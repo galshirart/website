@@ -1,0 +1,603 @@
+<meta charset="utf-8">
+<title>Gal Shir | Artsy Branding w/ the BS</title>
+<link rel="canonical" href="https://galshir.art/" />
+<link rel="shortcut icon" href="img/favicon.png">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family: 'Roboto Mono', monospace;
+  font-size:13px;
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(.7,0,.3,1);
+  display: inline-flex;
+  overflow: hidden;
+  height:100%;
+  color:rgba(0,0,0,0.8);
+}
+h1, h2 {
+  font-family: 'Inter', sans-serif;
+  line-height:110%;
+}
+h1 {
+  font-size:5vw;
+  letter-spacing: -2px;
+}
+h2 {
+  font-size:16px;
+}
+p {
+  line-height:160%;
+}
+a {
+  color:black;
+  text-decoration: none;
+}
+a:hover {
+  opacity:0.5;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.gradientText {
+  background: -webkit-linear-gradient(0deg, #00b1ff 0%, #d600ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.part {
+  height:100%;
+  overflow: scroll;
+  width:50vw;
+  transition: all 1s cubic-bezier(.7,0,.3,1);
+  padding:40px;
+}
+.part.left {
+  position: absolute;
+  z-index: 1;
+}
+.signature {
+  width:80px;
+}
+.content {
+  padding:10%;
+}
+.collapsable {
+  margin:4px 0;
+  transition: all 500ms;
+}
+.collapsable.open {
+
+  margin:10px 0 10px 20px;
+}
+.collapsable .head {
+  cursor: pointer;
+  transition: all 200ms;
+  position: relative;
+  padding:8px 14px;
+  border-radius:6px;
+  display: flex;
+  align-items: center;
+}
+.collapsable .head:hover {
+  background:#f7f7f7;
+}
+.collapsable > .head:before {
+  content:"+ ";
+  margin-right:6px;
+}
+.collapsable.open > .head {
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  padding-bottom:10px;
+  opacity:0.6;
+}
+.collapsable.open > .head:before {
+  content:"- ";
+}
+.collapsable .head .price {
+  position: absolute;
+  right:12px;
+}
+.collapsable > .cont {
+  display: none;
+}
+.collapsable.open > .cont {
+  display: block;
+}
+.process {
+  border-left:1px solid rgba(0,0,0,0.1);
+  padding-left:16px;
+}
+.process .step {
+  margin: 30px 0;
+  position: relative;
+  top:-7px;
+}
+.process .step:before {
+  content: " ";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: black;
+  position: absolute;
+  left: -20px;
+  top: 7px;
+}
+
+.backButton {
+  height:0;
+  width:0;
+  margin:10px;
+  transition: all 1s, background 300ms;
+  cursor: pointer;
+  background-image:url('img/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.backButton:hover {
+  background-color:#ececec
+}
+.thumbs {
+  display: flex;
+}
+.column {
+  width:50%;
+}
+.thumb {
+  width: calc(100% - 20px);
+  margin:10px;
+  display: inline-block;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 200ms, opacity 1s;
+  position: relative;
+  overflow: hidden;
+}
+.thumb:hover {
+  transform: scale(1.01);
+}
+.thumb img, .thumb video {
+  transform: scaleX(1);
+  width:100%;
+  transition-timing-function: cubic-bezier(.7,0,.3,1);
+  transition: all 200ms;
+  transition-delay: 200ms;
+}
+.thumb video {
+  position: absolute;
+  left:0;
+}
+.thumb .info {
+  position: absolute;
+  left:0;
+  top:0;
+  transform: scaleX(0);
+  transition: all 200ms;
+  transition-delay: 0;
+  width:100%;
+  height:100%;
+  padding:10%;
+  background:white;
+  transition-timing-function: cubic-bezier(.7,0,.3,1);
+  border-radius: 6px;
+}
+.thumb.flip img, .thumb.flip video {
+  transform: scaleX(0);
+  transition-delay: 0;
+}
+.thumb.flip .info {
+  transform: scaleX(1);
+  transition-delay: 200ms;
+}
+
+.column:nth-child(2) .thumb:nth-child(1) {
+  margin-top:50%;
+}
+
+.part.middle { 
+  width:100vw; 
+  padding-left:50vw;
+  left:0; 
+  position:absolute; 
+}
+
+.part.right {
+  padding:50px;
+  padding-left:0;
+  padding-bottom:30px;
+  position: absolute;
+  left:100vw;
+  width:50vw;
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  top: -100px;
+  right: 0px;
+  opacity: 0;
+  box-shadow: inset -50px 0 100px black;
+  transition: all 1s;
+  pointer-events: none;
+}
+
+.showProject {
+  margin-left:-50vw;
+  background:#f4f4f4;
+}
+.showProject .middle {
+  transition: all 1s opacity 500ms;
+  padding-left:40px;
+  padding-right: 90px;
+  width:40vw;
+}
+.showProject .backButton {
+  height:30px;
+  width:60px;
+}
+.showProject .thumb {
+  opacity:0.3;
+}
+.showProject .thumb.flip {
+  opacity:1;
+}
+.showProject .thumb:hover {
+  opacity:1;
+}
+.showProject .right {
+  display: block;
+  width:60vw;
+  left:40vw;
+}
+.showProject .shadow {
+  opacity: 0.1;
+  right: 50px;
+}
+
+.right * {
+  max-width:100%;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom:20px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% { opacity:0; transform: translateX(20%) }
+  100% { opacity:1 }
+}
+
+.availability {
+  display: inline-block;
+  padding-left: 13px;
+  font-size:12px;
+  position: relative;
+  color:#00b700;
+}
+.availability:before {
+  content: " ";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: #00b700;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+}
+@keyframes blink {
+  0% { opacity:0.5 }
+  50% { opacity:1 }
+  100% { opacity:0.5 }
+}
+
+
+.collapsable.illustration img {
+  width:60px;
+  border-radius: 6px;
+}
+.collapsable.illustration .flex {
+  text-align: center;
+  max-width:300px;
+  margin:30px auto;
+}
+
+.right *:nth-child(1) { animation-delay: 300ms; }
+.right *:nth-child(2) { animation-delay: 500ms; }
+.right *:nth-child(3) { animation-delay: 700ms; }
+.right *:nth-child(4) { animation-delay: 900ms; }
+.right *:nth-child(5) { animation-delay: 1100ms; }
+.right *:nth-child(6) { animation-delay: 1300ms; }
+.right *:nth-child(7) { animation-delay: 1500ms; }
+.right *:nth-child(8) { animation-delay: 1700ms; }
+.right *:nth-child(9) { animation-delay: 1900ms; }
+.right *:nth-child(10) { animation-delay: 2100ms; }
+
+@media screen and (max-width: 1000px) {
+  body { font-size:10px; }
+  .part { padding: 20px; }
+  .part.left { width:70vw }
+  .part.middle { padding-left:70vw }
+  .content { padding: 0 }
+  h1 { font-size:24px; letter-spacing: -1px; }
+  .collapsable .head { padding:8px }
+  .collapsable.open {
+      margin: 10px 0 10px 10px;
+  }
+  .backButton { margin:0 0 10px 0;}
+  .shadow { display:none }
+  .column { width:100%; padding:0 }
+  .thumbs { display:block }
+  .thumb { margin:0 0 10px 0; width:100% }
+  .thumb img { transform:scale(1.5) }
+  .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
+  .column:nth-child(2) .thumb:nth-child(1) { margin-top:0 }
+  .showProject .middle { padding: 20px; width:30vw; opacity:1 }
+  .showProject .right { width:70vw; left:30vw; padding: 20px 20px 0 0; }
+  .thumb.flip .info { transform:scaleX(0) }
+}
+
+
+</style>
+	
+<div class="left part">
+  <div class="home content">
+    <img class="signature" src="img/gal-shir-signature.png"/>
+    <h1>Artsy branding<br> w/o the bs</h1>
+
+    <div class="collapsable">
+      <div class="head">Let's chat</div>
+      <div class="cont">
+        <h2>hello@galshir.com</h2>
+        <div class="availability">Available for new projects</div>
+        <p>Reach out with all the information of your project and your needs, and I'll get back to you to schedule a meeting.</p>
+      </div>
+    </div>
+
+    <div class="collapsable">
+      <div class="head">Process and pricing</div>
+      <div class="cont">
+
+        <div class="collapsable">
+          <div class="head">Branding <span class="price">$10,000</span></div>
+          <div class="cont">
+            <p>My branding process is simple, efficent, and straight to the point. No fancy timelines, no endless meetings, and no iterations. </p>
+            <div class="process">
+              <div class="step">
+                <h2>Meeting</h2>
+                <p>I get to know you and your brand over a 60m zoom/coffee to understand your needs, vision, and strategy. I use that info to define your brand values, and to research your market and competitors.</p>
+              </div>
+              <div class="step">
+                <p>If we decide to work together, you make an upfront payment of $3,000.</p>
+              </div>
+              <div class="step">
+                <p><span class="gradientText">I do the work</span></p>
+              </div>
+              <div class="step">
+                <h2>Presentation</h2>
+                <p>A 60m meeting where I present a complete and custom brand book designed to define your brand indentity. It includes a logo, a color palette, a font pair, and examples of how to use your new visual language.</p>
+              </div>
+              <div class="step">
+                <p>Love it? You pay the remaining $7,000 and get the rights and materials. If you're unhappy with the result you don't pay the remaining sum and we say goodbye with no strings attached.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsable illustration">
+          <div class="head">Illustration <span class="price">~$600/item</span></div>
+          <div class="cont">
+            <p>My illustration process complements your brand's visual language and provides a set of unique, hand-drawn illustrations that can be used everywhere accross your products, ads, or other content. The price per item depends on the complexity of each illustration.</p>
+            <div class="flex">
+              <div><img src="img/illustration-simple.png" /><p><h2>Simple</h2>$300/item</p></div>
+              <div><img src="img/illustration-normal.png" /><p><h2>Normal</h2>$600/item</p></div>
+              <div><img src="img/illustration-complex.png" /><p><h2>Complex</h2>$900/item</p></div>
+            </div>
+            <div class="process">
+              <div class="step">
+                <h2>Meeting</h2>
+                <p>A 60m zoom/coffee to understand your illustration needs, visual language, and complexity of the work.</p>
+              </div>
+              <div class="step">
+                <p>If we decide to work together, you make an upfront payment of 30%.</p>
+              </div>
+              <div class="step">
+                <p><span class="gradientText">I do the work</span></p>
+              </div>
+              <div class="step">
+                <h2>Delivery</h2>
+                <p>You get the illustration files via email.</p>
+              </div>
+              <div class="step">
+                <p>Love it? You pay the remaining 70% and get the rights and materials. If you're unhappy with the result you don't pay the remaining sum and we say goodbye with no strings attached.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsable">
+          <div class="head">Art Direction <span class="price">$500/hr</span></div>
+          <div class="cont">
+            <p>My art direction service is an hourly-based zoom consultation program. I zoom with your designers or product managers to give feedback and provide consultation for your design, art, and creative projects. With that, you get an objective opinion that ensures your on-going work follows the right artistic direction.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="collapsable">
+      <div class="head">About Gal Shir</div>
+      <div class="cont">
+        <p>Gal Shir is a Tel-Aviv-based designer and artist helping innovative startups to develop and define their unique identity. Through logo design, visual language, illustration, and art direction, Gal provides a 360° solution for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p>
+        <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of <a href="https://lemonade.com" target="_blank">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond. </p>
+        <p>Over the last 15 years, Gal has moved between design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+<div class="middle part">
+  <div class="backButton"></div>
+  <div class="thumbs">
+    <div class="column">
+
+      <div class="thumb" project="rdbp">
+        <img src="projects/rdbp/0.png" />
+        <div class="info">
+          <h2>Rubber Duck Bath Party</h2>
+          <p>2022 / duck.art</p>
+          <p>A sold-out web3 project featuring thousands of generative art pieces</p>
+        </div>
+      </div>
+
+      <div class="thumb" project="colorhunt">
+        <img src="projects/colorhunt/0.png" />
+        <div class="info">
+          <h2>Color Hunt</h2>
+          <p>2015 / colorhunt.co</p>
+          <p>The world's favorite resource for color palettes serving over 1 million users every month</p>
+        </div>
+      </div>
+
+      <div class="thumb" project="articka">
+        <img src="projects/articka/0.png" />
+        <div class="info">
+          <h2>Articka</h2>
+          <p>2018 / articka.com</p>
+          <p>Amazon's choice of high-end products and accessories for modern artists</p>
+        </div>
+      </div>
+
+      <div class="thumb" project="pakatu">
+        <img src="projects/pakatu/0.png" />
+        <div class="info">
+          <h2>Pakatu</h2>
+          <p>2019</p>
+          <p>A platform for fans to suggest content ideas for creators</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="column">
+
+      <div class="thumb" project="lemonade">
+        <img src="projects/lemonade/0.png" />
+        <div class="info">
+          <h2>Lemonade</h2>
+          <p>2016-2019 / lemonade.com</p>
+          <p>America's top-rated insurance company (NYSE:LMND), a multi-billion dollar brand.</p>
+        </div>
+      </div>
+
+      <div class="thumb" project="trillium">
+        <img src="projects/trillium/0.png" />
+        <!-- <video height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/trillium/0.mp4" type="video/mp4"></video> -->
+        <!-- <img src="placeholder.png" /> -->
+        <div class="info">
+          <h2>Trillium</h2>
+          <p>2023</p>
+          <p>Creative laboratory powered by AI</p>
+        </div>
+      </div>
+
+      <div class="thumb" project="santa">
+        <img src="projects/santa/0.png" />
+        <div class="info">
+          <h2>Santa</h2>
+          <p>2021 / getsanta.com</p>
+          <p>The store at your door. Raised $13 million at a $40 million valuation.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="shadow"></div>
+
+  </div>
+</div>
+
+<div class="right part"></div>
+
+
+
+
+<script>
+
+projects = {
+  trillium:10,
+  lemonade: 11,
+  rdbp: 10,
+  colorhunt: 6,
+  santa: 10,
+  articka: 10,
+  pakatu: 9,
+}
+
+projectsWithVideo = ['trillium','lemonade']
+
+
+$('.collapsable .head').click(function() {
+  $(this).parent('.collapsable').toggleClass('open')
+  $(this).parent().siblings('.collapsable').removeClass('open')
+})
+
+
+$('.thumb').click(function() {
+  $('body').addClass('showProject')
+  project = $(this).attr('project')
+  $('.thumb').removeClass('flip')
+  $(this).addClass('flip')
+
+  $('.right').html('').scrollTop(0)
+
+  i = 1
+  while ( i <= projects[project] ) {
+    if ( i == 3 && projectsWithVideo.includes(project) ) { 
+      $('.right').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4" type="video/mp4"></video>')
+     } else { 
+      $('.right').append('<img src="projects/'+project+'/'+i+'.png" />')
+    }
+    i++
+  }
+})
+
+$(document).click(function(event) { 
+  var target = $(event.target);
+  if(!target.closest('.right').length ) {
+    closeProject()
+  }        
+});
+
+document.addEventListener('keydown', (event) => {
+  if ( event.which == 27 ) {
+    closeProject()
+  }
+});
+
+function closeProject() {
+  $('body').removeClass('showProject')
+  $('.thumb').removeClass('flip')
+}
+
+$('.thumb').click(function(event){
+  event.stopPropagation();
+});
+
+</script>
