@@ -67,7 +67,6 @@ a:hover {
 .part.left {
   position: absolute;
   z-index: 1;
-  pointer-events: none;
 }
 .signature {
   width:80px;
@@ -233,6 +232,16 @@ a:hover {
   width:50vw;
 }
 
+.part.right .right * {
+  max-width:100%;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom:20px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
 .shadow {
   position: absolute;
   width: 100%;
@@ -246,7 +255,7 @@ a:hover {
 }
 
 .showProject {
-  margin-left:-60vw;
+  margin-left:-70vw;
   background:#f4f4f4;
 }
 .showProject .middle {
@@ -279,16 +288,6 @@ a:hover {
 .showProject .shadow {
   opacity: 0.1;
   right: 50px;
-}
-
-.right * {
-  max-width:100%;
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom:20px;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-fill-mode: both;
 }
 
 @keyframes fadeIn {
@@ -366,6 +365,7 @@ a:hover {
   .showProject .middle { padding: 20px; width:30vw; opacity:1 }
   .showProject .right { width:70vw; left:30vw; padding: 20px 20px 0 0; }
   .thumb.flip .info { transform:scaleX(0) }
+  .part.right .right * { margin-bottom:10px; }
 }
 
 
