@@ -325,7 +325,6 @@ a:hover {
   100% { opacity:0.5 }
 }
 
-
 .collapsable.illustration img {
   width:60px;
   border-radius: 6px;
@@ -334,6 +333,30 @@ a:hover {
   text-align: center;
   max-width:300px;
   margin:30px auto;
+}
+.socials.flex {
+  justify-content: space-around;
+  justify-content: unset;
+  padding-left:10px;
+  margin-top:20px;
+}
+.socials.flex a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:30px;
+  height:30px;
+  border-radius:6px;
+  transition: all 200ms;
+  opacity:0.4;
+}
+.socials.flex a:hover {
+  background:rgba(0,0,0,0.1);
+  opacity:0.8;
+}
+.socials.flex img {
+  width:20px;
+  filter:brightness(0);
 }
 
 .right *:nth-child(1) { animation-delay: 300ms; }
@@ -469,6 +492,12 @@ a:hover {
       </div>
     </div>
 
+    <div class="socials flex">
+      <a href="https://x.com/galshirart" target="_blank"><img src="img/i-twitter.png" /></a>
+      <a href="https://instagram.com/galshirart" target="_blank"><img src="img/i-instagram.png" /></a>
+      <a href="https://facebook.com/galgalshir" target="_blank"><img src="img/i-facebook.png" /></a>
+    </div>
+
   </div>
   </div>
 </div>
@@ -532,7 +561,6 @@ projects = {
 
 projectsWithVideo = ['trillium','lemonade']
 
-
 $('.collapsable .head').click(function() {
   $(this).parent('.collapsable').toggleClass('open')
   $(this).parent().siblings('.collapsable').removeClass('open')
@@ -556,6 +584,8 @@ $('.thumb').click(function() {
     }
     i++
   }
+
+  window.location.hash = project;
 })
 
 $(document).click(function(event) { 
@@ -574,10 +604,18 @@ document.addEventListener('keydown', (event) => {
 function closeProject() {
   $('body').removeClass('showProject')
   $('.thumb').removeClass('flip')
+  history.replaceState(null, null, ' ');
 }
 
 $('.thumb').click(function(event){
   event.stopPropagation();
 });
+
+if(window.location.hash) {
+    var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+    $('.thumb[project='+hash+']').click()
+} else {
+    // No hash found
+}
 
 </script>
