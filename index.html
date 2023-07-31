@@ -53,14 +53,21 @@ a:hover {
 }
 .part {
   height:100%;
-  overflow: scroll;
+  overflow-y: scroll;
   width:50vw;
   transition: all 1s cubic-bezier(.7,0,.3,1);
   padding:40px;
 }
+.part::-webkit-scrollbar{
+    display: none;
+    width: 0 !important
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 .part.left {
   position: absolute;
   z-index: 1;
+  pointer-events: none;
 }
 .signature {
   width:80px;
@@ -71,9 +78,9 @@ a:hover {
 .collapsable {
   margin:4px 0;
   transition: all 500ms;
+  pointer-events: all;
 }
 .collapsable.open {
-
   margin:10px 0 10px 20px;
 }
 .collapsable .head {
@@ -134,7 +141,6 @@ a:hover {
 .backButton {
   height:0;
   width:0;
-  margin:10px;
   transition: all 1s, background 300ms;
   cursor: pointer;
   background-image:url('img/arrow.svg');
@@ -142,12 +148,17 @@ a:hover {
   background-position: 50% 50%;
   overflow: hidden;
   border-radius: 100px;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
 }
 .backButton:hover {
   background-color:#ececec
 }
 .thumbs {
-  display: flex;
+  transition: all 1s;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .column {
   width:50%;
@@ -164,6 +175,9 @@ a:hover {
 }
 .thumb:hover {
   transform: scale(1.01);
+}
+.thumb:nth-child(even) {
+  transform:translateY(30%);
 }
 .thumb img, .thumb video {
   transform: scaleX(1);
@@ -232,7 +246,7 @@ a:hover {
 }
 
 .showProject {
-  margin-left:-50vw;
+  margin-left:-60vw;
   background:#f4f4f4;
 }
 .showProject .middle {
@@ -240,6 +254,9 @@ a:hover {
   padding-left:40px;
   padding-right: 90px;
   width:40vw;
+}
+.showProject .thumbs {
+    padding-top:40px;
 }
 .showProject .backButton {
   height:30px;
@@ -336,14 +353,13 @@ a:hover {
   .content { padding: 0 }
   h1 { font-size:24px; letter-spacing: -1px; }
   .collapsable .head { padding:8px }
-  .collapsable.open {
-      margin: 10px 0 10px 10px;
-  }
+  .collapsable.open { margin: 10px 0 10px 10px; }
   .backButton { margin:0 0 10px 0;}
   .shadow { display:none }
   .column { width:100%; padding:0 }
   .thumbs { display:block }
   .thumb { margin:0 0 10px 0; width:100% }
+  .thumb:nth-child(even) { transform:none; }
   .thumb img { transform:scale(1.5) }
   .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
   .column:nth-child(2) .thumb:nth-child(1) { margin-top:0 }
@@ -365,7 +381,7 @@ a:hover {
       <div class="cont">
         <h2>hello@galshir.com</h2>
         <div class="availability">Available for new projects</div>
-        <p>Reach out with all the information of your project and your needs, and I'll get back to you to schedule a meeting.</p>
+        <p>Drop me an email with all the information of your project and your needs, and I'll get back to you to schedule a meeting.</p>
       </div>
     </div>
 
@@ -456,87 +472,47 @@ a:hover {
 <div class="middle part">
   <div class="backButton"></div>
   <div class="thumbs">
-    <div class="column">
 
-      <div class="thumb" project="rdbp">
-        <img src="projects/rdbp/0.png" />
-        <div class="info">
-          <h2>Rubber Duck Bath Party</h2>
-          <p>2022 / duck.art</p>
-          <p>A sold-out web3 project featuring thousands of generative art pieces</p>
-        </div>
-      </div>
+    <div class="thumb" project="rdbp"><img src="projects/rdbp/0.png" /><div class="info">
+      <h2>Rubber Duck Bath Party</h2><p>2022 / duck.art</p>
+      <p>A sold-out web3 project featuring thousands of generative art pieces</p>
+    </div></div>
 
-      <div class="thumb" project="colorhunt">
-        <img src="projects/colorhunt/0.png" />
-        <div class="info">
-          <h2>Color Hunt</h2>
-          <p>2015 / colorhunt.co</p>
-          <p>The world's favorite resource for color palettes serving over 1 million users every month</p>
-        </div>
-      </div>
+    <div class="thumb" project="trillium"><img src="projects/trillium/0.png" /><div class="info">
+      <h2>Trillium</h2><p>2023</p>
+      <p>Creative laboratory powered by AI</p>
+    </div></div>
 
-      <div class="thumb" project="articka">
-        <img src="projects/articka/0.png" />
-        <div class="info">
-          <h2>Articka</h2>
-          <p>2018 / articka.com</p>
-          <p>Amazon's choice of high-end products and accessories for modern artists</p>
-        </div>
-      </div>
+    <div class="thumb" project="colorhunt"><img src="projects/colorhunt/0.png" /><div class="info">
+      <h2>Color Hunt</h2><p>2015 / colorhunt.co</p>
+      <p>The world's favorite resource for color palettes serving over 1 million users every month</p>
+    </div></div>
 
-      <div class="thumb" project="pakatu">
-        <img src="projects/pakatu/0.png" />
-        <div class="info">
-          <h2>Pakatu</h2>
-          <p>2019</p>
-          <p>A platform for fans to suggest content ideas for creators</p>
-        </div>
-      </div>
+    <div class="thumb" project="lemonade"><img src="projects/lemonade/0.png" /><div class="info">
+      <h2>Lemonade</h2><p>2016-2019 / lemonade.com</p>
+      <p>America's top-rated insurance company (NYSE:LMND), a multi-billion dollar brand.</p>
+    </div></div>
 
-    </div>
-    <div class="column">
+    <div class="thumb" project="articka"><img src="projects/articka/0.png" /><div class="info">
+      <h2>Articka</h2><p>2018 / articka.com</p>
+      <p>Amazon's choice of high-end products and accessories for modern artists</p>
+    </div></div>
 
-      <div class="thumb" project="lemonade">
-        <img src="projects/lemonade/0.png" />
-        <div class="info">
-          <h2>Lemonade</h2>
-          <p>2016-2019 / lemonade.com</p>
-          <p>America's top-rated insurance company (NYSE:LMND), a multi-billion dollar brand.</p>
-        </div>
-      </div>
+    <div class="thumb" project="santa"><img src="projects/santa/0.png" /><div class="info">
+      <h2>Santa</h2><p>2021 / getsanta.com</p>
+      <p>The store at your door. Raised $13 million at a $40 million valuation.</p>
+    </div></div>
 
-      <div class="thumb" project="trillium">
-        <img src="projects/trillium/0.png" />
-        <!-- <video height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/trillium/0.mp4" type="video/mp4"></video> -->
-        <!-- <img src="placeholder.png" /> -->
-        <div class="info">
-          <h2>Trillium</h2>
-          <p>2023</p>
-          <p>Creative laboratory powered by AI</p>
-        </div>
-      </div>
-
-      <div class="thumb" project="santa">
-        <img src="projects/santa/0.png" />
-        <div class="info">
-          <h2>Santa</h2>
-          <p>2021 / getsanta.com</p>
-          <p>The store at your door. Raised $13 million at a $40 million valuation.</p>
-        </div>
-      </div>
-
-    </div>
+    <div class="thumb" project="pakatu"><img src="projects/pakatu/0.png" /><div class="info">
+      <h2>Pakatu</h2><p>2019</p>
+      <p>A platform for fans to suggest content ideas for creators</p>
+    </div></div>
 
     <div class="shadow"></div>
-
   </div>
 </div>
 
 <div class="right part"></div>
-
-
-
 
 <script>
 
