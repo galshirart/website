@@ -558,7 +558,6 @@ a:hover {
 <div class="right part"></div>
 
 <script>
-
 projects = {
   trillium:10,
   lemonade: 11,
@@ -575,7 +574,6 @@ $('.collapsable .head').click(function() {
   $(this).parent('.collapsable').toggleClass('open')
   $(this).parent().siblings('.collapsable').removeClass('open')
 })
-
 
 $('.thumb').click(function() {
   $('body').addClass('showProject')
@@ -621,11 +619,8 @@ $('.thumb').click(function(event){
   event.stopPropagation();
 });
 
-if(window.location.hash) {
-    var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+if ( window.location.hash ) {
+    hash = window.location.hash.substring(1)
     $('.thumb[project='+hash+']').click()
-} else {
-    // No hash found
 }
-
 </script>
