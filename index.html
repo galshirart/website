@@ -191,6 +191,9 @@ a:hover {
 .thumb:nth-child(even) {
   transform:translateY(30%);
 }
+.thumb:last-of-type {
+  margin-bottom:40%;
+}
 .thumb img, .thumb video {
   transform: scaleX(1);
   width:100%;
@@ -546,6 +549,11 @@ a:hover {
       <p>The store at your door. Raised $13 million at a $40 million valuation.</p>
     </div></div>
 
+    <div class="thumb" project="flyp"><img src="projects/flyp/0.png" /><div class="info">
+      <h2>Flyp</h2><p>2019 / flyp.co</p>
+      <p>Revolutionising property sales through expertise, data-driven tech, and the power of scale.</p>
+    </div></div>
+
     <div class="thumb" project="pakatu"><img src="projects/pakatu/0.png" /><div class="info">
       <h2>Pakatu</h2><p>2019</p>
       <p>A platform for fans to suggest content ideas for creators</p>
@@ -567,6 +575,7 @@ projects = {
   santa: 10,
   articka: 10,
   pakatu: 9,
+  flyp: 9,
 }
 
 projectsWithVideo = ['trillium','lemonade']
