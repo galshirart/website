@@ -385,7 +385,14 @@ a:hover {
 .right *:nth-child(9) { animation-delay: 1900ms; }
 .right *:nth-child(10) { animation-delay: 2100ms; }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
+  .column { width:100%; padding:0 }
+  .thumbs { display:block }
+  .thumb { margin:0 0 10px 0; width:100% }
+  .thumb:nth-child(even) { transform:none; }
+}
+
+@media screen and (max-width: 800px) {
   body { font-size:10px; }
   .part { padding: 20px; }
   .part.left { width:70vw }
@@ -396,10 +403,7 @@ a:hover {
   .collapsable.open { margin: 10px 0 10px 10px; }
   .backButton { margin:0 0 10px 0;}
   .shadow { display:none }
-  .column { width:100%; padding:0 }
-  .thumbs { display:block }
-  .thumb { margin:0 0 10px 0; width:100% }
-  .thumb:nth-child(even) { transform:none; }
+
   .thumb img { transform:scale(1.5) }
   .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
   .column:nth-child(2) .thumb:nth-child(1) { margin-top:0 }
@@ -408,7 +412,6 @@ a:hover {
   .thumb.flip .info { transform:scaleX(0) }
   .part.right * { margin-bottom:10px; }
 }
-
 
 </style>
 	
