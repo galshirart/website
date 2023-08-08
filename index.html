@@ -609,7 +609,7 @@ $('.thumb').click(function() {
   i = 1
   while ( i <= projects[project] ) {
     if ( i == 3 && projectsWithVideo.includes(project) ) { 
-      $('.right').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4" type="video/mp4"></video>')
+      $('.right').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?2" type="video/mp4"></video>')
      } else { 
       $('.right').append('<img src="projects/'+project+'/'+i+'.png" />')
     }
