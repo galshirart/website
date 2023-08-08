@@ -185,12 +185,33 @@ a:hover {
   transition: all 200ms, opacity 1s;
   position: relative;
   overflow: hidden;
+  animation-name: thumb;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
 }
+@keyframes thumb {
+  0% { opacity:0; margin-top:20% }
+  100% { opacity:1 }
+}
+.thumb:nth-child(2) { animation-delay:200ms }
+.thumb:nth-child(3) { animation-delay:300ms }
+.thumb:nth-child(4) { animation-delay:400ms }
+.thumb:nth-child(5) { animation-delay:500ms }
+.thumb:nth-child(6) { animation-delay:600ms }
+.thumb:nth-child(7) { animation-delay:700ms }
+.thumb:nth-child(8) { animation-delay:800ms }
+.thumb:nth-child(9) { animation-delay:900ms }
+.thumb:nth-child(10) { animation-delay:1000ms }
+.thumb:nth-child(11) { animation-delay:1100ms }
+.thumb:nth-child(12) { animation-delay:1200ms }
 .thumb:hover {
-  transform: scale(1.01);
+  transform:scale(1.01);
 }
 .thumb:nth-child(even) {
   transform:translateY(30%);
+}
+.thumb:nth-child(even):hover {
+  transform:translateY(30%) scale(1.01);
 }
 .thumb:last-of-type {
 /*  margin-bottom:40%;*/
