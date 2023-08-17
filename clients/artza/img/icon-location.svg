@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="17px" viewBox="0 0 12 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1009, -3702)" fill="#CA5D00">
+            <g id="Group-13" transform="translate(100, 3097)">
+                <g id="Bitmap" transform="translate(878, 289)">
+                    <g id="Group-12" transform="translate(31, 314)">
+                        <path d="M6,2 C9.3137085,2 12,4.6862915 12,8 C12,10.209139 10,13.8758057 6,19 C2,13.8758057 0,10.209139 0,8 C0,4.6862915 2.6862915,2 6,2 Z M6,6 C4.8954305,6 4,6.8954305 4,8 C4,9.1045695 4.8954305,10 6,10 C7.1045695,10 8,9.1045695 8,8 C8,6.8954305 7.1045695,6 6,6 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
