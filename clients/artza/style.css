@@ -666,6 +666,7 @@ input {
 	h2 { font-size:30px }
 	h2 div { font-size:50px }
 	h3 { font-size:30px }
+	.price h3 { font-size:50px }
 	.logo { width:100px }
 	.press img { height:32px }
 	.artisans { display:block; }
