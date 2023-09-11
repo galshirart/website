@@ -421,7 +421,6 @@ a:hover {
   .thumb { margin:0 0 10px 0; width:100% }
   .thumb:nth-child(even) { transform:none; }
   .thumb:nth-child(even):hover { transform:none }
-
 }
 
 @media screen and (max-width: 800px) {
@@ -620,7 +619,7 @@ a:hover {
 <script>
 projects = {
   trillium:10,
-  lemonade: 11,
+  lemonade: 13,
   rdbp: 10,
   colorhunt: 7,
   santa: 10,
@@ -632,6 +631,10 @@ projects = {
 }
 
 projectsWithVideo = ['trillium','lemonade','daymind']
+
+wordArr = []
+wordArr = $('h1').html().split(' ')
+
 
 $('.collapsable .head').click(function() {
   $(this).parent('.collapsable').toggleClass('open')
