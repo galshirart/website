@@ -34,12 +34,12 @@ body {
   color:rgba(0,0,0,0.8);
 }
 h1, h2 {
-
   line-height:110%;
 }
 h1 {
-  font-size:5vw;
-  letter-spacing: -2px;
+  font-size:3.2vw;
+  letter-spacing: -0.1vw;
+  font-weight:400;
 }
 h2 {
   font-size:16px;
@@ -85,7 +85,7 @@ a:hover {
   margin-left: 6px;
 }
 .content {
-  padding:10%;
+  padding:10px;
 }
 .collapsable {
   margin:4px 0;
@@ -195,6 +195,8 @@ a:hover {
   animation-name: thumb;
   animation-duration: 800ms;
   animation-fill-mode: backwards;
+  background:white;
+  height: fit-content;
 }
 @keyframes thumb {
   0% { opacity:0; margin-top:20% }
@@ -423,12 +425,12 @@ a:hover {
 }
 
 @media screen and (max-width: 800px) {
-  body { font-size:10px; }
-  .part { padding: 20px; }
+  body { font-size:11px; }
+  .part { padding: 16px; }
   .part.left { width:70vw }
   .part.middle { padding-left:70vw }
   .content { padding: 0 }
-  h1 { font-size:11vw; letter-spacing: -1px; }
+  h1 { font-size:6vw; letter-spacing: 0px; }
   .collapsable .head { padding:8px }
   .collapsable.open { margin: 10px 0 10px 10px; }
   .backButton { margin:0 0 10px 0;}
@@ -449,7 +451,7 @@ a:hover {
 <div class="left part">
   <div class="home content">
     <img class="signature" src="img/gal-sh-signature.png?2"/>
-    <h1>Artsy branding<br> w/o the bs</h1>
+    <h1>I'm a brand designer based in <span style="white-space:nowrap">Tel Aviv</span>, crafting great logos for early-stage startups helping them define their visual identity.</h1>
 
     <div class="collapsable">
       <div class="head">Let's chat</div>
