@@ -472,7 +472,7 @@ a:hover {
 <div class="left part">
   <div class="home content">
     <img class="signature" src="img/gal-sh-signature.png?2"/>
-    <h1>Gal Shir is a brand designer based in Tel Aviv, crafting great logos for early-stage startups and helping them define their visual identity.</h1>
+    <h1></h1>
 
     <div class="collapsable">
       <div class="head">Let's chat</div>
@@ -609,7 +609,7 @@ projects = {
 projectsWithVideo = ['trillium','lemonade','daymind']
 
 wordArr = []
-wordArr = $('h1').html().split('')
+wordArr = "Gal Shir is a brand designer based in Tel Aviv, crafting great logos for early-stage startups and helping them define their visual identity.".split('')
 $('h1').html('')
 for (word in wordArr) {
   $('h1').append('<span style="animation-delay:'+word*word/100*20+'ms">'+wordArr[word]+'</span>')
