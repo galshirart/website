@@ -101,6 +101,7 @@ a:hover {
 }
 .collapsable {
   margin:4px 0;
+  margin-left:-6px;
   transition: all 500ms;
   pointer-events: all;
   max-width:600px;
@@ -423,13 +424,12 @@ a:hover {
   .part.left { width:70vw }
   .showProject { margin-left:-70vw; }
   .part.middle { padding-left:70vw }
-  .content { padding: 0 }
-  h1 { font-size:6vw; letter-spacing: 0px; }
+  .content { padding: 4px; }
+  h1 { font-size:5vw; letter-spacing: 0px; }
   .collapsable .head { padding:8px }
-  .collapsable.open { margin: 10px 0 10px 10px; }
+  .collapsable > .cont { padding-left: 24px; }
   .showProject .backButton { margin:0; width:50px}
   .shadow { display:none }
-
   .thumb img { transform:scale(1.5) }
   .thumb:nth-child(even):hover { transform:none }
   .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
