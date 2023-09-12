@@ -6,7 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Artsy Branding w/ the BS">
 <meta property="og:description" content="Gal Shir is a Tel-Aviv-based designer and artist helping innovative startups to develop and define their unique identity." />
@@ -35,12 +35,11 @@ body {
 }
 h1, h2 {
   line-height:120%;
-  font-weight:500;
+  font-weight:400;
 }
 h1 {
   font-size:3.2vw;
   letter-spacing: -0.1vw;
-  font-weight:400;
 }
 h1 span {
   animation-name: enter;
@@ -153,18 +152,36 @@ a:hover {
   margin: 30px 0;
   position: relative;
   top:-7px;
+  padding-left: 2px;
 }
 .process .step:before {
   content: " ";
   display: block;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 100%;
-  background: black;
+  background: #ffffff;
   position: absolute;
   left: -20px;
   top: 7px;
   z-index: 3;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.process .step:nth-child(1):before, .process .step:nth-child(4):before {
+  font-size:10px;
+  content: "1";
+  width: 16px;
+  height: 16px;
+  left: -25px;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: rgba(0,0,0,0.6);
+}
+.process .step:nth-child(4):before {
+  content: "2";
 }
 .process .step:last-of-type:after { 
   height: 100%;
@@ -277,9 +294,6 @@ a:hover {
 .thumb.flip .info {
   transform: scaleX(1);
   transition-delay: 200ms;
-}
-.column:nth-child(2) .thumb:nth-child(1) {
-  margin-top:50%;
 }
 .part.middle { 
   width:100vw; 
@@ -477,7 +491,7 @@ a:hover {
             <p><span class="gradientText">I do the work</span></p>
           </div>
           <div class="step">
-            <h2>Presentation</h2>
+            <h2>Delivery</h2>
             <p>A 30m meeting where I present a complete and custom brand book designed to define your brand identity. It includes a logo, a color palette, a font pair, and examples of how to use the materials.</p>
           </div>
           <div class="step">
@@ -490,9 +504,9 @@ a:hover {
     <div class="collapsable">
       <div class="head">About Gal Shir</div>
       <div class="cont">
-        <p>Gal Shir is a designer and artist based in Tel-Aviv, helping innovative startups to develop and define their unique identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p>
+        <p>Gal Shir is a designer and artist based in Tel Aviv, helping innovative startups to develop and define their unique identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p>
         <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of <a href="https://lemonade.com" target="_blank">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond. </p>
-        <p>Over the last 15 years, Gal has moved between design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
+        <p>Over the last 15 years, Gal has moved between the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
         <img src="https://pbs.twimg.com/profile_images/1684291552842055682/R-y5tqGS_400x400.jpg" style="width:100px; border-radius: 100%; margin-top:10px"/>
       </div>
     </div>
