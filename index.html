@@ -27,7 +27,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size:13px;
   transition: all 1s;
-  transition-timing-function: cubic-bezier(.7,0,.3,1);
+  transition-timing-function: cubic-bezier(0,0,0,1);
   display: inline-flex;
   overflow: hidden;
   height:100%;
@@ -45,7 +45,7 @@ h1 {
 h1 span {
   animation-name: enter;
   animation-fill-mode: both;
-  animation-timing-function: ease-out;
+  animation-timing-function: cubic-bezier(0,0,0,1);
   animation-duration: 200ms;
   position: relative;
 }
@@ -79,15 +79,15 @@ a:hover {
   height:100%;
   overflow-y: scroll;
   width:50vw;
-  transition: all 1s cubic-bezier(.7,0,.3,1);
+  transition: all 1s cubic-bezier(0,0,0,1);
   padding:40px;
 }
 .part::-webkit-scrollbar{
-    display: none;
-    width: 0 !important
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  display: none;
+  width: 0 !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .part.left {
   position: absolute;
   z-index: 1;
@@ -210,8 +210,8 @@ a:hover {
   position: relative;
   overflow: hidden;
   animation-name: thumb;
-  animation-duration: 800ms;
-  animation-fill-mode: backwards;
+  animation-duration: 1200ms;
+  animation-fill-mode: both;
   background:white;
   height: fit-content;
 }
@@ -219,17 +219,18 @@ a:hover {
   0% { opacity:0; margin-top:20% }
   100% { opacity:1 }
 }
-.thumb:nth-child(2) { animation-delay:200ms }
-.thumb:nth-child(3) { animation-delay:300ms }
-.thumb:nth-child(4) { animation-delay:400ms }
-.thumb:nth-child(5) { animation-delay:500ms }
-.thumb:nth-child(6) { animation-delay:600ms }
-.thumb:nth-child(7) { animation-delay:700ms }
-.thumb:nth-child(8) { animation-delay:800ms }
-.thumb:nth-child(9) { animation-delay:900ms }
-.thumb:nth-child(10) { animation-delay:1000ms }
-.thumb:nth-child(11) { animation-delay:1100ms }
-.thumb:nth-child(12) { animation-delay:1200ms }
+.thumb:nth-child(1) { animation-delay:600ms }
+.thumb:nth-child(2) { animation-delay:800ms }
+.thumb:nth-child(3) { animation-delay:1000ms }
+.thumb:nth-child(4) { animation-delay:1200ms }
+.thumb:nth-child(5) { animation-delay:1400ms }
+.thumb:nth-child(6) { animation-delay:1600ms }
+.thumb:nth-child(7) { animation-delay:1800ms }
+.thumb:nth-child(8) { animation-delay:2000ms }
+.thumb:nth-child(9) { animation-delay:2200ms }
+.thumb:nth-child(10) { animation-delay:2400ms }
+.thumb:nth-child(11) { animation-delay:2600ms }
+.thumb:nth-child(12) { animation-delay:2800ms }
 .thumb:hover {
   transform:scale(1.01);
 }
@@ -267,7 +268,7 @@ a:hover {
   transition-timing-function: cubic-bezier(.7,0,.3,1);
   border-radius: 6px;
 }
-.thumb.flip img, .thumb.flip video {
+.thumb.flip img {
   transform: scaleX(0);
   transition-delay: 0;
 }
@@ -275,18 +276,15 @@ a:hover {
   transform: scaleX(1);
   transition-delay: 200ms;
 }
-
 .column:nth-child(2) .thumb:nth-child(1) {
   margin-top:50%;
 }
-
 .part.middle { 
   width:100vw; 
   padding-left:50vw;
   left:0; 
   position:absolute; 
 }
-
 .part.right {
   padding:50px;
   padding-left:0;
@@ -295,7 +293,6 @@ a:hover {
   left:100vw;
   width:50vw;
 }
-
 .part.right * {
   max-width:100%;
   width: 100%;
@@ -305,21 +302,19 @@ a:hover {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-
 .shadow {
   position: fixed;
-  width:calc(100vw);
+  width:100vw;
   height: 100%;
   top: 0;
   left:0;
   opacity: 0;
   box-shadow: inset -50px 0 100px black;
-  transition: all 1s cubic-bezier(.7,0,.3,1);
+  transition: all 1s cubic-bezier(0,0,0,1);
   pointer-events: none;
 }
-
 .showProject {
-  margin-left:-70vw;
+  margin-left:-50vw;
   background:#f4f4f4;
 }
 .showProject .middle {
@@ -334,18 +329,9 @@ a:hover {
 .showProject .backButton {
   height:30px;
   width:60px;
-}
-.showProject .thumb {
-  opacity:0.3;
-}
-.showProject .thumb.flip {
-  opacity:1;
-}
-.showProject .thumb:hover {
-  opacity:1;
+  margin-left: 10px;
 }
 .showProject .right {
-  display: block;
   width:60vw;
   left:40vw;
 }
@@ -353,12 +339,10 @@ a:hover {
   opacity: 0.1;
   width:calc(40vw - 50px);
 }
-
 @keyframes fadeIn {
   0% { opacity:0; transform: translateX(20%) }
   100% { opacity:1 }
 }
-
 .availability {
   display: inline-block;
   margin-top: 12px;
@@ -413,14 +397,14 @@ a:hover {
 
 .right *:nth-child(1) { animation-delay: 400ms; }
 .right *:nth-child(2) { animation-delay: 700ms; }
-.right *:nth-child(3) { animation-delay: 700ms; }
-.right *:nth-child(4) { animation-delay: 1000ms; }
-.right *:nth-child(5) { animation-delay: 1300ms; }
-.right *:nth-child(6) { animation-delay: 1600ms; }
-.right *:nth-child(7) { animation-delay: 1900ms; }
-.right *:nth-child(8) { animation-delay: 2200ms; }
-.right *:nth-child(9) { animation-delay: 2500ms; }
-.right *:nth-child(10) { animation-delay: 2800ms; }
+.right *:nth-child(3) { animation-delay: 1000ms; }
+.right *:nth-child(4) { animation-delay: 1300ms; }
+.right *:nth-child(5) { animation-delay: 1600ms; }
+.right *:nth-child(6) { animation-delay: 1900ms; }
+.right *:nth-child(7) { animation-delay: 2200ms; }
+.right *:nth-child(8) { animation-delay: 2500ms; }
+.right *:nth-child(9) { animation-delay: 2800ms; }
+.right *:nth-child(10) { animation-delay: 3100ms; }
 
 @media screen and (max-width: 1300px) {
   .column { width:100%; padding:0 }
@@ -434,12 +418,13 @@ a:hover {
   body { font-size:11px; }
   .part { padding: 16px; }
   .part.left { width:70vw }
+  .showProject { margin-left:-70vw; }
   .part.middle { padding-left:70vw }
   .content { padding: 0 }
   h1 { font-size:6vw; letter-spacing: 0px; }
   .collapsable .head { padding:8px }
   .collapsable.open { margin: 10px 0 10px 10px; }
-  .backButton { margin:0 0 10px 0;}
+  .showProject .backButton { margin:0; width:50px}
   .shadow { display:none }
 
   .thumb img { transform:scale(1.5) }
