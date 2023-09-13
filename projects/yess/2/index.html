@@ -3,7 +3,7 @@
 <link href="../../presentation.css" rel="stylesheet" media="all" />
 <style>
 .slide {
-	background:#E2DDE2;
+	background:#CDD5E1;
 	position: relative;
 }
 #animation-container {
@@ -16,38 +16,7 @@
 	width: 600px;
 	height: 300px;
 }
-#animation-container div {
-	animation-name:rotate;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	animation-duration: 5s;
-	position: relative;
-	mix-blend-mode: lighten;
-	position: absolute;
-	background-image: linear-gradient(225deg, #FF4B3C 0%, #BC3A33 100%);
-	box-sizing: border-box;
-	transition: all cubic-bezier(0.8,0,0.2,1);
-}
-@keyframes rotate {
-	0% { transform:rotate(0) }
-	100% { transform:rotate(360deg) }
-}
-#animation-container div:after {
-	content: " ";
-	width:calc(100% - 30px);
-	height:calc(100% - 30px);
-	border-radius: 100%;
-	background:black;
-	display: block;
-	position: absolute;
-	left:15px;
-	top:15px;
-	box-sizing: border-box;
-}
 
-#animation-container div:nth-child(even) {
-	animation-direction: reverse;
-}
 
 
 </style>
@@ -78,34 +47,32 @@
 
 <script>
 
-amount = 4
+amount = 20
 bpm = 80
 
 beat()
 
 
-
 i = 1
 while ( i <= amount ) {
-	size = $('#animation-container').css('width').replace('px','')
 	item = $('<div></div>').css({
-		'border-radius':'100%',
-		'animation-duration': i*10000/amount+'ms'
+		'width': '100px',
+		'background': '#FF4B3C',
+		'margin':'4px',
+		'border-radius':'100px'
 	})
 	$('#animation-container').append(item)
 	i++
 }
 
-
-
-
 function beat() {
 	setTimeout(function() {
 
+
 		$('#animation-container div').each(function() {
 			$(this).css({
-				'height':random(1, 5)*60+'px',
-				'width':random(1, 5)*60+'px',
+				'height':random(50, 300)+'px',
+				'opacity': random(10,100)+'%',
 				'transition': 'all '+60000/bpm+'ms cubic-bezier(0.8,0,0.2,1)',
 			})
 		})
@@ -120,5 +87,6 @@ function beat() {
 function random(min,max) {
 	return Math.floor(Math.random() * (max + 1 - min) + min);
 }
+
 
 </script>
