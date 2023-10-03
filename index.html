@@ -194,8 +194,7 @@ a:hover {
   z-index: 0;
 }
 .backButton {
-  height:0;
-  width:0;
+  opacity:0;
   transition: all 1s, background 300ms;
   cursor: pointer;
   background-image:url('img/arrow.svg');
@@ -205,10 +204,14 @@ a:hover {
   border-radius: 100px;
   position: fixed;
   z-index: 10;
+  top:-50px;
+  left:25px;
+  height:50px;
+  width:50px;
   background-color: white;
 }
 .backButton:hover {
-  background-color:#ececec
+  background-color:#dadada
 }
 .thumbs {
   transition: all 1s;
@@ -230,7 +233,6 @@ a:hover {
   animation-name: thumb;
   animation-duration: 1200ms;
   animation-fill-mode: both;
-  background:white;
   height: fit-content;
 }
 @keyframes thumb {
@@ -249,51 +251,46 @@ a:hover {
 .thumb:nth-child(10) { animation-delay:2400ms }
 .thumb:nth-child(11) { animation-delay:2600ms }
 .thumb:nth-child(12) { animation-delay:2800ms }
-.thumb:hover {
-  transform:scale(1.01);
-}
 .thumb:nth-child(even) {
   transform:translateY(30%);
-}
-.thumb:nth-child(even):hover {
-  transform:translateY(30%) scale(1.01);
 }
 .thumb:last-of-type {
   margin-bottom:40%;
 }
-.thumb img, .thumb video {
-  transform: scaleX(1);
+.thumb img {
+  transform: scale(1);
   width:100%;
   transition-timing-function: cubic-bezier(.7,0,.3,1);
-  transition: all 200ms;
-  transition-delay: 200ms;
+  transition: all 1s;
+  filter:blur(0);
 }
-.thumb video {
-  position: absolute;
-  left:0;
+.thumb.flip img {
+  filter:blur(10px);
+  transform: scale(1.6);
 }
 .thumb .info {
   position: absolute;
   left:0;
   top:0;
-  transform: scaleX(0);
-  transition: all 200ms;
-  transition-delay: 0;
+  transition: all 1s;
   width:100%;
   height:100%;
-  padding:10%;
-  background:white;
+  padding:6% 10%;
+  color:white;
   transition-timing-function: cubic-bezier(.7,0,.3,1);
   border-radius: 6px;
+  background: rgba(0,0,0,0.5);
+  opacity:0;
+  pointer-events: none;
 }
-.thumb.flip img {
-  transform: scaleX(0);
-  transition-delay: 0;
+.thumb .info a {
+  color:white;
 }
 .thumb.flip .info {
-  transform: scaleX(1);
-  transition-delay: 200ms;
+  opacity:1;
+  pointer-events: all;
 }
+
 .part.middle { 
   width:100vw; 
   padding-left:50vw;
@@ -316,19 +313,8 @@ a:hover {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-.shadow {
-  position: fixed;
-  width:100vw;
-  height: 100%;
-  top: 0;
-  left:0;
-  opacity: 0;
-  box-shadow: inset -50px 0 100px black;
-  transition: all 1s cubic-bezier(0,0,0,1);
-  pointer-events: none;
-}
 .showProject {
-  background:#f4f4f4;
+  background:black;
 }
 .showProject .left {
   opacity:0;
@@ -337,24 +323,18 @@ a:hover {
 .showProject .middle {
   transition: all 1s opacity 500ms;
   padding-left:40px;
-  padding-right: 90px;
   width:40vw;
 }
 .showProject .thumbs {
     padding-top:40px;
 }
 .showProject .backButton {
-  height:30px;
-  width:60px;
-  margin-left: 10px;
+  opacity:1;
+  top:25px;
 }
 .showProject .right {
   width:60vw;
   left:40vw;
-}
-.showProject .shadow {
-  opacity: 0.1;
-  width:calc(40vw - 50px);
 }
 @keyframes fadeIn {
   0% { opacity:0; transform: translateX(20%) }
@@ -427,6 +407,8 @@ a:hover {
 .right *:nth-child(8) { animation-delay: 2500ms; }
 .right *:nth-child(9) { animation-delay: 2800ms; }
 .right *:nth-child(10) { animation-delay: 3100ms; }
+.right *:nth-child(11) { animation-delay: 3400ms; }
+.right *:nth-child(12) { animation-delay: 3700ms; }
 
 @media screen and (max-width: 1300px) {
   .column { width:100%; padding:0 }
@@ -445,8 +427,6 @@ a:hover {
   h1 { font-size:5vw; letter-spacing: 0px; }
   .collapsable .head { padding:8px }
   .collapsable > .cont { padding-left: 24px; }
-  .showProject .backButton { margin:0; width:50px}
-  .shadow { display:none }
   .thumb img { transform:scale(1.5) }
   .thumb:nth-child(even):hover { transform:none }
   .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
@@ -454,7 +434,8 @@ a:hover {
   .showProject .left { left:-70vw }
   .showProject .middle { padding: 20px; width:30vw; opacity:1 }
   .showProject .right { width:70vw; left:30vw; padding: 20px 20px 0 0; }
-  .thumb.flip .info { transform:scaleX(0) }
+  .thumb.flip img { filter:none }
+  .thumb .info { display:none }
   .part.right * { margin-bottom:10px; }
 }
 
@@ -578,8 +559,6 @@ a:hover {
 
   </div>
 </div>
-
-<div class="shadow"></div>
 
 <div class="right part"></div>
 
