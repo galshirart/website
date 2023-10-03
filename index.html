@@ -29,8 +29,6 @@ body {
   transition: all 1s;
   transition-timing-function: cubic-bezier(0,0,0,1);
   display: inline-flex;
-  overflow: hidden;
-  height:100%;
   color:rgba(0,0,0,0.8);
 }
 h1, h2 {
@@ -88,8 +86,9 @@ a:hover {
   scrollbar-width: none;
 }
 .part.left {
-  position: absolute;
+  position: fixed;
   z-index: 1;
+  left:0;
 }
 .signature {
   width:80px;
@@ -299,13 +298,12 @@ a:hover {
   width:100vw; 
   padding-left:50vw;
   left:0; 
-  position:absolute; 
 }
 .part.right {
   padding:50px;
   padding-left:0;
   padding-bottom:30px;
-  position: absolute;
+  position: fixed;
   left:100vw;
   width:50vw;
 }
@@ -330,11 +328,11 @@ a:hover {
   pointer-events: none;
 }
 .showProject {
-  margin-left:-50vw;
   background:#f4f4f4;
 }
 .showProject .left {
   opacity:0;
+  left:-50vw;
 }
 .showProject .middle {
   transition: all 1s opacity 500ms;
