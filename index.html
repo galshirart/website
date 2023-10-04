@@ -42,8 +42,8 @@ h1 {
 h1 span {
   animation-name: enter;
   animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0,0,0,1);
-  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+  animation-duration: 600ms;
   position: relative;
 }
 @keyframes enter {
@@ -579,7 +579,7 @@ wordArr = []
 wordArr = "Gal Shir is a brand designer based in Tel Aviv, crafting great logos for early-stage startups helping them define their visual identity.".split('')
 $('h1').html('')
 for (word in wordArr) {
-  $('h1').append('<span style="animation-delay:'+word*word/100*20+'ms">'+wordArr[word]+'</span>')
+  $('h1').append('<span style="animation-delay:'+word*word/500*30+'ms">'+wordArr[word]+'</span>')
 }
 
 
