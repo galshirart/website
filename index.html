@@ -570,10 +570,10 @@ projects = {
   pakatu: 9,
   flyp: 9,
   daymind: 12,
-  moonwave: 12,
+  moonwave: 14,
 }
 
-projectsWithVideo = ['trillium','lemonade','daymind','colorhunt']
+projectsWithVideo = ['trillium','lemonade','daymind','colorhunt','moonwave']
 
 wordArr = []
 wordArr = "Gal Shir is a brand designer based in Tel Aviv, crafting great logos for early-stage startups helping them define their visual identity.".split('')
@@ -602,9 +602,9 @@ $('.thumb').click(function() {
   i = 1
   while ( i <= projects[project] ) {
     if ( i == 3 && projectsWithVideo.includes(project) ) { 
-      $('.right').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?2" type="video/mp4"></video>')
+      $('.right').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?3" type="video/mp4"></video>')
      } else { 
-      $('.right').append('<img src="projects/'+project+'/'+i+'.png?18" />')
+      $('.right').append('<img src="projects/'+project+'/'+i+'.png?19" />')
     }
     i++
   }
