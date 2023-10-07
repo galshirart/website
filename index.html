@@ -255,7 +255,7 @@ a:hover {
   transform:translateY(30%);
 }
 .thumb:last-of-type {
-/*  margin-bottom:40%;*/
+  margin-bottom:40%;
 }
 .thumb img {
   transform: scale(1);
@@ -450,6 +450,7 @@ a:hover {
   .thumb.flip img { filter:none }
   .thumb .info { display:none }
   .part.right * { margin-bottom:10px; }
+  .part.right .projectInfo { margin-bottom:10px; }
   .part.right .projectInfo > div > div:nth-child(1) { font-size:8px!important }
   .part.right .projectInfo > div > div:nth-child(2) { font-size:10px!important;  }
   .part.right .projectInfo .attribute-achievement > div:nth-child(2) { background-size: 14px; padding-left: 18px;}
@@ -521,25 +522,16 @@ a:hover {
 <div class="middle part">
   <div class="backButton"></div>
   <div class="thumbs">
-
     <div class="thumb" project="daymind"><img src="projects/daymind/0.png?2" /></div>
-
     <div class="thumb" project="moonwave"><img src="projects/moonwave/0.png?2" /></div>
-
     <div class="thumb" project="colorhunt"><img src="projects/colorhunt/0.png?2" /></div>
-
     <div class="thumb" project="lemonade"><img src="projects/lemonade/0.png" /></div>
-
     <div class="thumb" project="rdbp"><img src="projects/rdbp/0.png" /></div>
-
     <div class="thumb" project="articka"><img src="projects/articka/0.png" /></div>
-
     <div class="thumb" project="santa"><img src="projects/santa/0.png" /></div>
-
     <div class="thumb" project="flyp"><img src="projects/flyp/0.png" /></div>
-
+    <div class="thumb" project="promo"><img src="projects/promo/0.png" /></div>
     <div class="thumb" project="pakatu"><img src="projects/pakatu/0.png" /></div>
-
   </div>
 </div>
 
@@ -648,6 +640,18 @@ projectsData = {
     'industry': ['Housing','Interior Design'],
     'year': '2019',
     'achievement': "Raised £5 million",
+  },
+  'promo': {
+    'brand': 'Promo',
+    'length': 7,
+    'background':'#FFD1C1',
+    'color': '#1A2E57',
+    'video': false,
+    'website': 'promo.com',
+    'description': "High-quality professional video clips, music, customizable video templates, and assets for creators.",
+    'values': ['Instant','Creative'],
+    'industry': ['Video','Marketing'],
+    'year': '2016',
   },
   'pakatu': {
     'brand': 'Pakatu',
