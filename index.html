@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>GAL.SH | Logo Design Specialist</title>
+<title>GAL.SH | Logo design w/ the bs</title>
 <link rel="canonical" href="https://gal.sh/" />
 <link rel="shortcut icon" href="img/favicon.png?2">
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
@@ -8,16 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<meta property="og:title" content="Gal Shir | Logo Design SpecialistS">
-<meta property="og:description" content="Gal Shir is a Tel-Aviv-based designer and artist helping innovative startups to develop and define their unique identity." />
+<meta property="og:title" content="GAL.SH | Logo design w/ the bs">
+<meta property="og:description" content="Gal Shir is a logo design specialist based in Tel Aviv, helping early-stage startups define their brand identity and set their unique visual footprint." />
 <meta property="og:image" content="https://gal.sh/img/gal-shir-og.png">
 <meta property="og:url" content="https://gal.sh/">
 <meta property="og:type" content="website" />
 
-<meta name="twitter:title" content="Gal Shir | Logo Design SpecialistS">
+<meta name="twitter:title" content="GAL.SH | Logo design w/ the bs">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@galshirart" />
-<meta name="twitter:description" content="Gal Shir is a Tel-Aviv-based designer and artist helping innovative startups to develop and define their unique identity." />
+<meta name="twitter:description" content="Gal Shir is a logo design specialist based in Tel Aviv, helping early-stage startups define their brand identity and set their unique visual footprint." />
 <meta name="twitter:image" content="https://gal.sh/img/gal-shir-og.png">
 
 <style>
@@ -218,9 +218,6 @@ a:hover {
   display: grid;
   grid-template-columns: auto auto;
 }
-.column {
-  width:50%;
-}
 .thumb {
   width: calc(100% - 20px);
   margin:10px;
@@ -254,9 +251,9 @@ a:hover {
 .thumb:nth-child(even) {
   transform:translateY(30%);
 }
-.thumb:last-of-type {
+/*.thumb:last-of-type {
   margin-bottom:40%;
-}
+}*/
 .thumb img {
   transform: scale(1);
   width:100%;
@@ -424,7 +421,6 @@ a:hover {
 .right *:nth-child(12) { animation-delay: 3700ms; }
 
 @media screen and (max-width: 1300px) {
-  .column { width:100%; padding:0 }
   .thumbs { display:block }
   .thumb { margin:0 0 10px 0; width:100% }
   .thumb:nth-child(even) { transform:none; }
@@ -443,7 +439,6 @@ a:hover {
   .thumb img { transform:scale(1.5) }
   .thumb:nth-child(even):hover { transform:none }
   .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
-  .column:nth-child(2) .thumb:nth-child(1) { margin-top:0 }
   .showProject .left { left:-70vw }
   .showProject .middle { padding: 20px; width:30vw; opacity:1 }
   .showProject .right { width:70vw; left:30vw; padding: 20px 20px 0 0; }
@@ -469,8 +464,8 @@ a:hover {
       <div class="cont">
         <div class="availability">Available for new projects</div>
         <h2>hi@gal.sh</h2>
-        <p>Drop me an email with all the information of your project and your needs, and I'll get back to you as soon as I can!</p>
-        <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; opacity:0.6" />Tel Aviv</p>
+        <p>Drop me an email and I'll get back to you as soon as I can!</p>
+        <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
       </div>
     </div>
 
@@ -523,9 +518,10 @@ a:hover {
   <div class="backButton"></div>
   <div class="thumbs">
     <div class="thumb" project="daymind"><img src="projects/daymind/0.png?2" /></div>
+    <div class="thumb" project="unit107"><img src="projects/unit107/0.png?2" /></div>
     <div class="thumb" project="moonwave"><img src="projects/moonwave/0.png?2" /></div>
-    <div class="thumb" project="colorhunt"><img src="projects/colorhunt/0.png?2" /></div>
     <div class="thumb" project="lemonade"><img src="projects/lemonade/0.png" /></div>
+    <div class="thumb" project="colorhunt"><img src="projects/colorhunt/0.png?2" /></div>
     <div class="thumb" project="rdbp"><img src="projects/rdbp/0.png" /></div>
     <div class="thumb" project="articka"><img src="projects/articka/0.png" /></div>
     <div class="thumb" project="santa"><img src="projects/santa/0.png" /></div>
@@ -549,6 +545,18 @@ projectsData = {
     'about': "A journaling app for intuitive writing, assisted by AI for personal insights, summaries, and analysis.",
     'values': ['Intuitive','Authentic','Smooth','Personal'],
     'industry': ['AI','Wellness'],
+    'year': '2023'
+  },
+  'unit107': {
+    'brand': 'Unit 107',
+    'length': 6,
+    'background':'#064ACB',
+    'color': 'white',
+    'video': true,
+    'website': 'unit107.co',
+    'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war.",
+    'values': ['Israeli','Techy','Positive','Trustworhy'],
+    'industry': ['Non-profit','Tech'],
     'year': '2023'
   },
   'moonwave': {
