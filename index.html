@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>GAL.SH | Logo design w/ the bs</title>
+<title>Gal Shir | Brand design w/ the bs</title>
 <link rel="canonical" href="https://gal.sh/" />
 <link rel="shortcut icon" href="img/favicon.png?2">
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
@@ -8,147 +8,278 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<meta property="og:title" content="GAL.SH | Logo design w/ the bs">
-<meta property="og:description" content="Gal Shir is a logo design specialist based in Tel Aviv, helping early-stage startups define their brand identity and set their unique visual footprint." />
+<meta property="og:title" content="Gal Shir | Brand design w/ the bs">
+<meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
 <meta property="og:image" content="https://gal.sh/img/gal-shir-og.png">
 <meta property="og:url" content="https://gal.sh/">
 <meta property="og:type" content="website" />
 
-<meta name="twitter:title" content="GAL.SH | Logo design w/ the bs">
+<meta name="twitter:title" content="Gal Shir | Brand design w/ the bs">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@galshirart" />
-<meta name="twitter:description" content="Gal Shir is a logo design specialist based in Tel Aviv, helping early-stage startups define their brand identity and set their unique visual footprint." />
+<meta name="twitter:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
 <meta name="twitter:image" content="https://gal.sh/img/gal-shir-og.png">
 
 <style>
-* { box-sizing:border-box; }
+* { 
+  box-sizing:border-box;
+  transition: all 100ms;
+}
 body {
   margin:0;
   font-family: 'Inter', sans-serif;
-  font-size:13px;
+  font-size:14px;
   transition: all 1s;
   transition-timing-function: cubic-bezier(0,0,0,1);
-  display: inline-flex;
-  color:rgba(0,0,0,0.8);
+  padding:40px 0;
 }
-h1, h2 {
-  line-height:130%;
+h1, h2, h3 {
   font-weight:400;
-}
-h1 {
-  font-size:2.6vw;
-  letter-spacing: -0.1vw;
-}
-h1 span {
-  animation-name: enter;
-  animation-fill-mode: both;
-  animation-timing-function: ease-out;
-  animation-duration: 600ms;
-  position: relative;
-}
-@keyframes enter {
-  0% { top:10px; opacity:0 }
-  100% {  top:0; opacity:1 }
+  line-height:120%;
+  margin:0;
+  font-size:46px;
+  letter-spacing: -1px;
 }
 h2 {
-  font-size:18px;
+  margin-bottom:20px;
+}
+h3 {
+  font-size:24px;
+  letter-spacing: -0.5px;
 }
 p {
-  line-height:160%;
+  line-height:170%;
+  margin: 10px 0;
 }
 a {
-  color:black;
   text-decoration: none;
+  cursor: pointer;
+  opacity:0.5;
+  color:black;
 }
 a:hover {
-  opacity:0.5;
+  opacity:0.8;
+}
+.small {
+  opacity:0.6;
+  letter-spacing: 2px;
+  font-size: 10px;
+  margin-bottom:10px;
 }
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.hide {
+  display: none;
+}
+.center {
+  text-align: center;
 }
 .gradientText {
   background: -webkit-linear-gradient(0deg, #00b1ff 0%, #d600ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.part {
-  height:100%;
-  overflow-y: scroll;
-  width:50vw;
-  transition: all 1s cubic-bezier(0,0,0,1);
-  padding:40px;
-}
-.part::-webkit-scrollbar{
-  display: none;
-  width: 0 !important;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.part.left {
-  position: fixed;
-  z-index: 1;
-  left:0;
-}
-.signature {
-  width:80px;
-  margin-left: 6px;
-}
-.content {
-  padding:10px;
+.wrap {
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:30px;
   position: relative;
 }
-.collapsable {
-  margin:4px 0;
-  margin-left:-6px;
-  transition: all 500ms;
-  pointer-events: all;
-  max-width:600px;
+h1 {
+  white-space: nowrap;
+  animation-name: logo;
+  animation-duration: 1s;
+  overflow: hidden;
 }
-.collapsable .head {
+@keyframes logo {
+  0% { width:0 }
+  100% { width:170px }
+}
+.thumbs {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin:80px 0
+}
+.thumbs.minimize {
+  margin: 80px 0 30px
+}
+.thumbs.minimize .thumb:nth-child(n+7) {
+  display: none;
+}
+.thumb {
+  background:#ececec;
+  background-position: 50% 50%;
+  background-size: 100% auto;
   cursor: pointer;
+  animation-name: thumb;
+  animation-duration: 1s;
+  animation-fill-mode: both;
   transition: all 200ms;
-  position: relative;
-  padding:8px 14px;
-  border-radius:6px;
-  display: flex;
-  align-items: center;
+  background-repeat: no-repeat;
+  animation-timing-function: ease-in-out;
 }
-.collapsable .head:hover {
-  background:#f7f7f7;
+@keyframes thumb {
+  0% { background-position: 50% -130%; }
+  60% { background-position: 50% 60%; }
+  80% { background-position: 50% 45%;  }
+  100% { background-position: 50% 50%;  }
 }
-.collapsable .collapsable .head {
-  font-weight:700;
+.thumb:hover {
+  background-size: 110% auto;
 }
-.collapsable > .head:before {
-  content:"+ ";
-  margin-right:6px;
-  width:10px;
+.thumb img {
+  width:100%;
 }
-
-.collapsable.open > .head {
-  padding-bottom:10px;
-  opacity:0.6;
+.show-project { 
+  background: #ececec;
+  overflow: hidden;
 }
-.collapsable.open > .head:before {
-  content:"- ";
+.project-window {
+  position: fixed;
+  height:100%;
+  top:100%;
+  left:0;
+  width:100%;
+  transition: top 1s;
+  z-index: 5;
+  overflow: scroll;
+  background: white;
+  padding:60px 20px;
 }
-.collapsable > .cont {
-  display: none;
-  padding-left:30px;
+.show-project .project-window {
+  top:0;
 }
-.collapsable.open > .cont {
+.project-window > * {
+  max-width:1100px;
+  width: 100%;
+  outline:1px solid rgba(0,0,0,0.1);
+  margin:0 auto 20px;
   display: block;
 }
-.collapsable h2 {
-  margin-bottom:-4px;
+@keyframes enter {
+  0% { transform:translateY(50px); opacity:0 }
+  100% { transform:translateY(0); }
+}
+.project-window .project-info {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-column-gap: 10%;
+  padding:5%;
+} 
+.project-window .project-info > div {
+  margin:4% 0;
+  animation-fill-mode: both;
+  animation-name: enter;
+  animation-duration: .6s;
+  animation-fill-mode: both;
+}
+.project-window .project-info > div:nth-child(1) { animation-delay: 400ms; }
+.project-window .project-info > div:nth-child(2) { animation-delay: 600ms; }
+.project-window .project-info > div:nth-child(3) { animation-delay: 800ms; }
+.project-window .project-info > div:nth-child(4) { animation-delay: 1000ms; }
+.project-window .project-info > div:nth-child(5) { animation-delay: 1200ms; }
+.project-window .project-info > div:nth-child(6) { animation-delay: 1400ms; }
+.project-window .project-info > h3 { margin:0; }
+.project-window .project-info > div > div:nth-child(1) {
+  margin:0;
+  margin-bottom:4px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity:0.5!important;
+}
+.project-window .project-info > div > div:nth-child(2) {
+  line-height:150%;
+  margin:0;
+}
+.project-window a {
+  opacity:1;
+}
+.project-window a:hover {
+  text-decoration: underline;
+}
+.project-window .project-info .attribute-achievement > div:nth-child(2) {
+  background-image:url('img/trophy.png');
+  background-repeat: no-repeat;
+  background-size:  16px;
+  padding-left:20px;
+  border-radius: 0;
+  color:black;
+  opacity:0.7!important;
+}
+.next-project {
+  padding: 30px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: -webkit-fill-available;
+  background: #f7f7f7;
+  outline: 0;
+}
+.next-project:hover {
+  background:#ececec;
+}
+.mini-thumb {
+  width:100px;
+  height:100px;
+  background-size: 150% auto;
+  background-position: 50% 50%;
+  margin: 0 auto 20px
+}
+.next-project:hover .mini-thumb {
+  background-size: 160% auto;
+}
+.close {
+  position: fixed;
+  top: 20px;
+  right: -50px;
+  background: grey;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
+  border-radius: 100%;
+  color: white;
+  font-size: 20px;
+  mix-blend-mode: luminosity;
+  z-index: 5;
+  cursor: pointer;
+}
+.close:hover {
+  transform:scale(1.1);
+}
+.show-project .close {
+  right:20px;
+}
+.line {
+  border-bottom:1px solid black;
+  margin: 80px 0;
+  opacity:0.1;
+}
+.section {
+  align-items: flex-start;
+}
+.section.services h3:nth-child(n+2) {
+  margin-top:40px;
+}
+.section > div {
+  width:45%;
+}
+.section > div:nth-child(1) {
+  max-width:520px;
 }
 .process {
   border-left:1px solid rgba(0,0,0,0.1);
   padding-left:16px;
 }
 .process .step {
-  margin: 30px 0;
+  margin: 40px 0;
   position: relative;
   top:-7px;
   padding-left: 2px;
@@ -156,31 +287,36 @@ a:hover {
 .process .step:before {
   content: " ";
   display: block;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 100%;
-  background: #ffffff;
+  background: black;
   position: absolute;
-  left: -20px;
-  top: 7px;
+  left: -19px;
+  top: 8px;
   z-index: 3;
-  border: 1px solid rgba(0,0,0,0.5);
 }
 .process .step:nth-child(1):before, .process .step:nth-child(4):before {
-  font-size:10px;
-  content: "1";
-  width: 16px;
-  height: 16px;
-  left: -25px;
-  top: 2px;
+  width: 11px;
+  height: 11px;
+  left: -22px;
+  top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   color: rgba(0,0,0,0.6);
 }
-.process .step:nth-child(4):before {
-  content: "2";
+.process .step:first-of-type:after { 
+  height: 10px;
+  background: white;
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  left: -20px;
+  top: 7px;
+  z-index: 0;
 }
 .process .step:last-of-type:after { 
   height: 100%;
@@ -193,206 +329,12 @@ a:hover {
   top: 7px;
   z-index: 0;
 }
-.backButton {
-  opacity:0;
-  transition: all 1s, background 300ms;
-  cursor: pointer;
-  background-image:url('img/arrow.svg');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  overflow: hidden;
-  border-radius: 100px;
-  position: fixed;
-  z-index: 10;
-  top:-50px;
-  left:25px;
-  height:50px;
-  width:50px;
-  background-color: white;
-}
-.backButton:hover {
-  background-color:#dadada
-}
-.thumbs {
-  transition: all 1s;
-  display: grid;
-  grid-template-columns: auto auto;
-}
-.thumb {
-  width: calc(100% - 20px);
-  margin:10px;
-  display: inline-block;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 200ms, opacity 1s;
-  position: relative;
-  overflow: hidden;
-  animation-name: thumb;
-  animation-duration: 1200ms;
-  animation-fill-mode: both;
-  height: fit-content;
-}
-@keyframes thumb {
-  0% { opacity:0; margin-top:20% }
-  100% { opacity:1 }
-}
-.thumb:nth-child(1) { animation-delay:600ms }
-.thumb:nth-child(2) { animation-delay:800ms }
-.thumb:nth-child(3) { animation-delay:1000ms }
-.thumb:nth-child(4) { animation-delay:1200ms }
-.thumb:nth-child(5) { animation-delay:1400ms }
-.thumb:nth-child(6) { animation-delay:1600ms }
-.thumb:nth-child(7) { animation-delay:1800ms }
-.thumb:nth-child(8) { animation-delay:2000ms }
-.thumb:nth-child(9) { animation-delay:2200ms }
-.thumb:nth-child(10) { animation-delay:2400ms }
-.thumb:nth-child(11) { animation-delay:2600ms }
-.thumb:nth-child(12) { animation-delay:2800ms }
-.thumb:nth-child(even) {
-  transform:translateY(30%);
-}
-/*.thumb:last-of-type {
-  margin-bottom:40%;
-}*/
-.thumb img {
-  transform: scale(1);
-  width:100%;
-  transition-timing-function: cubic-bezier(.7,0,.3,1);
-  transition: all 1s;
-  filter:blur(0);
-}
-.thumb.flip img {
-  opacity:0.5;
-}
-.part.middle { 
-  width:100vw; 
-  padding-left:50vw;
-  left:0; 
-}
-.part.right {
-  padding:50px;
-  padding-left:0;
-  padding-bottom:30px;
-  position: fixed;
-  left:100vw;
-  width:50vw;
-  color:white;
-}
-.part.right * {
-  max-width:100%;
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom:20px;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-.part.right .projectInfo {
-  display: grid;
-  grid-template-columns: 50% 40%;
-  grid-column-gap: 10%;
-  margin-bottom:20px;
-  padding:5%;
-} 
-.part.right .projectInfo > div {
-  margin:4% 0;
-}
-.part.right .projectInfo > div > div:nth-child(1) {
-  margin:0;
-  margin-bottom:4px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  opacity:0.5!important;
-  font-size:10px;
-}
-.part.right .projectInfo > div > div:nth-child(2) {
-  font-size:calc(1vw + 6px);
-  line-height:150%;
-  margin:0;
-}
-.part.right a:hover {
-  text-decoration: underline;
-}
-.part.right .projectInfo .attribute-achievement > div:nth-child(2) {
-  font-size:12px;
-  background-image:url('img/trophy.png');
-  background-repeat: no-repeat;
-  background-size:  16px;
-  padding-left:20px;
-  border-radius: 0;
-  color:black;
-  opacity:0.7!important;
-}
-.showProject {
-  background:black;
-}
-.showProject .left {
-  opacity:0;
-  left:-50vw;
-}
-.showProject .middle {
-  transition: all 1s opacity 500ms;
-  padding-left:40px;
-  width:40vw;
-}
-.showProject .thumbs {
-    padding-top:40px;
-}
-.showProject .backButton {
-  opacity:1;
-  top:25px;
-}
-.showProject .right {
-  width:60vw;
-  left:40vw;
-}
-@keyframes fadeIn {
-  0% { opacity:0; transform: translateX(20%) }
-  100% { opacity:1 }
-}
-.availability {
-  display: inline-block;
-  margin-top: 12px;
-  padding-left: 13px;
-  font-size:12px;
-  position: relative;
-  color:#00b700;
-}
-.availability:before {
-  content: " ";
-  display: block;
-  width: 7px;
-  height: 7px;
-  border-radius: 100%;
-  background: #00b700;
-  position: absolute;
-  left: 0;
-  top: 4px;
-  animation-name: blink;
-  animation-duration: 800ms;
-  animation-iteration-count: infinite;
-}
-@keyframes blink {
-  0% { opacity:0.5 }
-  50% { opacity:1 }
-  100% { opacity:0.5 }
-}
-.socials.flex {
-  justify-content: space-around;
-  justify-content: unset;
-  padding-left:2px;
-  margin-top:20px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 .socials.flex a {
   display: flex;
   align-items: center;
   justify-content: center;
   width:30px;
   height:30px;
-  border-radius:6px;
   transition: all 200ms;
   opacity:0.6;
   background:rgba(0,0,0,0.06);
@@ -406,132 +348,131 @@ a:hover {
   width:20px;
   filter:brightness(0);
 }
-
-.right *:nth-child(1) { animation-delay: 400ms; }
-.right *:nth-child(2) { animation-delay: 700ms; }
-.right *:nth-child(3) { animation-delay: 1000ms; }
-.right *:nth-child(4) { animation-delay: 1300ms; }
-.right *:nth-child(5) { animation-delay: 1600ms; }
-.right *:nth-child(6) { animation-delay: 1900ms; }
-.right *:nth-child(7) { animation-delay: 2200ms; }
-.right *:nth-child(8) { animation-delay: 2500ms; }
-.right *:nth-child(9) { animation-delay: 2800ms; }
-.right *:nth-child(10) { animation-delay: 3100ms; }
-.right *:nth-child(11) { animation-delay: 3400ms; }
-.right *:nth-child(12) { animation-delay: 3700ms; }
-
-@media screen and (max-width: 1300px) {
-  .thumbs { display:block }
-  .thumb { margin:0 0 10px 0; width:100% }
-  .thumb:nth-child(even) { transform:none; }
-  .thumb:nth-child(even):hover { transform:none }
+.contact {
+  background:#f7f7f7;
+  padding:30px;
+  margin:20px 0;
+}
+.about > * {
+  max-width:600px;
 }
 
 @media screen and (max-width: 800px) {
-  body { font-size:11px; }
-  .part { padding: 16px; }
-  .part.left { width:70vw }
-  .part.middle { padding-left:70vw }
-  .content { padding: 4px; }
-  h1 { font-size:5vw; letter-spacing: 0px; }
-  .collapsable .head { padding:8px }
-  .collapsable > .cont { padding-left: 24px; }
-  .thumb img { transform:scale(1.5) }
-  .thumb:nth-child(even):hover { transform:none }
-  .thumb:hover img, .thumb.flip img { transform:scale(1.5) }
-  .showProject .left { left:-70vw }
-  .showProject .middle { padding: 20px; width:30vw; opacity:1 }
-  .showProject .right { width:70vw; left:30vw; padding: 20px 20px 0 0; }
-  .thumb.flip img { filter:none }
-  .thumb .info { display:none }
-  .part.right * { margin-bottom:10px; }
-  .part.right .projectInfo { margin-bottom:10px; }
-  .part.right .projectInfo > div > div:nth-child(1) { font-size:8px!important }
-  .part.right .projectInfo > div > div:nth-child(2) { font-size:10px!important;  }
-  .part.right .projectInfo .attribute-achievement > div:nth-child(2) { background-size: 14px; padding-left: 18px;}
-
+  body { font-size:12px; }
+  .wrap { padding:16px }
+  h1 { font-size:38px }
+  h2 { font-size:30px }
+  h3 { font-size:20px }
+  .small { font-size:10px }
+  .thumbs { grid-template-columns: auto auto; grid-column-gap: 10px; grid-row-gap: 10px; }
+  .project-window { padding: 16px; }
+  .section.flex { display: block; }
+  .section.flex  > div { width:100% }
+  .section.services h3:nth-child(n+2) { margin-top:20px }
+  .process .step { margin:30px auto; }
+  .close { top:10px; right:-60px }
+  .show-project .close { top:10px; right:10px}
 }
 
 </style>
-	
-<div class="left part">
-  <div class="home content">
-    <img class="signature" src="img/gal-sh-signature.png?2"/>
-    <h1></h1>
 
-    <div class="collapsable">
-      <div class="head">Let's chat</div>
-      <div class="cont">
-        <div class="availability">Available for new projects</div>
-        <h2>hi@gal.sh</h2>
-        <p>Drop me an email and I'll get back to you as soon as I can!</p>
-        <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
-      </div>
-    </div>
+<div class="wrap">
 
-    <div class="collapsable">
-      <div class="head">Process and pricing</div>
-      <div class="cont">
-        <p>My logo design process is simple, efficent, and straight to the point. No fancy timelines, no endless meetings, and no iterations. The price is <b>$8,000</b> and the process usually takes two weeks.</p>
-        <div class="process">
-          <div class="step">
-            <h2>Meeting</h2>
-            <p>I get to know you and your brand over Zoom/coffee to understand your vision, strategy, industry, audience, and your unique product or offering.</p>
-          </div>
-          <div class="step">
-            <p>You choose how many logo options you'd like to receive and submit an upfront payment of $2,000 per option.</p>
-          </div>
-          <div class="step">
-            <p><span class="gradientText">I do the work</span></p>
-          </div>
-          <div class="step">
-            <h2>Delivery</h2>
-            <p>You receive the logo files alongside a guidelines book showing how to use the logo in different placements.</p>
-          </div>
-          <div class="step">
-            <p>Love it? You pay the remaining $6,000 and get the rights and materials. If you're unhappy with the result you don't pay the remaining sum and we say goodbye with no strings attached.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="collapsable">
-      <div class="head">About Gal Shir</div>
-      <div class="cont">
-        <p>Gal Shir is a designer and artist based in Tel Aviv, helping innovative startups to develop and define their unique identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p>
-        <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of <a href="https://lemonade.com" target="_blank">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond. </p>
-        <p>Over the last 15 years, Gal has moved between the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
-        <img src="https://pbs.twimg.com/profile_images/1684291552842055682/R-y5tqGS_400x400.jpg" style="width:100px; border-radius: 100%; margin-top:10px"/>
-      </div>
-    </div>
-
-    <div class="socials flex">
-      <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
-      <a href="https://instagram.com/galshirart" target="_blank"><img src="img/i-instagram.png" /></a>
-      <a href="https://facebook.com/galgalshir" target="_blank"><img src="img/i-facebook.png" /></a>
-      <a href="https://linkedin.com/in/galshir" target="_blank"><img src="img/i-linkedin.png" /></a>
-    </div>
-  </div>
-  </div>
-</div>
-<div class="middle part">
-  <div class="backButton"></div>
-  <div class="thumbs">
-    <div class="thumb" project="daymind"><img src="projects/daymind/0.png?2" /></div>
-    <div class="thumb" project="unit107"><img src="projects/unit107/0.png?2" /></div>
-    <div class="thumb" project="moonwave"><img src="projects/moonwave/0.png?2" /></div>
-    <div class="thumb" project="lemonade"><img src="projects/lemonade/0.png" /></div>
-    <div class="thumb" project="colorhunt"><img src="projects/colorhunt/0.png?2" /></div>
-    <div class="thumb" project="rdbp"><img src="projects/rdbp/0.png" /></div>
-    <div class="thumb" project="articka"><img src="projects/articka/0.png" /></div>
-    <div class="thumb" project="santa"><img src="projects/santa/0.png" /></div>
-    <div class="thumb" project="flyp"><img src="projects/flyp/0.png" /></div>
-    <div class="thumb" project="promo"><img src="projects/promo/0.png" /></div>
-    <div class="thumb" project="pakatu"><img src="projects/pakatu/0.png" /></div>
+<div class="header flex">
+  <h1>Gal Shir</h1>
+  <div class="socials flex">
+    <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
+    <a href="https://instagram.com/galshirart" target="_blank"><img src="img/i-instagram.png" /></a>
+    <a href="https://facebook.com/galgalshir" target="_blank"><img src="img/i-facebook.png" /></a>
+    <a href="https://linkedin.com/in/galshir" target="_blank"><img src="img/i-linkedin.png" /></a>
   </div>
 </div>
 
-<div class="right part"></div>
+<div class="thumbs minimize"></div>
+<div class="center"><a onclick="$('.thumbs').removeClass('minimize'); $('.center').remove()">Show more</a></div>
+
+<div class="project-window"></div>
+
+<div class="close" onclick="closeProject()">✕</div>
+
+<div class="line"></div>
+
+<div class="section flex services">
+  <div>
+    <div class="small">WHAT I DO</div>
+    <h2>Designing a complete brand kit setting the foundation for years</h2>
+    <p>Helping early-stage startups define their unique visual identity, or providing a rebrand for established brands in need of a fresh makeover</p>
+  </div>
+  <div>
+    <h3>Logo</h3>
+    <p>A hand-crafted logo designed to last and reflects the brand values</p>
+    <!-- <a href="#">Read more →</a> -->
+    <h3>Visual Language</h3>
+    <p>A color system, fonts, and graphic elements complimenting the logo</p>
+    <h3>Guidelines</h3>
+    <p>A brand book showing how to implement the visual language with examples of a landing page design, user-interface components, social media assets, and business cards</p>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="section flex">
+  <div>
+    <div class="small">PROCESS AND PRICING</div>
+    <h2>Focusing on efficiency with a straight-forward process</h2>
+    <p>Delivering the best logo within two weeks with a seamless process for a fixed price of $10,000</p>
+  </div>
+  <div>
+    <div class="process">
+      <div class="step">
+        <h3>Meeting</h3>
+        <p>I get to know you and your brand over Zoom/coffee to understand everything I need. <a class="expand" onclick="expand(this)">Read more...</a><span class="hide">I ask relevant question to learn about your vision, strategy, industry, audience, and your unique product or offering. I use that information to research your market and competitors.</span></p>
+      </div>
+      <div class="step">
+        <p>You submit a $2,500 upfront payment</p>
+      </div>
+      <div class="step">
+        <p><span class="gradientText">I do the work</span></p>
+      </div>
+      <div class="step">
+        <h3>Delivery</h3>
+        <p>You get the brand book showcasing the logo, the visual language, and the examples </p>
+      </div>
+      <div class="step">
+        <p>Love it? You pay the $7,500 remaining sum and get the files</p>
+      </div>
+      <div class="step">
+        <p>Not happy with the result? You don't pay the remaining sum and we say goodbye with no strings attached, or you can request a new direction for an additional $2,500</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="section flex">
+  <div>
+  <div class="small">LET'S CHAT</div>
+    <div class="contact">
+      <h3>hi@gal.sh</h3>
+      <p>Drop me an email and I'll get back to you as soon as I can</p>
+      <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
+    </div>
+  </div>
+  <div class="about">
+    <div class="small">ABOUT</div>
+    <h3>Gal Shir is an art director based in Tel Aviv specialised in brand design</h3>
+    <p>Gal helps innovative startups to develop and define their unique visual identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive. <a onclick="expand(this)">Read more...</a></p>
+    <div class="hide">
+      <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of Lemonade (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
+      <p>Over the last 15 years, Gal has moved between the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, Color Hunt, has become a leading resource for designers and artists with over 1 million monthly users.</p>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
 
 <script>
 projectsData = {
@@ -547,18 +488,6 @@ projectsData = {
     'industry': ['AI','Wellness'],
     'year': '2023'
   },
-  'unit107': {
-    'brand': 'Unit 107',
-    'length': 7,
-    'background':'#064ACB',
-    'color': 'white',
-    'video': true,
-    'website': 'unit107.co',
-    'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war.",
-    'values': ['Israeli','Techy','Positive','Trustworhy'],
-    'industry': ['Non-profit','Tech'],
-    'year': '2023'
-  },
   'moonwave': {
     'brand': 'Moonwave',
     'length': 15,
@@ -569,6 +498,18 @@ projectsData = {
     'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health.",
     'values': ['Intimate','Calm','Continious','Balanced','Inspiring'],
     'industry': ['AI','Wellness'],
+    'year': '2023'
+  },
+  'unit107': {
+    'brand': 'Unit 107',
+    'length': 7,
+    'background':'#064ACB',
+    'color': 'white',
+    'video': true,
+    'website': 'unit107.co',
+    'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war.",
+    'values': ['Israeli','Techy','Positive','Trustworhy'],
+    'industry': ['Non-profit','Tech'],
     'year': '2023'
   },
   'colorhunt': {
@@ -597,6 +538,19 @@ projectsData = {
     'year': '2016-2019',
     'achievement': 'NYSE:LMND',
   },
+  'santa': {
+    'brand': 'Santa',
+    'length': 10,
+    'background':'#D9ECE9',
+    'color': '#191B41',
+    'video': false,
+    'website': 'getsanta.com',
+    'about': "Digital gifting retailer offering curated assortments of apparel, accessories, wellness, and tech.",
+    'values': ['Delightful','Surprising','Modern','Mobile','Premium'],
+    'industry': ['Retail','Delivery','Gifting'],
+    'year': '2021',
+    'achievement': "Raised $13 million",
+  },
   'rdbp': {
     'brand': 'Rubber Duck Bath Party',
     'length': 10,
@@ -622,19 +576,6 @@ projectsData = {
     'industry': ['Art','Design'],
     'year': '2018',
     'achievement': "Amazon's choice",
-  },
-  'santa': {
-    'brand': 'Santa',
-    'length': 10,
-    'background':'#D9ECE9',
-    'color': '#191B41',
-    'video': false,
-    'website': 'getsanta.com',
-    'about': "Digital gifting retailer offering curated assortments of apparel, accessories, wellness, and tech.",
-    'values': ['Delightful','Surprising','Modern','Mobile','Premium'],
-    'industry': ['Retail','Delivery','Gifting'],
-    'year': '2021',
-    'achievement': "Raised $13 million",
   },
   'flyp': {
     'brand': 'Flyp',
@@ -675,41 +616,59 @@ projectsData = {
   },
 }
 
-wordArr = []
-wordArr = "Gal Shir is a logo design specialist based in Tel Aviv, helping early-stage startups define their brand identity and set their unique visual footprint.".split('')
-$('h1').html('')
-for (word in wordArr) {
-  $('h1').append('<span style="animation-delay:'+word*word/500*30+'ms">'+wordArr[word]+'</span>')
+imageSources = []
+
+for (project in projectsData) {
+  imageSources.push('projects/'+project+'/0.png')
+}
+
+loadImages(imageSources).then((loadedImages) => {
+  i = 0;
+  for (project in projectsData) {
+    thumb = $('<div class="thumb"></div>')
+    thumb.append('<img src="img/empty-4x3.png" />')
+    thumb.css('background-image','url("projects/'+project+'/0.png")')
+    thumb.css('animation-delay', 100*i+'ms')
+    thumb.attr('onclick','openProject("'+project+'")')
+    $('.thumbs').append(thumb)
+    i++
+    if ( i > 5 ) { i = 0}
+  }
+})
+
+
+function loadImages(imageSources) {
+  const imageElements = [];
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = (error) => reject(error);
+      img.src = src;
+    });
+  }
+  const imagePromises = imageSources.map(loadImage);
+  return Promise.all(imagePromises);
 }
 
 
-$('.collapsable .head').click(function() {
-  $(this).parent('.collapsable').toggleClass('open')
-  $(this).parent().siblings('.collapsable').removeClass('open')
-})
+function openProject(project) {
+  event.stopPropagation();
+  $('body').addClass('show-project')
 
-$('.thumb').click(function() {
-
-  if ( $(this).hasClass('flip') ) { return }
-
-  $('body').addClass('showProject')
-  project = $(this).attr('project')
-  $('.thumb').removeClass('flip')
-  $(this).addClass('flip')
-
-  $('.right').html('').scrollTop(0)
+  $('.project-window').html('').scrollTop(0)
 
   i = 1
   while ( i <= projectsData[project]['length'] ) {
     if ( i == 3 && projectsData[project]['video'] ) { 
-      $('.right').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?3" type="video/mp4"></video>')
+      $('.project-window').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?3" type="video/mp4"></video>')
      } else { 
-      $('.right').append('<img src="projects/'+project+'/'+i+'.png?21" />')
+      $('.project-window').append('<img src="projects/'+project+'/'+i+'.png?21" />')
     }
     i++
   }
 
-  projectInfo = $('<div class="projectInfo"></div>')
+  projectInfo = $('<div class="project-info"></div>')
 
   for ( attribute in projectsData[project] ) {
     value = projectsData[project][attribute]
@@ -733,7 +692,7 @@ $('.thumb').click(function() {
     }
 
     if ( !['length','background','color','video'].includes(attribute) ) {
-      $(projectInfo).append('<div class="attribute-'+type+'"><div>'+attribute+'</div><div>'+value+'</div></div>')
+      $(projectInfo).append('<div class="attribute-'+type+'"><div class="small">'+attribute+'</div><h3>'+value+'</h3></div>')
     }
 
   }
@@ -742,17 +701,34 @@ $('.thumb').click(function() {
   projectInfo.css('color',projectsData[project]['color'])
   projectInfo.find('a').css('color',projectsData[project]['color'])
 
-  $('.right').find('img').eq(0).after(projectInfo)
+  $('.project-window').find('img').eq(0).after(projectInfo)
+
+  nextID = Object.keys(projectsData).indexOf(project)+1
+  console.log(nextID)
+  if ( nextID >= Object.keys(projectsData).length ) { nextID = 0 }
+
+  nextProject = $('<div class="next-project center"></div>')
+  miniThumb = $('<div class="mini-thumb"></div>')
+  miniThumb.css('background-image','url("projects/'+Object.keys(projectsData)[nextID]+'/0.png")')
+  nextProject.append(miniThumb)
+  nextProject.append('Next project: '+projectsData[Object.keys(projectsData)[nextID]]['brand']+'→')
+  nextProject.attr('onclick','openProject("'+Object.keys(projectsData)[nextID]+'")')
+
+  $('.project-window').append(nextProject)
 
   window.location.hash = project;
-})
 
-$(document).click(function(event) { 
-  var target = $(event.target)
-  if(!target.closest('.right').length ) {
-    closeProject()
-  }        
-})
+
+}
+
+
+$('.project-window > *').click(function(event){
+  event.stopPropagation();
+});
+
+$('.project-window').click(function(event){
+  closeProject()
+});
 
 document.addEventListener('keydown', (event) => {
   if ( event.which == 27 ) {
@@ -760,35 +736,26 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
-function getTelAvivTime() {
-  const telAvivOffset = 3; // Tel Aviv is UTC+3
-  const now = new Date();
-  const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
-  const telAvivTime = new Date(utcTime + telAvivOffset * 3600000);
 
-  const hours = telAvivTime.getHours().toString().padStart(2, '0');
-  const minutes = telAvivTime.getMinutes().toString().padStart(2, '0');
-  const seconds = telAvivTime.getSeconds().toString().padStart(2, '0');
-
-  return `${hours}:${minutes}:${seconds}`;
-}
-
-// Example usage
-const telAvivTime = getTelAvivTime();
-console.log(`Current time in Tel Aviv: ${telAvivTime}`);
 
 function closeProject() {
-  $('body').removeClass('showProject')
-  $('.thumb').removeClass('flip')
+  $('body').removeClass('show-project')
   history.replaceState(null, null, ' ')
 }
 
-$('.thumb').click(function(event){
-  event.stopPropagation();
-})
+
+
+function expand(item) {
+  $(item+' .hide').show()
+  $(item).remove()
+}
+
 
 if ( window.location.hash ) {
     hash = window.location.hash.substring(1)
     $('.thumb[project='+hash+']').click()
 }
+
+
+
 </script>
