@@ -636,7 +636,7 @@ for (project in projectsData) {
 loadImages(imageSources).then((loadedImages) => {
   i = 0;
   for (project in projectsData) {
-    thumb = $('<div class="thumb"></div>')
+    thumb = $('<div class="thumb" project='+project+'></div>')
     thumb.append('<img src="img/empty-4x3.png" />')
     thumb.css('background-image','url("projects/'+project+'/0.png")')
     thumb.css('animation-delay', 100*i+'ms')
@@ -645,7 +645,13 @@ loadImages(imageSources).then((loadedImages) => {
     i++
     if ( i > 5 ) { i = 0}
   }
+
   $('body').css('opacity',1)
+
+  if ( window.location.hash ) {
+      hash = window.location.hash.substring(1)
+      $('.thumb[project='+hash+']').click()
+  }
 })
 
 
@@ -761,13 +767,6 @@ function expand(item) {
   $(item+' .hide').show()
   $(item).remove()
 }
-
-
-if ( window.location.hash ) {
-    hash = window.location.hash.substring(1)
-    $('.thumb[project='+hash+']').click()
-}
-
 
 
 </script>
