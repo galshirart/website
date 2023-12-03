@@ -26,6 +26,7 @@
   transition: all 100ms;
 }
 body {
+  opacity:0;
   margin:0;
   font-family: 'Inter', sans-serif;
   font-size:14px;
@@ -135,6 +136,17 @@ h1 {
 }
 .thumb img {
   width:100%;
+}
+.arrow {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  transform: rotate(45deg);
+  position: relative;
+  top: -3px;
+  left: 2px;
 }
 .show-project { 
   background: #ececec;
@@ -358,11 +370,10 @@ h1 {
 }
 
 @media screen and (max-width: 800px) {
-  body { font-size:12px; }
   .wrap { padding:16px }
   h1 { font-size:38px }
-  h2 { font-size:30px }
-  h3 { font-size:20px }
+  h2 { font-size:34px }
+  h3 { font-size:24px }
   .small { font-size:10px }
   .thumbs { grid-template-columns: auto auto; grid-column-gap: 10px; grid-row-gap: 10px; }
   .project-window { padding: 16px; }
@@ -389,7 +400,7 @@ h1 {
 </div>
 
 <div class="thumbs minimize"></div>
-<div class="center"><a onclick="$('.thumbs').removeClass('minimize'); $('.center').remove()">Show more</a></div>
+<div class="center"><a onclick="$('.thumbs').removeClass('minimize'); $('.center').remove()">Show more <span class="arrow"></span></a></div>
 
 <div class="project-window"></div>
 
@@ -634,6 +645,7 @@ loadImages(imageSources).then((loadedImages) => {
     i++
     if ( i > 5 ) { i = 0}
   }
+  $('body').css('opacity',1)
 })
 
 
