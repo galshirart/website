@@ -658,7 +658,6 @@ loadImages(imageSources).then((loadedImages) => {
   }
 })
 
-
 function loadImages(imageSources) {
   const imageElements = [];
   function loadImage(src) {
@@ -672,7 +671,6 @@ function loadImages(imageSources) {
   const imagePromises = imageSources.map(loadImage);
   return Promise.all(imagePromises);
 }
-
 
 function openProject(project) {
   event.stopPropagation();
@@ -739,38 +737,15 @@ function openProject(project) {
   $('.project-window').append(nextProject)
 
   window.location.hash = project;
-
-
 }
-
-
-$('.project-window > *').click(function(event){
-  event.stopPropagation();
-});
-
-$('.project-window').click(function(event){
-  closeProject()
-});
-
-document.addEventListener('keydown', (event) => {
-  if ( event.which == 27 ) {
-    closeProject()
-  }
-})
-
-
 
 function closeProject() {
   $('body').removeClass('show-project')
   history.replaceState(null, null, ' ')
 }
 
-
-
 function expand(item) {
   $(item+' .hide').show()
   $(item).remove()
 }
-
-
 </script>
