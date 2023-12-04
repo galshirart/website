@@ -374,16 +374,19 @@ h1 {
 }
 
 @media screen and (max-width: 800px) {
+  body { padding:20px 0 }
   .wrap { padding:16px }
   h1 { font-size:38px }
   h2 { font-size:34px }
-  h3 { font-size:24px }
+  h3 { font-size:22px }
   .small { font-size:10px }
-  .thumbs { grid-template-columns: auto auto; grid-column-gap: 10px; grid-row-gap: 10px; }
+  .thumbs { margin:40px 0; grid-template-columns: auto auto; grid-column-gap: 10px; grid-row-gap: 10px; }
+  .thumbs.minimize { margin:40px 0 30px }
   .project-window { padding: 16px; }
-  .section.flex { display: block; }
+  .section.flex { display: block; padding:0 6px }
   .section.flex  > div { width:100% }
-  .section.services h3:nth-child(n+2) { margin-top:20px }
+  .line { margin:40px 0 }
+  .section.services h3:nth-child(n+2) { margin-top:30px }
   .process .step { margin:30px auto; }
   .close { top:10px; right:-60px }
   .show-project .close { top:10px; right:10px}
