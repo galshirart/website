@@ -355,6 +355,7 @@ h1 {
 .contact {
   background:#f7f7f7;
   padding:30px;
+  margin-bottom:30px;
 }
 .about > * {
   max-width:600px;
