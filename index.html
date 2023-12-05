@@ -271,11 +271,10 @@ for (project in projectsData) {
 loadImages(imageSources).then((loadedImages) => {
   i = 0;
   for (project in projectsData) {
-    thumb = $('<div class="thumb" project='+project+'></div>')
+    thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
     thumb.append('<img src="img/empty-4x3.png" />')
     thumb.css('background-image','url("projects/'+project+'/0.png")')
     thumb.css('animation-delay', 100*i+'ms')
-    thumb.attr('onclick','openProject("'+project+'")')
     $('.thumbs').append(thumb)
     i++
     if ( i > 5 ) { i = 0}
@@ -285,7 +284,7 @@ loadImages(imageSources).then((loadedImages) => {
 
   if ( window.location.hash ) {
       hash = window.location.hash.substring(1)
-      $('.thumb[project='+hash+']').click()
+      openProject(hash)
   }
 })
 
@@ -302,6 +301,11 @@ function loadImages(imageSources) {
   const imagePromises = imageSources.map(loadImage);
   return Promise.all(imagePromises);
 }
+
+$(window).on('hashchange', function() {
+  hash = window.location.hash.substring(1)
+  openProject(hash)
+});
 
 function openProject(project) {
   event.stopPropagation();
@@ -355,7 +359,6 @@ function openProject(project) {
   $('.project-window').find('img').eq(0).after(projectInfo)
 
   nextID = Object.keys(projectsData).indexOf(project)+1
-  console.log(nextID)
   if ( nextID >= Object.keys(projectsData).length ) { nextID = 0 }
 
   nextProject = $('<div class="next-project center"></div>')
