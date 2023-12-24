@@ -19,7 +19,7 @@ h1, h2, h3 {
 }
 h2 {
   margin-bottom:20px;
-  line-height:120%;
+  line-height:130%;
   font-size:40px;
 }
 h3 {
@@ -126,7 +126,7 @@ a:hover {
 }
 .thumb:hover h3 {
   opacity:0; 
-  transform:translateY(-40px);
+  transform:translateY(-24px);
 }
 .thumb .info p {
   opacity:0;
