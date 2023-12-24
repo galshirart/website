@@ -161,7 +161,7 @@ projectsData = {
     'background':'#ffeeee',
     'color': '#521ca2',
     'video': true,
-    'website': '—',
+    'website': '',
     'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health",
     'values': ['Intimate','Calm','Balanced','Inspiring'],
     'industry': ['AI','Wellness'],
@@ -170,7 +170,7 @@ projectsData = {
   'unit107': {
     'brand': 'Unit 107',
     'length': 7,
-    'background':'#6499FF',
+    'background':'#F2F3F6',
     'color': '#000A44',
     'video': true,
     'website': 'unit107.co',
@@ -300,7 +300,9 @@ loadImages(imageSources).then((loadedImages) => {
 
     thumb.append('<div class="info"></div>')
     thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
-    thumb.find('.info').append('<p>'+projectsData[project]['about']+'</p>')
+    thumb.find('.info').append('<div class="flex"></div>')
+    thumb.find('.info .flex').append('<p>'+projectsData[project]['about']+'</p>')
+    thumb.find('.info .flex').append('<a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
     thumb.css('animation-delay', 100*i+'ms')
     $('.thumbs').append(thumb)
     i++
@@ -382,7 +384,7 @@ function openProject(project) {
       value = valueString
     }
 
-    if ( attribute == 'website' && value != '—' ) {
+    if ( attribute == 'website') {
       value = "<a target='_blank' href='https://"+value+"'>"+value+"</a>"
     }
 
