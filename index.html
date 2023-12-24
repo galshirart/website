@@ -25,7 +25,12 @@
 <div class="wrap">
 
 <div class="header flex">
-  <h1><a style="opacity:1" href="/">Gal Shir</a></h1>
+  <div class="flex menu">
+    <a style="opacity:1" href="/"><h1>Gal Shir</h1></a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a class="mobile-hide" onclick="$('html,body').animate({scrollTop: document.body.scrollHeight},'slow');">Contact</a>
+  </div>
   <div class="socials flex">
     <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
     <a href="https://instagram.com/galshirart" target="_blank"><img src="img/i-instagram.png" /></a>
@@ -34,91 +39,99 @@
   </div>
 </div>
 
+<div class="line"></div>
+
+<h2 style="max-width:1000px">Creator of timeless logos that people love, Gal Shir is an independent designer based in Tel Aviv, helping young brands define their visual identity</h2>
+
+<div class="line"></div>
+
 <div class="thumbs minimize"></div>
 <div class="center"><a onclick="$('.thumbs').removeClass('minimize'); $('.center').remove()">Show more <span class="arrow"></span></a></div>
 
-<div class="project-window"></div>
-
-<div class="close" onclick="closeProject()">✕</div>
+<div class="project-window page"></div>
 
 <div class="line"></div>
 
-<div class="section flex services">
-  <div>
-    <div class="small">WHAT I DO</div>
-    <h2>Designing a visual identity that sets the foundation for years</h2>
-    <p>Helping early-stage startups define their unique brand, or providing a rebrand for established brands in need of a fresh makeover</p>
-  </div>
-  <div>
-    <h3>Logo</h3>
-    <p>A hand-crafted logo designed to last</p>
-    <!-- <a href="#">Read more →</a> -->
-    <h3>Visual Language</h3>
-    <p>A color system, fonts, and illustrations or graphic elements</p>
-    <h3>Guidelines</h3>
-    <p>A brand book showing how to implement the visual language with examples of a landing page design, user-interface components, social media assets, business cards, or other assets upon request</p>
-  </div>
-</div>
-
-<div class="line"></div>
-
-<div class="section flex">
-  <div>
-    <div class="small">PROCESS AND PRICING</div>
-    <h2>Focusing on efficiency with a straight-forward process</h2>
-    <p>Delivering the absolute best logo within two weeks with a seamless process for a fixed price of $10,000</p>
-    <a target="_blank" href="https://gal.sh/read/process/" class="learn-more">Read more about my process</a>
-  </div>
-  <div>
-    <div class="process">
-      <div class="step">
-        <h3>Meeting</h3>
-        <p>I get to know you and your brand over Zoom/coffee to understand everything I need. <a class="expand" onclick="expand(this)">Read more...</a><span class="hide">We chat about your vision, strategy, industry, audience, and your unique product or offering. I use that information to research your market and competitors.</span></p>
-      </div>
-      <div class="step">
-        <p>You submit an upfront payment of 25%</p>
-      </div>
-      <div class="step">
-        <p><span class="gradientText">I do the work</span></p>
-      </div>
-      <div class="step">
-        <h3>Delivery</h3>
-        <p>You get the logo alongside a brand book showcasing the visual language, the guidelines, and the examples</p>
-      </div>
-      <div class="step">
-        <p>Love it? You pay the remaining sum and get the files</p>
-      </div>
-      <div class="step">
-        <p>Not happy with the result? You don't pay the remaining sum and we say goodbye with no strings attached, or you can request a new direction for additional 25%</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="line"></div>
-
-<div class="section flex">
-  <div>
     <div class="contact">
       <div class="small">LET'S CHAT</div>
       <h3>hi@gal.sh</h3>
       <div class="availability">Available for new projects</div>
-
       <p>Drop me an email and I'll get back to you as soon as I can</p>
-      <!-- <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p> -->
+      <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
+    </div>
 
+
+<div class="page-process page">
+  <div class="wrap">
+  <div class="section flex services">
+    <div>
+      <div class="small">WHAT I DO</div>
+      <h2>Designing a visual identity that sets the foundation for years</h2>
+      <p>Helping early-stage startups define their unique brand, or providing a rebrand for established brands in need of a fresh makeover</p>
+    </div>
+    <div>
+      <h3>Logo</h3>
+      <p>A hand-crafted logo designed to last</p>
+      <!-- <a href="#">Read more →</a> -->
+      <h3>Visual Language</h3>
+      <p>A color system, fonts, and illustrations or graphic elements</p>
+      <h3>Guidelines</h3>
+      <p>A brand book showing how to implement the visual language with examples of a landing page design, user-interface components, social media assets, business cards, or other assets upon request</p>
     </div>
   </div>
-  <div class="about">
-    <div class="flex"> <img src="https://pbs.twimg.com/profile_images/1684291552842055682/R-y5tqGS_400x400.jpg" style="width:60px; border-radius: 100%; margin-right:12px"/><h3>Gal Shir is an independent brand designer based in Tel Aviv</h3></div>
-    <p>Gal helps innovative startups to develop and define their unique visual identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p><a onclick="expand(this)">Read more...</a>
-    <div class="hide">
-      <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of <a target="_blank" href="https://lemonade.com">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
-      <p>Over the last 15 years, Gal has moved between the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a target="_blank" href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
+
+  <div class="line"></div>
+
+  <div class="section flex">
+    <div>
+      <div class="small">PROCESS AND PRICING</div>
+      <h2>Focusing on efficiency with a straight-forward process</h2>
+      <p>Delivering the absolute best logo within two weeks with a seamless process for a fixed price of $10,000</p>
+      <a target="_blank" href="https://gal.sh/read/process/" class="learn-more">Read more about my process</a>
+    </div>
+    <div>
+      <div class="process">
+        <div class="step">
+          <h3>Meeting</h3>
+          <p>I get to know you and your brand over Zoom/coffee to understand everything I need. <a class="expand" onclick="expand(this)">Read more...</a><span class="hide">We chat about your vision, strategy, industry, audience, and your unique product or offering. I use that information to research your market and competitors.</span></p>
+        </div>
+        <div class="step">
+          <p>You submit an upfront payment of 25%</p>
+        </div>
+        <div class="step">
+          <p><span class="gradientText">I do the work</span></p>
+        </div>
+        <div class="step">
+          <h3>Delivery</h3>
+          <p>You get the logo alongside a brand book showcasing the visual language, the guidelines, and the examples</p>
+        </div>
+        <div class="step">
+          <p>Love it? You pay the remaining sum and get the files</p>
+        </div>
+        <div class="step">
+          <p>Not happy with the result? You don't pay the remaining sum and we say goodbye with no strings attached, or you can request a new direction for additional 25%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="page-about page" style="padding-top:100px">
+  <div class="wrap">
+    <h2 style="max-width:800px">Gal Shir is an independent brand designer based in Tel Aviv, helping young brands define their visual identity</h2>
+      <div class="section flex">
+      <img src="https://scontent.ftlv5-1.fna.fbcdn.net/v/t39.30808-6/338947106_607781994530511_4175052318174459418_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=-OSniCrB5JIAX8tj5DT&_nc_ht=scontent.ftlv5-1.fna&oh=00_AfBuYaDp-UGrR8DzJX01WCc9tmYYqTyWStjbi1pGIz2c1A&oe=658D767A" style="max-width:50%;"/>
+      <div>
+        <p>Gal helps innovative startups to develop and define their unique visual identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p>
+        <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of <a target="_blank" href="https://lemonade.com">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
+        <p>Over the last 15 years, Gal has moved between the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a target="_blank" href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
+      </div>
     </div>
   </div>
 </div>
 
+<div class="close" onclick="closePage()">✕</div>
 
 
 </div>
@@ -132,7 +145,7 @@ projectsData = {
     'color': '#21424c',
     'video': true,
     'website': 'daymind.com',
-    'about': "A journaling app for intuitive writing, assisted by AI for personal insights, summaries, and analysis.",
+    'about': "A journaling app for intuitive writing, assisted by AI for personal insights, summaries, and analysis",
     'values': ['Intuitive','Authentic','Smooth','Personal'],
     'industry': ['AI','Wellness'],
     'year': '2023'
@@ -144,7 +157,7 @@ projectsData = {
     'color': '#521ca2',
     'video': true,
     'website': '—',
-    'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health.",
+    'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health",
     'values': ['Intimate','Calm','Balanced','Inspiring'],
     'industry': ['AI','Wellness'],
     'year': '2023'
@@ -156,7 +169,7 @@ projectsData = {
     'color': '#000A44',
     'video': true,
     'website': 'unit107.co',
-    'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war.",
+    'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war",
     'values': ['Israeli','Techy','Positive','Trustworhy'],
     'industry': ['Non-profit','Tech'],
     'year': '2023',
@@ -169,7 +182,7 @@ projectsData = {
     'color': '#222222',
     'video': true,
     'website': 'colorhunt.co',
-    'about': "The world's favorite resource for color palettes used by designers and artists and curated by Gal Shir.",
+    'about': "The world's favorite resource for color palettes used by designers and artists and curated by Gal Shir",
     'values': ['Creative','Friendly','Playful','Positive'],
     'industry': ['Design','Art'],
     'year': '2015',
@@ -182,7 +195,7 @@ projectsData = {
     'color': '#4a4a4a',
     'video': true,
     'website': 'lemonade.com',
-    'about': "America's top-rated insurance company built to provide the best, most delightful, and most transparent insurance experience in the world.",
+    'about': "America's top-rated insurance company built to provide the best, most delightful, and most transparent insurance experience in the world",
     'values': ['Disruptive','Delightful','Simple','Transparent'],
     'industry': ['Fintech','Insurance','AI'],
     'year': '2016-2019',
@@ -195,7 +208,7 @@ projectsData = {
     'color': '#191B41',
     'video': false,
     'website': 'getsanta.com',
-    'about': "Digital gifting retailer offering curated assortments of apparel, accessories, wellness, and tech.",
+    'about': "Digital gifting retailer offering curated assortments of apparel, accessories, wellness, and tech",
     'values': ['Delightful','Surprising','Modern','Mobile'],
     'industry': ['Retail','Delivery','Gifting'],
     'year': '2021',
@@ -208,7 +221,7 @@ projectsData = {
     'color': '#400000',
     'video': false,
     'website': 'duck.art',
-    'about': "A web3 based community and art project featuring thousands of generative art pieces created by Gal Shir.",
+    'about': "A web3 based community and art project featuring thousands of generative art pieces created by Gal Shir",
     'values': ['Vibrant','Funny','Quirky','Attractive'],
     'industry': ['Gaming','Web3','NFT','Art'],
     'year': '2022',
@@ -234,7 +247,7 @@ projectsData = {
     'color': '#20212F',
     'video': false,
     'website': 'flyp.co',
-    'about': "Revolutionising property sales through expertise, data-driven tech, and the power of scale.",
+    'about': "Revolutionising property sales through expertise, data-driven tech, and the power of scale",
     'values': ['Techy','Minimal','Geometric','Sharp'],
     'industry': ['Housing','Interior Design'],
     'year': '2019',
@@ -247,7 +260,7 @@ projectsData = {
     'color': '#1A2E57',
     'video': true,
     'website': 'promo.com',
-    'about': "High-quality professional video clips, music, customizable video templates, and assets for creators.",
+    'about': "High-quality professional video clips, music, customizable video templates, and assets for creators",
     'values': ['Bold','Futuristic','Creative'],
     'industry': ['Video','Marketing'],
     'year': '2016',
@@ -259,7 +272,7 @@ projectsData = {
     'color': '#20212F',
     'video': false,
     'website': '—',
-    'about': "A platform for fans to suggest content ideas for creators.",
+    'about': "A platform for fans to suggest content ideas for creators",
     'values': ['Creative','Communicative','Playful','Ideative'],
     'industry': ['Creator-Economy'],
     'year': '2019',
@@ -276,8 +289,13 @@ loadImages(imageSources).then((loadedImages) => {
   i = 0;
   for (project in projectsData) {
     thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
-    thumb.append('<img src="img/empty-4x3.png" />')
-    thumb.css('background-image','url("projects/'+project+'/0.png")')
+    thumb.append('<div class="image"></div>')
+    thumb.find('.image').append('<img src="img/empty-4x3.png" />')
+    thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
+
+    thumb.append('<div class="info"></div>')
+    thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
+    thumb.find('.info').append('<p>'+projectsData[project]['about']+'</p>')
     thumb.css('animation-delay', 100*i+'ms')
     $('.thumbs').append(thumb)
     i++
@@ -287,8 +305,7 @@ loadImages(imageSources).then((loadedImages) => {
   $('body').css('opacity',1)
 
   if ( window.location.hash ) {
-      hash = window.location.hash.substring(1)
-      openProject(hash)
+    nav()
   }
 })
 
@@ -307,15 +324,25 @@ function loadImages(imageSources) {
 }
 
 $(window).on('hashchange', function() {
-  hash = window.location.hash.substring(1)
-  openProject(hash)
+  nav()
 });
+
+function nav() {
+  hash = window.location.hash.substring(1)
+
+  if (hash != '') { $('body').addClass('show-page')}
+
+  if ( ['process','about'].includes(hash) ) {
+    openPage(hash)
+  } else {
+    openProject(hash)
+  }
+}
 
 function openProject(project) {
   event.stopPropagation();
-  $('body').addClass('show-project')
-
-  $('.project-window').html('').scrollTop(0)
+  $('body').addClass('show-page')
+  $('.project-window').addClass('show').html('').scrollTop(0)
 
   i = 1
   while ( i <= projectsData[project]['length'] ) {
@@ -377,13 +404,21 @@ function openProject(project) {
   window.location.hash = project;
 }
 
-function closeProject() {
-  $('body').removeClass('show-project')
+function closePage() {
+  $('body').removeClass('show-page')
+  $('.page').removeClass('show')
   history.replaceState(null, null, ' ')
 }
 
-function expand(item) {
-  $(item).parent().find('.hide').show()
-  $(item).remove()
+document.onkeydown = function (e) {
+    var keyCode = e.keyCode
+    if(keyCode == 27) {
+        closePage()
+    }
+};
+
+function openPage(page) {
+  $('body').addClass('show-page')
+  $('.page-'+page).addClass('show').scrollTop(0)
 }
 </script>
