@@ -155,7 +155,7 @@ a.current {
 }
 .page {
   position: fixed;
-  height:100%;
+  height: -webkit-fill-available;
   top:100%;
   left:0;
   width:100%;
