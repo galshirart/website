@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?12" rel="stylesheet">
+<link href="style.css?13" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo designer based in Tel Aviv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -27,9 +27,10 @@
 <div class="header flex">
   <div class="flex menu">
     <a style="opacity:1" href="/"><h1>Gal Shir</h1></a>
+    <a class="mobile-hide current" onclick="closePage()">Work</a>
     <a href="#process">Process</a>
     <a href="#about">About</a>
-    <a class="mobile-hide" onclick="$('html,body').animate({scrollTop: document.body.scrollHeight},'slow');">Contact</a>
+    <a class="mobile-hide" onclick="$('html,body').animate({scrollTop: document.body.scrollHeight},'slow'); closePage()">Contact</a>
   </div>
   <div class="socials flex">
     <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
@@ -327,21 +328,31 @@ $(window).on('hashchange', function() {
   nav()
 });
 
+$('.menu a').click(function() {
+  $('.menu a').removeClass('current')
+  $(this).addClass('current')
+})
+
 function nav() {
   hash = window.location.hash.substring(1)
-
-  if (hash != '') { $('body').addClass('show-page')}
+  $('.page').removeClass('show')
 
   if ( ['process','about'].includes(hash) ) {
     openPage(hash)
+    $('html,body').animate({scrollTop: 0},'slow');
   } else {
     openProject(hash)
   }
 }
 
+function openPage(page) {
+  $('body').addClass('show-page')
+  $('.page-'+page).addClass('show').scrollTop(0)
+}
+
 function openProject(project) {
   event.stopPropagation();
-  $('body').addClass('show-page')
+  $('body').addClass('show-project')
   $('.project-window').addClass('show').html('').scrollTop(0)
 
   i = 1
@@ -405,6 +416,7 @@ function openProject(project) {
 }
 
 function closePage() {
+  $('body').removeClass('show-project')
   $('body').removeClass('show-page')
   $('.page').removeClass('show')
   history.replaceState(null, null, ' ')
@@ -422,8 +434,5 @@ function expand(item) {
   $(item).remove()
 }
 
-function openPage(page) {
-  $('body').addClass('show-page')
-  $('.page-'+page).addClass('show').scrollTop(0)
-}
+
 </script>
