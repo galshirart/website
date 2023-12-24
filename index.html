@@ -417,6 +417,11 @@ document.onkeydown = function (e) {
     }
 };
 
+function expand(item) {
+  $(item+' .hide').show()
+  $(item).remove()
+}
+
 function openPage(page) {
   $('body').addClass('show-page')
   $('.page-'+page).addClass('show').scrollTop(0)
