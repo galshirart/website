@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?16" rel="stylesheet">
+<link href="style.css?17" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo designer based in Tel Aviv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -145,7 +145,7 @@
 projectsData = {
   'daymind': {
     'brand': 'Daymind',
-    'length': 12,
+    'length': 11,
     'background':'#edf3d7',
     'color': '#21424c',
     'video': true,
@@ -157,10 +157,10 @@ projectsData = {
   },
   'moonwave': {
     'brand': 'Moonwave',
-    'length': 15,
+    'length': 11,
     'background':'#ffeeee',
     'color': '#521ca2',
-    'video': true,
+    'video': false,
     'website': '',
     'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health",
     'values': ['Intimate','Calm','Balanced','Inspiring'],
@@ -170,8 +170,8 @@ projectsData = {
   'unit107': {
     'brand': 'Unit 107',
     'length': 7,
-    'background':'#F2F3F6',
-    'color': '#000A44',
+    'background':'#F5F7F9',
+    'color': '#064ACB',
     'video': true,
     'website': 'unit107.co',
     'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war",
@@ -183,7 +183,7 @@ projectsData = {
   'lemonade': {
     'brand': 'Lemonade',
     'length': 13,
-    'background':'#f7f7f7',
+    'background':'#ececec',
     'color': '#4a4a4a',
     'video': true,
     'website': 'lemonade.com',
@@ -195,7 +195,7 @@ projectsData = {
   },
   'colorhunt': {
     'brand': 'Color Hunt',
-    'length': 11,
+    'length': 9,
     'background':'#feed30',
     'color': '#222222',
     'video': true,
@@ -235,7 +235,7 @@ projectsData = {
   'articka': {
     'brand': 'Articka',
     'length': 11,
-    'background':'#ffffff',
+    'background':'#ececec',
     'color': '#111111',
     'video': false,
     'website': 'articka.shop',
@@ -248,7 +248,7 @@ projectsData = {
   'flyp': {
     'brand': 'Flyp',
     'length': 9,
-    'background':'#00DDCC',
+    'background':'#EFF4F6',
     'color': '#20212F',
     'video': false,
     'website': 'flyp.co',
@@ -273,10 +273,10 @@ projectsData = {
   'pakatu': {
     'brand': 'Pakatu',
     'length': 9,
-    'background':'#ffffff',
+    'background':'#ECECEC',
     'color': '#20212F',
     'video': false,
-    'website': '—',
+    'website': '',
     'about': "A platform for fans to suggest content ideas for creators",
     'values': ['Creative','Communicative','Playful','Ideative'],
     'industry': ['Creator-Economy'],
@@ -360,48 +360,36 @@ function openProject(project) {
   event.stopPropagation();
   $('body').addClass('show-project')
   $('.project-window').addClass('show').html('').scrollTop(0)
+  // $('.project-window').css('background',projectsData[project]['background'])
+
+  $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
+
+
+  $('.project-window').css('color',projectsData[project]['color'])
 
   i = 1
   while ( i <= projectsData[project]['length'] ) {
     if ( i == 3 && projectsData[project]['video'] ) { 
       $('.project-window').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?3" type="video/mp4"></video>')
      } else { 
-      $('.project-window').append('<img src="projects/'+project+'/'+i+'.png?21" />')
+      $('.project-window').append('<img src="projects/'+project+'/'+i+'.png?22" />')
     }
     i++
   }
 
   projectInfo = $('<div class="project-info"></div>')
 
-  for ( attribute in projectsData[project] ) {
-    value = projectsData[project][attribute]
+  $(projectInfo).append('<div><h2>'+projectsData[project]['brand']+'</h2><h3>'+projectsData[project]['about']+'</h3><a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
+  $(projectInfo).append('<div class="right"></div>')
+  $(projectInfo).find('.right').append('<div class="attribute">YEAR</div><h3>'+projectsData[project]['year']+'</h3>')
 
-    if (Array.isArray(value)) { 
-      valueString = ''
-      for ( item in value ) {
-        valueString += value[item]+'<br>'
-      }
-      value = valueString
-    }
-
-    if ( attribute == 'website') {
-      value = "<a target='_blank' href='https://"+value+"'>"+value+"</a>"
-    }
-
-    type = "default"
-    if ( attribute == 'achievement' ) {
-      attribute = ''
-      type = "achievement"
-    }
-
-    if ( !['length','background','color','video'].includes(attribute) ) {
-      $(projectInfo).append('<div class="attribute-'+type+'"><div class="small">'+attribute+'</div><h3>'+value+'</h3></div>')
-    }
-
+  valuesString = ''
+  for ( item in projectsData[project]['values'] ) {
+    valuesString += projectsData[project]['values'][item]+'<br>'
   }
+  
+  $(projectInfo).find('.right').append('<div class="attribute">VALUES</div><h3>'+valuesString+'</h3>')
 
-  projectInfo.css('background',projectsData[project]['background'])
-  projectInfo.css('color',projectsData[project]['color'])
   projectInfo.find('a').css('color',projectsData[project]['color'])
 
   $('.project-window').find('img').eq(0).after(projectInfo)

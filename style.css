@@ -173,16 +173,17 @@ a.current {
 }
 .project-window {
   background: black;
-  padding:60px 20px;
+  padding:20px;
 }
 .project-window.show {
-top:0;
+  top:0;
 }
 .project-window > * {
   max-width:1100px;
   width: 100%;
   margin:0 auto 20px;
   display: block;
+  border-radius:8px;
 }
 @keyframes enter {
   0% { transform:translateY(50px); opacity:0 }
@@ -190,36 +191,40 @@ top:0;
 }
 .project-window .project-info {
   display: grid;
-  grid-template-columns: 50% 40%;
+  grid-template-columns: 60% 30%;
   grid-column-gap: 10%;
-  padding:5%;
+  margin-bottom:30px;
 } 
-.project-window .project-info > div {
-  margin:4% 0;
+.project-window .project-info * {
+  margin:20px 0;
   animation-fill-mode: both;
   animation-name: enter;
   animation-duration: .6s;
   animation-fill-mode: both;
 }
-.project-window .project-info > div:nth-child(1) { animation-delay: 400ms; }
-.project-window .project-info > div:nth-child(2) { animation-delay: 600ms; }
-.project-window .project-info > div:nth-child(3) { animation-delay: 800ms; }
-.project-window .project-info > div:nth-child(4) { animation-delay: 1000ms; }
-.project-window .project-info > div:nth-child(5) { animation-delay: 1200ms; }
-.project-window .project-info > div:nth-child(6) { animation-delay: 1400ms; }
-.project-window .project-info > div:nth-child(7) { animation-delay: 1600ms; }
-.project-window .project-info > h3 { margin:0; }
-.project-window .project-info > div > div:nth-child(1) {
+.project-window .project-info *:nth-child(1) { animation-delay: 500ms; }
+.project-window .project-info *:nth-child(2) { animation-delay: 700ms; }
+.project-window .project-info *:nth-child(3) { animation-delay: 900ms; }
+.project-window .project-info *:nth-child(4) { animation-delay: 1100ms; }
+.project-window .project-info *:nth-child(5) { animation-delay: 1300ms; }
+.project-window .project-info *:nth-child(6) { animation-delay: 1500ms; }
+.project-window .project-info *:nth-child(7) { animation-delay: 1700ms; }
+.project-window .project-info h2 {
+  margin-top:0;
+}
+.project-window .project-info .attribute {
+  font-size:10px;
   margin:0;
   margin-bottom:4px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  opacity:0.5!important;
+  letter-spacing: 1px;
+  opacity:0.5;
 }
-.project-window .project-info > div > div:nth-child(2) {
-  line-height:150%;
-  margin:0;
+
+.project-window .project-info h3 {
+  margin:0 0 20px
 }
+
 .project-window .project-info .attribute-achievement > h3 {
   font-size:12px;
   background-image:url('img/trophy.png');
@@ -230,6 +235,7 @@ top:0;
   color:black;
   opacity:0.7!important;
 }
+
 .project-window a {
   opacity:1;
 }
@@ -251,10 +257,7 @@ top:0;
   margin: 20px auto;
   width: -webkit-fill-available;
   background: rgba(255,255,255,0.1);
-  color:white;
-}
-.next-project:hover {
-  background: rgba(255,255,255,0.12);
+  background:white;
 }
 .mini-thumb {
   width:100px;
@@ -444,9 +447,9 @@ top:0;
   .small { font-size:10px }
   .thumbs { margin:40px 0; grid-column-gap: 10px; grid-row-gap: 10px; }
   .thumbs.minimize { margin:40px 0 30px }
-  .project-window { padding: 16px; }
   .page { padding-top:70px }
   .page.show { top:100px }
+  .project-window.show { top:0; padding:16px}
   .section.flex { display: block; padding:0 6px }
   .section.flex  > div { width:100% }
   .line { margin:40px 0 }
