@@ -365,7 +365,7 @@ function openProject(project) {
   $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
 
 
-  $('.project-window').css('color',projectsData[project]['color'])
+  $('.project-window .project-info').css('color',projectsData[project]['color'])
 
   i = 1
   while ( i <= projectsData[project]['length'] ) {
