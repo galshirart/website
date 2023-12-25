@@ -187,7 +187,7 @@ projectsData = {
     'color': '#4a4a4a',
     'video': true,
     'website': 'lemonade.com',
-    'about': "America's top-rated insurance company built to provide the best, most delightful, and most transparent insurance experience in the world",
+    'about': "America's top-rated insurance company built to provide the best, most delightful, and most transparent insurance experience in the world (NYSE:LMND)",
     'values': ['Disruptive','Delightful','Simple','Transparent'],
     'industry': ['Fintech','Insurance','AI'],
     'year': '2016-2019',
@@ -364,9 +364,6 @@ function openProject(project) {
 
   $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
 
-
-  $('.project-window .project-info').css('color',projectsData[project]['color'])
-
   i = 1
   while ( i <= projectsData[project]['length'] ) {
     if ( i == 3 && projectsData[project]['video'] ) { 
@@ -394,6 +391,10 @@ function openProject(project) {
 
   $('.project-window').find('img').eq(0).after(projectInfo)
 
+  $('.project-window .project-info').css('color',projectsData[project]['color'])
+
+  $('.project-window').append(nextProject)
+
   nextID = Object.keys(projectsData).indexOf(project)+1
   if ( nextID >= Object.keys(projectsData).length ) { nextID = 0 }
 
@@ -404,7 +405,6 @@ function openProject(project) {
   nextProject.append('Next project: '+projectsData[Object.keys(projectsData)[nextID]]['brand']+'→')
   nextProject.attr('onclick','openProject("'+Object.keys(projectsData)[nextID]+'")')
 
-  $('.project-window').append(nextProject)
 
   window.location.hash = project;
 }
