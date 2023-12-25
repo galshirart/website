@@ -447,9 +447,9 @@ a.current {
   .small { font-size:10px }
   .thumbs { margin:40px 0; grid-column-gap: 10px; grid-row-gap: 10px; }
   .thumbs.minimize { margin:40px 0 30px }
-  .page { padding-top:70px }
-  .page.show { top:100px }
-  .project-window.show { top:0; padding:16px}
+  .page { padding-top:40px; padding-bottom:30px }
+  .page.show { top:100px; height:calc(100% - 100px) }
+  .project-window.show { top:0; padding:16px; height:100%}
   .section.flex { display: block; padding:0 6px }
   .section.flex  > div { width:100% }
   .line { margin:40px 0 }
