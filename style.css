@@ -140,7 +140,7 @@ a.current {
 }
 .thumb:hover .info .flex {
   opacity:1;
-  transform:translateY(-38px);
+  transform:translateY(-36px);
 }
 .thumb .info .flex p {
   max-width:70%;
