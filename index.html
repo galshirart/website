@@ -360,8 +360,6 @@ function openProject(project) {
   event.stopPropagation();
   $('body').addClass('show-project')
   $('.project-window').addClass('show').html('').scrollTop(0)
-  // $('.project-window').css('background',projectsData[project]['background'])
-
   $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
 
   i = 1
@@ -393,8 +391,6 @@ function openProject(project) {
 
   $('.project-window .project-info').css('color',projectsData[project]['color'])
 
-  $('.project-window').append(nextProject)
-
   nextID = Object.keys(projectsData).indexOf(project)+1
   if ( nextID >= Object.keys(projectsData).length ) { nextID = 0 }
 
@@ -405,6 +401,7 @@ function openProject(project) {
   nextProject.append('Next project: '+projectsData[Object.keys(projectsData)[nextID]]['brand']+'→')
   nextProject.attr('onclick','openProject("'+Object.keys(projectsData)[nextID]+'")')
 
+  $('.project-window').append(nextProject)
 
   window.location.hash = project;
 }
