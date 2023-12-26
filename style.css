@@ -362,8 +362,8 @@ a.current {
   height:30px;
   transition: all 200ms;
   opacity:0.6;
-  background:rgba(0,0,0,0.06);
   margin-left:4px;
+  border-radius:4px;
 }
 .socials.flex a:hover {
   background:rgba(0,0,0,0.1);
