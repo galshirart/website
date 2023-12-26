@@ -1,6 +1,6 @@
 * { 
   box-sizing:border-box;
-  transition: all 100ms;
+  transition: all 200ms;
 }
 body {
   opacity:0;
@@ -8,8 +8,10 @@ body {
   font-family: 'Inter', sans-serif;
   font-size:14px;
   transition: all 1s;
-  transition-timing-function: opacty cubic-bezier(0,0,0,1), background cubic-bezier(1,0,0,1);;
+  transition-timing-function: opacity linear, background cubic-bezier(1,0,0,1);;
   padding:30px 0;
+  background: hsl(60 25% 96% / 1);
+  color: rgba(0,0,0,0.8);
 }
 h1, h2, h3 {
   font-weight:400;
@@ -33,14 +35,13 @@ p {
 a {
   text-decoration: none;
   cursor: pointer;
-  opacity:0.5;
-  color:black;
+  color: rgba(0,0,0,0.6);
 }
 a:hover {
-  opacity:0.8;
+  opacity:0.7;
 }
 a.current {
-  opacity:1;
+  color: rgba(0,0,0,0.3);
 }
 .small {
   opacity:0.6;
@@ -96,22 +97,11 @@ a.current {
   background:#ececec;
   background-position: 50% 50%;
   background-size: 100% auto;
-  animation-name: thumb;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  transition: all 200ms;
   background-repeat: no-repeat;
-  animation-timing-function: ease-in-out;
   z-index:2;
   position: relative;
 }
-@keyframes thumb {
-  0% { background-position: 50% -130%; }
-  60% { background-position: 50% 60%; }
-  80% { background-position: 50% 45%;  }
-  100% { background-position: 50% 50%;  }
-}
-.thumb:hover{
+.thumb:hover {
   opacity:1;
 }
 .thumb:hover .image {
@@ -121,7 +111,7 @@ a.current {
   width:100%;
 }
 .thumb .info {
-  margin-top:14px;
+  margin-top:10px;
   position: relative;
 }
 .thumb .info * {
@@ -130,7 +120,7 @@ a.current {
 }
 .thumb:hover h3 {
   opacity:0; 
-  transform:translateY(-12px);
+  transform:translateY(-14px);
 }
 .thumb .info .flex {
   opacity:0;
@@ -140,7 +130,7 @@ a.current {
 }
 .thumb:hover .info .flex {
   opacity:1;
-  transform:translateY(-36px);
+  transform:translateY(-32px);
 }
 .thumb .info .flex p {
   max-width:70%;
@@ -393,7 +383,7 @@ a.current {
   filter:brightness(0);
 }
 .contact {
-  background:#f7f7f7;
+  background:rgba(0,0,0,0.03);
   padding:30px;
   margin-bottom:30px;
 }
