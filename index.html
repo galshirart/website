@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?24" rel="stylesheet">
+<link href="style.css?26" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -187,7 +187,7 @@ projectsData = {
     'color': '#4a4a4a',
     'video': true,
     'website': 'lemonade.com',
-    'about': "America's top-rated insurance company providing delightful and transparent insurance experience (NYSE:LMND)",
+    'about': "America's top-rated insurance company providing delightful and transparent insurance experience",
     'values': ['Disruptive','Delightful','Simple','Transparent'],
     'industry': ['Fintech','Insurance','AI'],
     'year': '2016-2019',
@@ -357,7 +357,6 @@ function openPage(page) {
 }
 
 function openProject(project) {
-  event.stopPropagation();
   $('body').addClass('show-project')
   $('.project-window').addClass('show').html('').scrollTop(0)
   $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
@@ -374,9 +373,15 @@ function openProject(project) {
 
   projectInfo = $('<div class="project-info"></div>')
 
-  $(projectInfo).append('<div><h2>'+projectsData[project]['brand']+'</h2><h3>'+projectsData[project]['about']+'</h3><a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
+  $(projectInfo).append('<div class="left"><h2>'+projectsData[project]['brand']+'</h2><h3>'+projectsData[project]['about']+'</h3><a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
   $(projectInfo).append('<div class="right"></div>')
   $(projectInfo).find('.right').append('<div class="attribute">YEAR</div><h3>'+projectsData[project]['year']+'</h3>')
+
+
+
+  if ( projectsData[project]['achievement'] ) {
+    $(projectInfo).find('.left').append('<div class="achievement" style="background-color:'+projectsData[project]['color']+'">'+projectsData[project]['achievement']+'</div>')
+  }
 
   valuesString = ''
   for ( item in projectsData[project]['values'] ) {

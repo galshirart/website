@@ -214,36 +214,27 @@ a.current {
   letter-spacing: 1px;
   opacity:0.5;
 }
-
 .project-window .project-info h3 {
   margin:0 0 20px
 }
-
-.project-window .project-info .attribute-achievement > h3 {
+.project-window .project-info .achievement  {
   font-size:12px;
   background-image:url('img/trophy.png');
   background-repeat: no-repeat;
-  background-size:  16px;
-  padding-left:20px;
-  border-radius: 0;
-  color:black;
-  opacity:0.7!important;
+  background-size:  12px;
+  background-position: 8px 7px;
+  border-radius:4px;
+  padding-left: 20px;
+  border-radius: 2px;
+  color: white;
+  width: fit-content;
+  padding: 6px 10px 6px 25px;
 }
-
 .project-window a {
   opacity:1;
 }
 .project-window a:hover {
   text-decoration: underline;
-}
-.project-window .project-info .attribute-achievement > div:nth-child(2) {
-  background-image:url('img/trophy.png');
-  background-repeat: no-repeat;
-  background-size:  16px;
-  padding-left:20px;
-  border-radius: 0;
-  color:black;
-  opacity:0.7!important;
 }
 .next-project {
   padding: 30px;
@@ -402,7 +393,7 @@ a.current {
   width:13px;
   height:13px;
   font-size:10px;
-  border:1px solid black;
+  border:1px solid rgba(0,0,0,0.6);
 }
 .availability {
   display: inline-block;
