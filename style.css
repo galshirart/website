@@ -151,7 +151,7 @@ a.current {
 }
 .page {
   position: fixed;
-  height: -webkit-fill-available;
+  height: 100%;
   top:100%;
   left:0;
   width:100%;
@@ -163,6 +163,7 @@ a.current {
 }
 .page.show {
   top:160px;
+  height: calc(100% - 160px);
 }
 .project-window {
   height:100%;
