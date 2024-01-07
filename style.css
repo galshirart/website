@@ -198,6 +198,7 @@ a.current {
   margin:0 auto 20px;
   display: block;
   border-radius:8px;
+  -webkit-overflow-scrolling: touch;
 }
 @keyframes enter {
   0% { transform:translateY(50px); opacity:0 }

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?38" rel="stylesheet">
+<link href="style.css?39" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -353,7 +353,7 @@ function openProject(project) {
   i = 1
   while ( i <= projectsData[project]['length'] ) {
     if ( i == 3 && projectsData[project]['video'] ) { 
-      $('.project-window').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?4" type="video/mp4"></video>')
+      $('.project-window').append('<video autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?4" type="video/mp4"></video>')
      } else { 
       $('.project-window').append('<img src="projects/'+project+'/'+i+'.png?22" />')
     }
