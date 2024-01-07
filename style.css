@@ -31,7 +31,7 @@ h3 {
 }
 p {
   line-height:160%;
-  margin: 10px 0;
+  margin: 16px 0;
 }
 a {
   text-decoration: none;
@@ -290,17 +290,8 @@ a.current {
   align-items: flex-start;
   padding:50px 0;
 }
-.section.services h3:first-of-type {
-  margin-top:30px;
-}
-.section.services h3:nth-child(n+2) {
-  margin-top:40px;
-}
 .section > div {
   width:45%;
-}
-.section > div:nth-child(1) {
-  max-width:520px;
 }
 .process {
   border-left:1px solid rgba(0,0,0,0.1);
