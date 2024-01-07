@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?36" rel="stylesheet">
+<link href="style.css?37" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -22,7 +22,9 @@
 <meta name="twitter:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
 <meta name="twitter:image" content="https://gal.sh/img/gal-shir-og.png?2">
 
-<div class="wrap">
+<div class="loader"></div>
+
+<div class="wrap" style="opacity:0">
 
 <div class="header flex">
   <div class="flex menu">
@@ -269,6 +271,9 @@ imageSources = []
 
 for (project in projectsData) {
   imageSources.push('projects/'+project+'/0.png')
+  imageSources.push('projects/'+project+'/1.png')
+  imageSources.push('projects/'+project+'/2.png')
+  imageSources.push('projects/'+project+'/4.png')
 }
 
 loadImages(imageSources).then((loadedImages) => {
@@ -290,7 +295,8 @@ loadImages(imageSources).then((loadedImages) => {
     if ( i > 5 ) { i = 0}
   }
 
-  $('body').css('opacity',1)
+  $('.loader').remove()
+  $('.wrap').css('opacity',1)
 
   if ( window.location.hash ) {
     nav()
