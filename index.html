@@ -29,9 +29,9 @@
 <div class="header flex">
   <div class="flex menu">
     <a style="opacity:1" href="/"><h1>Gal Shir</h1></a>
-    <a class="mobile-hide current" onclick="closePage()">Work</a>
-    <a href="#process">Process</a>
-    <a href="#about">About</a>
+    <a class="mobile-hide current" data-page="work" onclick="closePage()">Work</a>
+    <a href="#process" data-page="process">Process</a>
+    <a href="#about" data-page="about">About</a>
     <a class="mobile-hide" onclick="$('html,body').animate({scrollTop: document.body.scrollHeight},'slow'); closePage()">Contact</a>
   </div>
   <div class="socials flex">
@@ -273,35 +273,34 @@ for (project in projectsData) {
   imageSources.push('projects/'+project+'/0.png')
   imageSources.push('projects/'+project+'/1.png')
   imageSources.push('projects/'+project+'/2.png')
-  imageSources.push('projects/'+project+'/4.png')
 }
 
 loadImages(imageSources).then((loadedImages) => {
-  i = 0;
-  for (project in projectsData) {
-    thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
-    thumb.append('<div class="image"></div>')
-    thumb.find('.image').append('<img src="img/empty-4x3.png" />')
-    thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
-
-    thumb.append('<div class="info"></div>')
-    thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
-    thumb.find('.info').append('<div class="flex"></div>')
-    thumb.find('.info .flex').append('<p>'+projectsData[project]['about']+'</p>')
-    thumb.find('.info .flex').append('<a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
-    thumb.css('animation-delay', 100*i+'ms')
-    $('.thumbs').append(thumb)
-    i++
-    if ( i > 5 ) { i = 0}
-  }
-
   $('.loader').remove()
   $('.wrap').css('opacity',1)
-
-  if ( window.location.hash ) {
-    nav()
-  }
 })
+
+i = 0;
+for (project in projectsData) {
+  thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
+  thumb.append('<div class="image"></div>')
+  thumb.find('.image').append('<img src="img/empty-4x3.png" />')
+  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
+
+  thumb.append('<div class="info"></div>')
+  thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
+  thumb.find('.info').append('<div class="flex"></div>')
+  thumb.find('.info .flex').append('<p>'+projectsData[project]['about']+'</p>')
+  thumb.find('.info .flex').append('<a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
+  thumb.css('animation-delay', 100*i+'ms')
+  $('.thumbs').append(thumb)
+  i++
+  if ( i > 5 ) { i = 0}
+}
+
+if ( window.location.hash ) {
+  nav()
+}
 
 function loadImages(imageSources) {
   const imageElements = [];
@@ -329,12 +328,15 @@ $('.menu a').click(function() {
 function nav() {
   hash = window.location.hash.substring(1)
   $('.page').removeClass('show')
+  $('.menu a').removeClass('current')
 
   if ( ['process','about'].includes(hash) ) {
     openPage(hash)
     $('html,body').animate({scrollTop: 0},'slow');
+    $('.header a[data-page='+window.location.hash.replace('#','')+']').addClass('current')
   } else {
     openProject(hash)
+    $('.header a[data-page=work]').addClass('current')
   }
 }
 
@@ -363,8 +365,6 @@ function openProject(project) {
   $(projectInfo).append('<div class="left"><h2>'+projectsData[project]['brand']+'</h2><h3>'+projectsData[project]['about']+'</h3><a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
   $(projectInfo).append('<div class="right"></div>')
   $(projectInfo).find('.right').append('<div class="attribute">YEAR</div><h3>'+projectsData[project]['year']+'</h3>')
-
-
 
   if ( projectsData[project]['achievement'] ) {
     $(projectInfo).find('.left').append('<div class="achievement" style="background-color:'+projectsData[project]['color']+'">'+projectsData[project]['achievement']+'</div>')
