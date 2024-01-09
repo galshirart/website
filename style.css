@@ -257,6 +257,10 @@ a.current {
 .project-window a:hover {
   text-decoration: underline;
 }
+.project-window .project-description {
+  padding:50px 20px;
+  max-width:800px;
+}
 .next-project {
   padding: 30px;
   cursor: pointer;

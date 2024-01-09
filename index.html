@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?39" rel="stylesheet">
+<link href="style.css?40" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -134,6 +134,7 @@ projectsData = {
     'video': true,
     'website': 'daymind.com',
     'about': "A journaling app for intuitive writing, assisted by AI for personal insights, summaries, and analysis",
+    'description': "Daymind's logo is made of a consistent line flowing seamlessly to create the D and the M. It resembles a signature and embraces the aesthetics of handwriting. While being minimalistic and simple, it also incorporates a human touch, a natural writing rhythm, and a smooth and intimate feel.",
     'values': ['Intuitive','Authentic','Smooth','Personal'],
     'industry': ['AI','Wellness'],
     'year': '2023'
@@ -146,6 +147,7 @@ projectsData = {
     'video': false,
     'website': '',
     'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health",
+    'description': "Moonswave's logo uses the golden ratio — a mathematical pattern found in nature that is associated with balance and harmony. The sky and and wave are formed in a shape similar to the Yin-Yang symbol, while the moon shines at the center in the negative space. The spiral effect gives the logo a dynamic feel, reflecting the ever-changing nature of the human mind.",
     'values': ['Intimate','Calm','Balanced','Inspiring'],
     'industry': ['AI','Wellness'],
     'year': '2023'
@@ -158,6 +160,7 @@ projectsData = {
     'video': true,
     'website': 'unit107.co',
     'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war",
+    'description': "Unit 107's logo was designed during the first month of the October 7 war. It was meant to define the identity of the non-profit organization formed by volunteers but to also resemble the unity, hope, and pride of the Israeli community affected by the war. The logo incorporates the Jewish star, merged with the digits of a date that turned out to be one of the most influential days in the history of the country.",
     'values': ['Israeli','Techy','Positive'],
     'industry': ['Non-profit','Tech'],
     'year': '2023',
@@ -381,7 +384,13 @@ function openProject(project) {
 
   $('.project-window').find('img').eq(0).after(projectInfo)
 
-  $('.project-window .project-info').css('color',projectsData[project]['color'])
+  if ( projectsData[project]['description'] ) {
+    projectDescription = $('<div class="project-description"></div>')
+    projectDescription.append('<h3>'+projectsData[project]['description']+'</h3>')
+    $('.project-window').find('img').eq(2).after(projectDescription)
+  }
+
+  $('.project-info, .project-description').css('color',projectsData[project]['color'])
 
   nextID = Object.keys(projectsData).indexOf(project)+1
   if ( nextID >= Object.keys(projectsData).length ) { nextID = 0 }
