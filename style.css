@@ -118,6 +118,7 @@ a.current {
   background-repeat: no-repeat;
   z-index:2;
   position: relative;
+  border-radius: 8px;
 }
 .thumb:hover {
   opacity:1;
