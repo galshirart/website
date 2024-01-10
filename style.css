@@ -201,6 +201,8 @@ a.current {
 }
 .project-window video {
   pointer-events: none;
+  width:100%;
+  border-radius:8px;
 }
 @keyframes enter {
   0% { transform:translateY(50px); opacity:0 }
