@@ -351,6 +351,9 @@ a.current {
   top: 8px;
   z-index: 3;
 }
+.process .step:nth-child(1) {
+  margin-top:24px;
+}
 .process .step:nth-child(1):before, .process .step:nth-child(4):before {
   width: 11px;
   height: 11px;
@@ -383,6 +386,10 @@ a.current {
   left: -20px;
   top: 7px;
   z-index: 0;
+}
+.learn-more {
+  margin-bottom:50px;
+  display: inline-block;
 }
 .socials.flex a {
   display: flex;
