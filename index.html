@@ -278,10 +278,14 @@ projectsData = {
 
 imageSources = []
 
+i = 1;
 for (project in projectsData) {
-  imageSources.push('projects/'+project+'/0.png')
-  imageSources.push('projects/'+project+'/1.png')
-  imageSources.push('projects/'+project+'/2.png')
+  if ( i <= 6 ) {
+    imageSources.push('projects/'+project+'/0.png')
+    imageSources.push('projects/'+project+'/1.png')
+    imageSources.push('projects/'+project+'/2.png')
+  }
+  i++
 }
 
 loadImages(imageSources).then((loadedImages) => {
