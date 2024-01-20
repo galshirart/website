@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?46" rel="stylesheet">
+<link href="style.css?47" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
 <meta name="twitter:image" content="https://gal.sh/img/gal-shir-og.png?2">
 
-<div class="loader"></div>
+<div class="loader global"></div>
 
 <div class="wrap" style="opacity:0">
 
@@ -286,7 +286,7 @@ for (project in projectsData) {
 }
 
 loadImages(imageSources).then((loadedImages) => {
-  $('.loader').remove()
+  $('.loader.global').remove()
   $('.wrap').css('opacity',1)
 })
 
@@ -355,11 +355,14 @@ function nav() {
 
     $('.project-window > *:nth-child(n+3)').removeClass('loaded')
     openProject(hash) 
+    $('.project-window .project-info').after('<div class="loader-container" style="opacity:1"><div class="loader project"></div></div>')
 
     loadImages(imageSources).then((loadedImages) => {
       setTimeout(function() { 
+        $('.project-window .loader-container').remove()
         $('.project-window > *:nth-child(n+3)').addClass('loaded')
-      },2000)
+
+      },1000)
     })
   }
 }
