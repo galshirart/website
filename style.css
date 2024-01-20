@@ -174,7 +174,7 @@ a.current {
   top:100%;
   left:0;
   width:100%;
-  transition: top .7s cubic-bezier(1,0,0,1);
+  transition: top 1s cubic-bezier(1,0,0,1);
   z-index: 5;
   overflow: scroll;
   background: hsl(60 25% 97% / 1);
@@ -199,6 +199,19 @@ a.current {
   margin:0 auto 20px;
   display: block;
   border-radius:8px;
+  transition: opacity 1s;
+}
+.project-window > img:first-of-type {
+  animation-name: enter;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay:1s;
+}
+.project-window > *:nth-child(n+3) {
+  opacity:0;
+}
+.project-window > .loaded {
+  opacity:1;
 }
 .project-window .video-container {
   position: relative;
@@ -214,10 +227,6 @@ a.current {
   height: 100%;
   top: 0;
 }
-@keyframes enter {
-  0% { transform:translateY(50px); opacity:0 }
-  100% { transform:translateY(0); }
-}
 .project-window .project-info {
   display: grid;
   grid-template-columns: 60% 30%;
@@ -231,13 +240,17 @@ a.current {
   animation-duration: .6s;
   animation-fill-mode: both;
 }
-.project-window .project-info *:nth-child(1) { animation-delay: 500ms; }
-.project-window .project-info *:nth-child(2) { animation-delay: 700ms; }
-.project-window .project-info *:nth-child(3) { animation-delay: 900ms; }
-.project-window .project-info *:nth-child(4) { animation-delay: 1100ms; }
-.project-window .project-info *:nth-child(5) { animation-delay: 1300ms; }
-.project-window .project-info *:nth-child(6) { animation-delay: 1500ms; }
-.project-window .project-info *:nth-child(7) { animation-delay: 1700ms; }
+@keyframes enter {
+  0% { transform:translateY(50px); opacity:0 }
+  100% { transform:translateY(0); }
+}
+.project-window .project-info *:nth-child(1) { animation-delay: 1500ms; }
+.project-window .project-info *:nth-child(2) { animation-delay: 1700ms; }
+.project-window .project-info *:nth-child(3) { animation-delay: 1900ms; }
+.project-window .project-info *:nth-child(4) { animation-delay: 2100ms; }
+.project-window .project-info *:nth-child(5) { animation-delay: 2300ms; }
+.project-window .project-info *:nth-child(6) { animation-delay: 2500ms; }
+.project-window .project-info *:nth-child(7) { animation-delay: 2700ms; }
 .project-window .project-info h2 {
   margin-top:0;
 }

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?45" rel="stylesheet">
+<link href="style.css?46" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -280,11 +280,8 @@ imageSources = []
 
 i = 1;
 for (project in projectsData) {
-  if ( i <= 6 ) {
-    imageSources.push('projects/'+project+'/0.png')
-    imageSources.push('projects/'+project+'/1.png')
-    imageSources.push('projects/'+project+'/2.png')
-  }
+  imageSources.push('projects/'+project+'/0.png')
+  imageSources.push('projects/'+project+'/1.png')
   i++
 }
 
@@ -345,21 +342,38 @@ function nav() {
 
   if ( ['process','about'].includes(hash) ) {
     openPage(hash)
-    $('html,body').animate({scrollTop: 0},'slow');
-    $('.header a[data-page='+window.location.hash.replace('#','')+']').addClass('current')
   } else {
-    openProject(hash)
-    $('.header a[data-page=work]').addClass('current')
+    imageSources = []
+    i = 1;
+    while ( i <= projectsData[hash]['length'] ) {
+      fileType = "png"
+      if ( i != 3 && projectsData[hash]['video'] == true ) { 
+        imageSources.push('projects/'+hash+'/'+i+'.'+fileType)
+      }
+      i++
+    }
+
+    $('.project-window > *:nth-child(n+3)').removeClass('loaded')
+    openProject(hash) 
+
+    loadImages(imageSources).then((loadedImages) => {
+      setTimeout(function() { 
+        $('.project-window > *:nth-child(n+3)').addClass('loaded')
+      },2000)
+    })
   }
 }
 
 function openPage(page) {
   $('body').addClass('show-page')
+  $('html,body').animate({scrollTop: 0},'slow');
+  $('.header a[data-page='+window.location.hash.replace('#','')+']').addClass('current')
   $('.page-'+page).addClass('show').scrollTop(0)
 }
 
 function openProject(project) {
   $('body').addClass('show-project')
+  $('.header a[data-page=work]').addClass('current')
   $('.project-window').addClass('show').html('').scrollTop(0)
   $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
 
