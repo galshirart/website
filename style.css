@@ -454,7 +454,7 @@ a.current {
 }
 .availability {
   display: inline-block;
-  margin-top: 12px;
+  margin-bottom: 50px;
   padding-left: 13px;
   font-size:12px;
   position: relative;
@@ -487,6 +487,7 @@ a.current {
   h2 { font-size:32px }
   h3 { font-size:20px }
   .small { font-size:10px }
+  .socials.flex a { margin:0; width:24px }
   .thumbs { margin:40px 0; grid-column-gap: 10px; grid-row-gap: 10px; }
   .thumbs.minimize { margin:40px 0 30px }
   .page { padding-top:40px; padding-bottom:30px }

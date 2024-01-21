@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?48" rel="stylesheet">
+<link href="style.css?49" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -28,11 +28,11 @@
 
 <div class="header flex">
   <div class="flex menu">
-    <a style="opacity:1" href="/"><h1>Gal Shir</h1></a>
+    <a style="opacity:1" href="/"><h1>G<span class="mobile-hide">al </span>S<span class="mobile-hide">hir</span></h1></a>
     <a class="mobile-hide current" data-page="work" onclick="closePage()">Work</a>
     <a href="#process" data-page="process">Process</a>
     <a href="#about" data-page="about">About</a>
-    <a class="mobile-hide" onclick="$('html,body').animate({scrollTop: document.body.scrollHeight},'slow'); closePage()">Contact</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="socials flex">
     <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
@@ -52,16 +52,6 @@
 <div class="center"><a onclick="$('.thumbs').removeClass('minimize'); $('.center').remove()">Show more <span class="arrow"></span></a></div>
 
 <div class="project-window page"></div>
-
-<div class="line"></div>
-
-<div class="contact">
-  <div class="small">LET'S CHAT</div>
-  <h3>hi@gal.sh</h3>
-  <div class="availability">Available for new projects</div>
-  <p>Drop me an email and I'll get back to you as soon as I can</p>
-  <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
-</div>
 
 <div class="page-process page">
   <div class="wrap">
@@ -115,10 +105,24 @@
         <p>Gal started his creative career as a designer, illustrator, and art director, working with several design studios and startups in Tel Aviv. Being on the founding team of <a target="_blank" href="https://lemonade.com">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
         <p>Over the last 15 years, Gal has been working in the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a target="_blank" href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
         <img src="img/gal-shir.jpg?2" style="margin-top:20px; max-width:100%;"/>
-
       </div>
     </div>
+  </div>
+</div>
 
+<div class="page-contact page">
+  <div class="wrap">
+    <div class="section flex">
+      <div>
+        <h2>hi@gal.sh</h2>
+        <div class="availability">Available for new projects</div>
+      </div>
+      <div >
+        <h2>Let's chat!</h2>
+        <p>I'm currently only taking logo design projects. If you're at that stage, drop me an email and I'll get back to you as soon as I can. I'd be happy to chat, learn more about your brand, and tell you more about my <a href="#process">process</a>.</p>
+        <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -340,7 +344,7 @@ function nav() {
   $('.page').removeClass('show')
   $('.menu a').removeClass('current')
 
-  if ( ['process','about'].includes(hash) ) {
+  if ( ['process','about','contact'].includes(hash) ) {
     openPage(hash)
   } else {
     imageSources = []
