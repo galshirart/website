@@ -172,13 +172,14 @@ a.current {
 .arrow {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   display: inline-block;
   transform: rotate(45deg);
   position: relative;
   top: -3px;
-  left: 2px;
+  left: 3px;
+  opacity:0.6;
 }
 .show-project, .show-page { 
   overflow: hidden;
