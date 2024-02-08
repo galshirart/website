@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?35" rel="stylesheet">
+<link href="style.css?50" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Logo design w/ the bsv">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -22,15 +22,17 @@
 <meta name="twitter:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
 <meta name="twitter:image" content="https://gal.sh/img/gal-shir-og.png?2">
 
-<div class="wrap">
+<div class="loader global"></div>
+
+<div class="wrap" style="opacity:0">
 
 <div class="header flex">
   <div class="flex menu">
-    <a style="opacity:1" href="/"><h1>Gal Shir</h1></a>
-    <a class="mobile-hide current" onclick="closePage()">Work</a>
-    <a href="#process">Process</a>
-    <a href="#about">About</a>
-    <a class="mobile-hide" onclick="$('html,body').animate({scrollTop: document.body.scrollHeight},'slow'); closePage()">Contact</a>
+    <a style="opacity:1" href="/"><h1>G<span class="mobile-hide">al </span>S<span class="mobile-hide">hir</span></h1></a>
+    <a class="mobile-hide current" data-page="work" onclick="closePage()">Work</a>
+    <a href="#process" data-page="process">Process</a>
+    <a href="#about" data-page="about">About</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="socials flex">
     <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
@@ -51,47 +53,22 @@
 
 <div class="project-window page"></div>
 
-<div class="line"></div>
-
-<div class="contact">
-  <div class="small">LET'S CHAT</div>
-  <h3>hi@gal.sh</h3>
-  <div class="availability">Available for new projects</div>
-  <p>Drop me an email and I'll get back to you as soon as I can</p>
-  <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
-</div>
-
 <div class="page-process page">
   <div class="wrap">
   <div class="section flex services">
     <div>
       <div class="small">WHAT I DO</div>
-      <h2>Designing a visual identity that sets the foundation for years</h2>
-      <p>Helping early-stage startups define their unique identity, or providing a rebrand for established brands in need of a fresh makeover</p>
-    </div>
-    <div>
-      <h3>Logo</h3>
-      <p>A hand-crafted logo designed to last</p>
-      <!-- <a href="#">Read more →</a> -->
-      <h3>Visual Language</h3>
-      <p>A color system, fonts, and a brandbook with guidelines showing how to implement the logo and the visual language across various placements</p>
-    </div>
-  </div>
-
-  <div class="line"></div>
-
-  <div class="section flex">
-    <div>
-      <div class="small">PROCESS AND PRICING</div>
-      <h2>Focusing on efficiency with a straight-forward process</h2>
-      <p>Delivering the absolute best logo within two weeks with a seamless process for a fixed price of <b>$10,000</b></p>
+      <h2>Designing powerful logos that define unique identities</h2>
+      <p>My logos are designed to last. They mark the initial step in shaping the identity of every brand. I deliver the logo alongside a guidelines book defining a color system, fonts, and examples showing how to implement the logo and the visual language across various placements.</p>
+      <p>The process usually takes two weeks. The price is <b>$8,000</b> and you only pay it fully if you're happy with the result.</p>
       <a target="_blank" href="https://gal.sh/read/process/" class="learn-more">Read more about my process</a>
     </div>
     <div>
+      <div class="small">THE PROCESS</div>
       <div class="process">
         <div class="step">
           <h3>Meeting</h3>
-          <p>I get to know you and your brand over Zoom/coffee to understand everything I need. <a class="expand" onclick="expand(this)">Read more...</a><span class="hide">We chat about your vision, strategy, industry, audience, and your unique product or offering. I use that information to research your market and competitors.</span></p>
+          <p>I get to know you and your brand over Zoom/coffee to understand everything I need. <a class="expand" onclick="expand(this)">Read more...</a><span class="hide">We chat about your vision, strategy, industry, audience, and your unique product or offering. I use that information to research your market/competitors and to define the direction of your brand identity.</span></p>
         </div>
         <div class="step">
           <p>You submit an upfront payment of 25%</p>
@@ -101,10 +78,10 @@
         </div>
         <div class="step">
           <h3>Delivery</h3>
-          <p>You get the logo alongside a brand book showcasing the visual language, the guidelines, and the examples</p>
+          <p>You get the logo alongside a guidelines book showcasing the visual language and the examples</p>
         </div>
         <div class="step">
-          <p>Love it? You pay the remaining sum and get the files</p>
+          <p>Love it? You pay the remaining 75% and get the files</p>
         </div>
         <div class="step">
           <p>Not happy with the result? You don't pay the remaining sum and we say goodbye with no strings attached, or you can request a new direction for additional 25%</p>
@@ -119,17 +96,31 @@
   <div class="wrap">
     <div class="section flex">
       <div>
-        <h2>Gal Shir is a designer and art director based in Tel Aviv, helping young brands define their visual identity</h2>
+        <h2>I love being there, at the most fundamental moment when young brands get to define their visual identity.</h2>
       </div>
       <div>
-        <p>Gal helps innovative startups to develop and define their unique visual identity. Through logo design, visual language, illustration, and art direction, Gal provides a fundamental package for young brands that haven't set their visual footprint yet, or, alternatively, a fresh makeover for established brands who want to look modern and attractive.</p>
-        <p>Gal started his creative career as a designer, illustrator, and art director, working with several marketing agencies and startups in Tel Aviv. Being on the founding team of <a target="_blank" href="https://lemonade.com">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
-        <p>Over the last 15 years, Gal has moved between the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a target="_blank" href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
-        <img src="img/gal-shir.jpg" style="margin-top:20px; max-width:100%;"/>
-
+        <p>Gal helps innovative startups to define their unique visual identities. Designing custom, unique, and powerful logos, Gal provides a fundamental asset for young brands that haven't set their visual footprint yet, or a makeover for established brands looking for a fresh rebrand.</p>
+        <p>Gal started his creative career as a designer, illustrator, and art director, working with several design studios and startups in Tel Aviv. Being on the founding team of <a target="_blank" href="https://lemonade.com">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
+        <p>Over the last 15 years, Gal has been working in the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a target="_blank" href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
+        <img src="img/gal-shir.jpg?2" style="margin-top:20px; max-width:100%;"/>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="page-contact page">
+  <div class="wrap">
+    <div class="section flex">
+      <div>
+        <h2>hi@gal.sh</h2>
+        <div class="availability">Available for new projects</div>
+      </div>
+      <div >
+        <h2>Let's chat!</h2>
+        <p>I'm currently only taking logo design projects. If you're at that stage, drop me an email and I'll get back to you as soon as I can. I'd be happy to chat, learn everything about your brand, and tell you more about my <a href="#process">process</a>.</p>
+        <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -148,6 +139,7 @@ projectsData = {
     'video': true,
     'website': 'daymind.com',
     'about': "A journaling app for intuitive writing, assisted by AI for personal insights, summaries, and analysis",
+    'description': "Daymind's logo is made of a consistent line flowing seamlessly to create the D and the M. It resembles a signature and embraces the aesthetics of handwriting. While being minimalistic and simple, it also incorporates a human touch, a natural writing rhythm, and a smooth and intimate feel.",
     'values': ['Intuitive','Authentic','Smooth','Personal'],
     'industry': ['AI','Wellness'],
     'year': '2023'
@@ -160,6 +152,7 @@ projectsData = {
     'video': false,
     'website': '',
     'about': "A therapy app powered by AI for mental health, EQ, mindfulness, wellness, and health",
+    'description': "Moonswave's logo uses the golden ratio — a mathematical pattern found in nature that is associated with balance and harmony. The sky and the wave forms a shape similar to the Yin-Yang symbol, while the moon shines at the center in the negative space. The spiral effect gives the logo a dynamic feel, reflecting the ever-changing nature of the human mind.",
     'values': ['Intimate','Calm','Balanced','Inspiring'],
     'industry': ['AI','Wellness'],
     'year': '2023'
@@ -172,6 +165,7 @@ projectsData = {
     'video': true,
     'website': 'unit107.co',
     'about': "An American non-profit supporting Israeli soldiers and families impacted by the October 7 war",
+    'description': "Unit 107's logo was designed during the first month of the October 7 war. It was meant to represent the non-profit organization, but to also resemble the unity, hope, and pride of the Israeli community affected by the war. The logo incorporates the Jewish star, merged with the digits of a date that turned out to be one of the most influential days in the history of the country.",
     'values': ['Israeli','Techy','Positive'],
     'industry': ['Non-profit','Tech'],
     'year': '2023',
@@ -185,6 +179,7 @@ projectsData = {
     'video': true,
     'website': 'lemonade.com',
     'about': "America's top-rated insurance company providing delightful and transparent insurance experience",
+    'description': "Lemonade's logo looks like anything but an insurance company logo. The visual language is based on a style that is friendly, likable, approachable, and sweet. Lemonade's identity resembles the simplicity, transparency, and delightfulness of its service.",
     'values': ['Disruptive','Delightful','Simple','Transparent'],
     'industry': ['Fintech','Insurance','AI'],
     'year': '2016-2019',
@@ -198,6 +193,7 @@ projectsData = {
     'video': true,
     'website': 'colorhunt.co',
     'about': "The world's favorite resource for color palettes used by designers and artists and curated by Gal Shir",
+    'description': "Color Hunt's logo celebrates the joy of color. It uses a modest black stroke as an outline to contain a rich combination of colors. The tongue resembles the appetite, playfulness, and childish essence of playing with colors. The smile makes the brand friendly, approachable, and memorable.",
     'values': ['Creative','Friendly','Playful','Positive'],
     'industry': ['Design','Art'],
     'year': '2015',
@@ -211,6 +207,7 @@ projectsData = {
     'video': false,
     'website': 'getsanta.com',
     'about': "Digital gifting retailer offering curated assortments of apparel, accessories, wellness, and tech",
+    'description': "Santa's logo sits at the intersection between a tech logo and a snack logo. The tilted, round, and connected letters resemble the typography of ice cream, chocolate, or other sweet products, while the minimalism and the color give it a modern and techy look.",
     'values': ['Delightful','Surprising','Modern','Mobile'],
     'industry': ['Retail','Delivery','Gifting'],
     'year': '2021',
@@ -283,35 +280,39 @@ projectsData = {
 
 imageSources = []
 
+i = 1;
 for (project in projectsData) {
   imageSources.push('projects/'+project+'/0.png')
+  imageSources.push('projects/'+project+'/1.png')
+  i++
 }
 
 loadImages(imageSources).then((loadedImages) => {
-  i = 0;
-  for (project in projectsData) {
-    thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
-    thumb.append('<div class="image"></div>')
-    thumb.find('.image').append('<img src="img/empty-4x3.png" />')
-    thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
-
-    thumb.append('<div class="info"></div>')
-    thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
-    thumb.find('.info').append('<div class="flex"></div>')
-    thumb.find('.info .flex').append('<p>'+projectsData[project]['about']+'</p>')
-    thumb.find('.info .flex').append('<a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
-    thumb.css('animation-delay', 100*i+'ms')
-    $('.thumbs').append(thumb)
-    i++
-    if ( i > 5 ) { i = 0}
-  }
-
-  $('body').css('opacity',1)
-
-  if ( window.location.hash ) {
-    nav()
-  }
+  $('.loader.global').remove()
+  $('.wrap').css('opacity',1)
 })
+
+i = 0;
+for (project in projectsData) {
+  thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
+  thumb.append('<div class="image"></div>')
+  thumb.find('.image').append('<img src="img/empty-4x3.png" />')
+  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
+
+  thumb.append('<div class="info"></div>')
+  thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
+  thumb.find('.info').append('<div class="flex"></div>')
+  thumb.find('.info .flex').append('<p>'+projectsData[project]['about']+'</p>')
+  thumb.find('.info .flex').append('<a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
+  thumb.css('animation-delay', 100*i+'ms')
+  $('.thumbs').append(thumb)
+  i++
+  if ( i > 5 ) { i = 0}
+}
+
+if ( window.location.hash ) {
+  nav()
+}
 
 function loadImages(imageSources) {
   const imageElements = [];
@@ -339,29 +340,52 @@ $('.menu a').click(function() {
 function nav() {
   hash = window.location.hash.substring(1)
   $('.page').removeClass('show')
+  $('.menu a').removeClass('current')
 
-  if ( ['process','about'].includes(hash) ) {
+  if ( ['process','about','contact'].includes(hash) ) {
     openPage(hash)
-    $('html,body').animate({scrollTop: 0},'slow');
   } else {
-    openProject(hash)
+    imageSources = []
+    i = 1;
+    while ( i <= projectsData[hash]['length'] ) {
+      fileType = "png"
+      if ( i != 3 && projectsData[hash]['video'] == true ) { 
+        imageSources.push('projects/'+hash+'/'+i+'.'+fileType)
+      }
+      i++
+    }
+
+    $('.project-window > *:nth-child(n+3)').removeClass('loaded')
+    openProject(hash) 
+    $('.project-window .project-info').after('<div class="loader-container" style="opacity:1"><div class="loader project"></div></div>')
+
+    loadImages(imageSources).then((loadedImages) => {
+      setTimeout(function() { 
+        $('.project-window .loader-container').remove()
+        $('.project-window > *:nth-child(n+3)').addClass('loaded')
+
+      },1000)
+    })
   }
 }
 
 function openPage(page) {
   $('body').addClass('show-page')
+  $('html,body').animate({scrollTop: 0},'slow');
+  $('.header a[data-page='+window.location.hash.replace('#','')+']').addClass('current')
   $('.page-'+page).addClass('show').scrollTop(0)
 }
 
 function openProject(project) {
   $('body').addClass('show-project')
+  $('.header a[data-page=work]').addClass('current')
   $('.project-window').addClass('show').html('').scrollTop(0)
   $('.project-window').css('background-image','linear-gradient('+projectsData[project]['background']+' 0%, white 50%)')
 
   i = 1
   while ( i <= projectsData[project]['length'] ) {
     if ( i == 3 && projectsData[project]['video'] ) { 
-      $('.project-window').append('<video class="toolkit-video" height="auto" autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?4" type="video/mp4"></video>')
+      $('.project-window').append('<div class="video-container"><video autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?4" type="video/mp4"></video><div class="video-overlay"></div></div>')
      } else { 
       $('.project-window').append('<img src="projects/'+project+'/'+i+'.png?22" />')
     }
@@ -373,8 +397,6 @@ function openProject(project) {
   $(projectInfo).append('<div class="left"><h2>'+projectsData[project]['brand']+'</h2><h3>'+projectsData[project]['about']+'</h3><a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
   $(projectInfo).append('<div class="right"></div>')
   $(projectInfo).find('.right').append('<div class="attribute">YEAR</div><h3>'+projectsData[project]['year']+'</h3>')
-
-
 
   if ( projectsData[project]['achievement'] ) {
     $(projectInfo).find('.left').append('<div class="achievement" style="background-color:'+projectsData[project]['color']+'">'+projectsData[project]['achievement']+'</div>')
@@ -391,7 +413,13 @@ function openProject(project) {
 
   $('.project-window').find('img').eq(0).after(projectInfo)
 
-  $('.project-window .project-info').css('color',projectsData[project]['color'])
+  if ( projectsData[project]['description'] ) {
+    projectDescription = $('<div class="project-description"></div>')
+    projectDescription.append('<h3>'+projectsData[project]['description']+'</h3>')
+    $('.project-window').find('img').eq(2).after(projectDescription)
+  }
+
+  $('.project-info, .project-description').css('color',projectsData[project]['color'])
 
   nextID = Object.keys(projectsData).indexOf(project)+1
   if ( nextID >= Object.keys(projectsData).length ) { nextID = 0 }
