@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?53" rel="stylesheet">
+<link href="style.css?54" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Boutique logo design for young brands">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
@@ -173,7 +173,8 @@ projectsData = {
     'description': "Moonswave's logo uses the golden ratio — a mathematical pattern found in nature that is associated with balance and harmony. The sky and the wave forms a shape similar to the Yin-Yang symbol, while the moon shines at the center in the negative space. The spiral effect gives the logo a dynamic feel, reflecting the ever-changing nature of the human mind.",
     'values': ['Intimate','Calm','Balanced','Inspiring'],
     'industry': ['AI','Wellness'],
-    'year': '2023'
+    'year': '2023',
+    'thumb-style': 'positive'
   },
   'lemonade': {
     'brand': 'Lemonade',
@@ -303,7 +304,7 @@ imageSources = []
 
 i = 1;
 for (project in projectsData) {
-  imageSources.push('projects/'+project+'/0.png')
+  imageSources.push('projects/'+project+'/0.png?1')
   imageSources.push('projects/'+project+'/1.png')
   i++
 }
@@ -318,9 +319,12 @@ for (project in projectsData) {
   thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
   thumb.append('<div class="image"></div>')
   thumb.find('.image').append('<img src="img/empty-4x3.png" />')
-  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
+  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png?1")')
   thumb.append('<div class="info"></div>')
   thumb.find('.info').addClass(projectsData[project]['thumb-style'])
+  if ( projectsData[project]['thumb-style'] == 'positive' ) {
+    thumb.find('.info').css('color',projectsData[project]['color'])
+  }
   thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
   thumb.find('.info').append('<p>'+projectsData[project]['about']+'</p>')
   thumb.find('.info').append('<a target="_blank" href="https://'+projectsData[project]['website']+'">'+projectsData[project]['website']+'</a></div>')
