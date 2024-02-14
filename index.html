@@ -302,11 +302,9 @@ projectsData = {
 
 imageSources = []
 
-i = 1;
 for (project in projectsData) {
   imageSources.push('projects/'+project+'/0.png?1')
   imageSources.push('projects/'+project+'/1.png')
-  i++
 }
 
 loadImages(imageSources).then((loadedImages) => {
@@ -372,9 +370,8 @@ function nav() {
     imageSources = []
     i = 1;
     while ( i <= projectsData[hash]['length'] ) {
-      fileType = "png"
-      if ( i != 3 && projectsData[hash]['video'] == true ) { 
-        imageSources.push('projects/'+hash+'/'+i+'.'+fileType)
+      if ( i != 3 ) { 
+        imageSources.push('projects/'+hash+'/'+i+'.png')
       }
       i++
     }
@@ -387,7 +384,6 @@ function nav() {
       setTimeout(function() { 
         $('.project-window .loader-container').remove()
         $('.project-window > *:nth-child(n+3)').addClass('loaded')
-
       },1000)
     })
   }
