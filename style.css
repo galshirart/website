@@ -26,8 +26,11 @@ h3 {
   line-height:130%;
 }
 .list h3 {
-  margin-top:20px;
+  margin-top:12px;
   margin-bottom:-4px;
+}
+.list h3:nth-child(n+2) {
+  margin-top:30px;
 }
 p {
   line-height:160%;
