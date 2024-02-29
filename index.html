@@ -302,7 +302,7 @@ projectsData = {
 imageSources = []
 
 for (project in projectsData) {
-  imageSources.push('projects/'+project+'/0.png')
+  imageSources.push('projects/'+project+'/0.png?1')
   imageSources.push('projects/'+project+'/1.png')
 }
 
@@ -316,7 +316,7 @@ for (project in projectsData) {
   thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
   thumb.append('<div class="image"></div>')
   thumb.find('.image').append('<img src="img/empty-4x3.png" />')
-  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png")')
+  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png?1")')
   thumb.append('<div class="info"></div>')
   thumb.find('.info').addClass(projectsData[project]['thumb-style'])
   if ( projectsData[project]['thumb-style'] == 'positive' ) {
