@@ -452,6 +452,8 @@ function openProject(project) {
 
   $('.project-window').append(nextProject)
 
+  $('.close').css('background',projectsData[project]['color'])
+
   window.location.hash = project;
 }
 
