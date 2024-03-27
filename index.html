@@ -464,7 +464,7 @@ function openProject(project) {
 
   nextProject = $('<div class="next-project center"></div>')
   miniThumb = $('<div class="mini-thumb"></div>')
-  miniThumb.css('background-image','url("projects/'+Object.keys(projectsData)[nextID]+'/0.png")')
+  miniThumb.css('background-image','url("projects/'+Object.keys(projectsData)[nextID]+'/0.png?3")')
   nextProject.append(miniThumb)
   nextProject.append('Next project: '+projectsData[Object.keys(projectsData)[nextID]]['brand']+'→')
   nextProject.attr('onclick','openProject("'+Object.keys(projectsData)[nextID]+'")')
