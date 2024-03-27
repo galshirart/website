@@ -319,7 +319,7 @@ imageSources = []
 
 for (project in projectsData) {
   imageSources.push('projects/'+project+'/0.png?1')
-  imageSources.push('projects/'+project+'/1.png')
+  imageSources.push('projects/'+project+'/1.png?2')
 }
 
 loadImages(imageSources).then((loadedImages) => {
@@ -389,7 +389,7 @@ function nav() {
     i = 1;
     while ( i <= projectsData[hash]['length'] ) {
       if ( i != 3 ) { 
-        imageSources.push('projects/'+hash+'/'+i+'.png')
+        imageSources.push('projects/'+hash+'/'+i+'.png?2')
       }
       i++
     }
