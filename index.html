@@ -318,8 +318,8 @@ projectsData = {
 imageSources = []
 
 for (project in projectsData) {
-  imageSources.push('projects/'+project+'/0.png?3')
-  imageSources.push('projects/'+project+'/1.png?3')
+  imageSources.push('projects/'+project+'/0.webp')
+  imageSources.push('projects/'+project+'/1.webp')
 }
 
 loadImages(imageSources).then((loadedImages) => {
@@ -332,7 +332,7 @@ for (project in projectsData) {
   thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
   thumb.append('<div class="image"></div>')
   thumb.find('.image').append('<img src="img/empty-4x3.png" />')
-  thumb.find('.image').css('background-image','url("projects/'+project+'/0.png?3")')
+  thumb.find('.image').css('background-image','url("projects/'+project+'/0.webp")')
   thumb.append('<div class="info"></div>')
   thumb.find('.info').addClass(projectsData[project]['thumb-style'])
   thumb.find('.info').append('<h3>'+projectsData[project]['brand']+'</h3>')
@@ -389,7 +389,7 @@ function nav() {
     i = 1;
     while ( i <= projectsData[hash]['length'] ) {
       if ( i != 3 ) { 
-        imageSources.push('projects/'+hash+'/'+i+'.png?3')
+        imageSources.push('projects/'+hash+'/'+i+'.webp')
       }
       i++
     }
@@ -425,7 +425,7 @@ function openProject(project) {
     if ( i == 3 && projectsData[project]['video'] ) { 
       $('.project-window').append('<div class="video-container"><video autoplay="" loop="" muted="" playsinline=""><source src="projects/'+project+'/3.mp4?6" type="video/mp4"></video><div class="video-overlay"></div></div>')
      } else { 
-      $('.project-window').append('<img src="projects/'+project+'/'+i+'.png?3" />')
+      $('.project-window').append('<img src="projects/'+project+'/'+i+'.webp" />')
     }
     i++
   }
@@ -464,7 +464,7 @@ function openProject(project) {
 
   nextProject = $('<div class="next-project center"></div>')
   miniThumb = $('<div class="mini-thumb"></div>')
-  miniThumb.css('background-image','url("projects/'+Object.keys(projectsData)[nextID]+'/0.png?3")')
+  miniThumb.css('background-image','url("projects/'+Object.keys(projectsData)[nextID]+'/0.webp")')
   nextProject.append(miniThumb)
   nextProject.append('Next project: '+projectsData[Object.keys(projectsData)[nextID]]['brand']+'→')
   nextProject.attr('onclick','openProject("'+Object.keys(projectsData)[nextID]+'")')
