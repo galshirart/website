@@ -201,6 +201,7 @@ a.current {
   overflow: scroll;
   background: white;
   border-top:1px solid rgba(0,0,0,0.1);
+  padding-top:40px;
 }
 .page.show {
   top:160px;
@@ -367,10 +368,13 @@ a.current {
 }
 .section {
   align-items: flex-start;
-  padding:10px 0;
+  padding:20px 0;
 }
-.section > div {
-  width:45%;
+.section div {
+  width:70%;
+}
+.section div p {
+  margin-top:0
 }
 .process {
   border-left:1px solid rgba(0,0,0,0.1);
@@ -522,8 +526,7 @@ a.current {
   .section.flex { display: block; padding:0 6px }
   .section.flex  > div { width:100% }
   .line { margin:40px 0 }
-  .section.services h3:nth-child(n+2) { margin-top:30px }
-  .process .step { margin:30px auto; }
+  .section div p { margin-top:10px }
   .close { top:10px; right:-60px }
   .show-project .close { top:10px; right:10px}
   .project-window h3 { font-size: 14px; }
