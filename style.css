@@ -455,20 +455,23 @@ a.current {
   margin-bottom:50px;
   display: inline-block;
 }
+.socials {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 3px 6px;
+  border-radius: 100px;
+}
 .socials.flex a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width:30px;
+  width:36px;
   height:30px;
   transition: all 200ms;
   opacity:0.6;
-  margin-left:4px;
-  border-radius:4px;
+  border-radius:40px;
 }
 .socials.flex a:hover {
-  background:rgba(0,0,0,0.1);
-  opacity:0.8;
+  opacity:0.9;
 }
 .socials.flex img {
   width:20px;
@@ -534,7 +537,7 @@ a.current {
   h2 { font-size:28px }
   h3 { font-size:20px }
   .small { font-size:10px }
-  .socials.flex a { margin:0; width:24px }
+  .socials.flex a { width:30px }
   .thumbs { margin:40px 0; grid-column-gap: 10px; grid-row-gap: 10px; }
   .thumbs.minimize { margin:40px 0 30px }
   .page { padding-top:40px; padding-bottom:30px }
