@@ -53,6 +53,19 @@ a.current {
   font-size: 10px;
   margin-bottom:10px;
 }
+.number {
+  font-size:12px;
+  height:24px;
+  width:24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border:1px solid rgba(0,0,0,0.7);
+  margin-right:8px;
+  position: relative;
+  top:-4px;
+}
 .flex {
   display: flex;
   justify-content: space-between;
@@ -370,11 +383,15 @@ a.current {
   align-items: flex-start;
   padding:20px 0;
 }
-.section div {
-  width:70%;
+.section > div {
+  width:45%;
 }
-.section div p {
-  margin-top:0
+.section h3:nth-child(n+1) {
+  margin-top:40px;
+  margin-bottom:0px;
+}
+.section h3:first-of-type {
+  margin-top:10px;
 }
 .process {
   border-left:1px solid rgba(0,0,0,0.1);
