@@ -55,11 +55,11 @@ a.current {
 }
 .number {
   font-size:12px;
-  height:24px;
-  width:24px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  height:23px;
+  width:23px;
+  line-height:22px;
+  display: inline-block;
+  text-align: center;
   border-radius: 100%;
   border:1px solid rgba(0,0,0,0.7);
   margin-right:8px;
