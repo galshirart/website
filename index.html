@@ -1,18 +1,18 @@
 <meta charset="utf-8">
 <title>Gal Shir | Boutique logo design for young brands</title>
 <link rel="canonical" href="https://gal.sh/" />
-<link rel="shortcut icon" href="img/favicon.png?2">
+<link rel="shortcut icon" href="studio-img/favicon.png?2">
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<link href="style.css?66" rel="stylesheet">
+<link href="style.css?67" rel="stylesheet">
 
 <meta property="og:title" content="Gal Shir | Boutique logo design for young brands">
 <meta property="og:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
-<meta property="og:image" content="https://gal.sh/img/gal-shir-og.png?2">
+<meta property="og:image" content="https://gal.sh/studio-img/gal-shir-og.png?2">
 <meta property="og:url" content="https://gal.sh/">
 <meta property="og:type" content="website" />
 
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@galshirart" />
 <meta name="twitter:description" content="Gal Shir is a brand design specialist based in Tel Aviv, helping early-stage startups define their visual identity and set their unique footprint." />
-<meta name="twitter:image" content="https://gal.sh/img/gal-shir-og.png?2">
+<meta name="twitter:image" content="https://gal.sh/studio-img/gal-shir-og.png?2">
 
 <div class="loader global"></div>
 
@@ -28,6 +28,21 @@
 
 <div class="header flex">
   <div class="flex menu">
+    <div class="hamburger" onclick="openMenu()"><div></div><div></div><div></div></div>
+
+    <div class="hamburger-menu hide">
+      <label>PROCREATE</label>
+      <a href="/toolkit">Procreate Toolkit</a>
+      <a href="/brushes">Texture Brushes</a>
+      <a href="/palettes">Color Palettes</a>
+      <label>APPS</label>
+      <a href="/pose">Pose</a>
+      <a href="/float">Float</a>
+      <label>LEARN</label>
+      <a href="/tips">Tips</a>
+      <a href="/shading">Shading Worksheets</a>
+    </div>
+
     <a style="opacity:1" href="/"><h1>G<span class="mobile-hide">al </span>S<span class="mobile-hide">hir</span></h1></a>
     <a class="mobile-hide current" data-page="work" onclick="closePage()">Work</a>
     <a href="#info" data-page="info">Info</a>
@@ -35,10 +50,10 @@
     <a href="#contact" data-page="contact">Contact</a>
   </div>
   <div class="socials flex">
-    <a href="https://x.com/galshirart/highlights" target="_blank"><img src="img/i-twitter.png" /></a>
-    <a href="https://instagram.com/galshirart" target="_blank"><img src="img/i-instagram.png" /></a>
-    <a href="https://facebook.com/galgalshir" target="_blank"><img src="img/i-facebook.png" /></a>
-    <a href="https://linkedin.com/in/galshir" target="_blank"><img src="img/i-linkedin.png" /></a>
+    <a href="https://x.com/galshirart/highlights" target="_blank"><img src="studio-img/i-twitter.png" /></a>
+    <a href="https://instagram.com/galshirart" target="_blank"><img src="studio-img/i-instagram.png" /></a>
+    <a href="https://facebook.com/galgalshir" target="_blank"><img src="studio-img/i-facebook.png" /></a>
+    <a href="https://linkedin.com/in/galshir" target="_blank"><img src="studio-img/i-linkedin.png" /></a>
   </div>
 </div>
 
@@ -90,7 +105,7 @@
         <p>Gal helps innovative startups to define their unique visual identities. Designing custom, unique, and powerful logos, Gal provides a fundamental asset for young brands that haven't set their visual footprint yet, or a makeover for established brands looking for a fresh rebrand.</p>
         <p>Gal started his creative career as a designer, illustrator, and art director, working with several design studios and startups in Tel Aviv. Being on the founding team of <a target="_blank" href="https://lemonade.com">Lemonade</a> (2016 to 2019), Gal created and developed the iconic brand and led the implementation of the visual identity through the product, marketing, and beyond.</p>
         <p>Over the last 15 years, Gal has been working in the spaces of design, art, entrepreneurship, illustration, product, and marketing. His work has gained massive exposure on social media, making him an influential person in the field. One of his major projects, <a target="_blank" href="https://colorhunt.co">Color Hunt</a>, has become a leading resource for designers and artists with over 1 million monthly users.</p>
-        <img src="img/gal-shir.jpg?2" style="margin-top:20px; max-width:100%;"/>
+        <img src="studio-img/gal-shir.jpg?2" style="margin-top:20px; max-width:100%;"/>
       </div>
     </div>
   </div>
@@ -103,7 +118,7 @@
         <h2>hi@gal.sh</h2>
         <div class="availability">Available for new projects</div>
         <p>I'm currently taking <a href="#info"><u>logo design</u></a> projects only. Drop me an email and I'll get back to you as soon as I can. I'd be happy to chat, learn about your brand, and see how I can help.</p>
-        <p style="font-weight:700"><img src="img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
+        <p style="font-weight:700"><img src="studio-img/i-location.png" style="width: 20px; position: relative; top: 4px; margin-left:-5px; opacity:0.8" />Tel Aviv</p>
       </div>
       <div >
 
@@ -364,7 +379,7 @@ i = 0;
 for (project in projectsData) {
   thumb = $('<a href="#'+project+'" class="thumb" project='+project+'></a>')
   thumb.append('<div class="image"></div>')
-  thumb.find('.image').append('<img src="img/empty-4x3.png" />')
+  thumb.find('.image').append('<img src="studio-img/empty-4x3.png" />')
   thumb.find('.image').css('background-image','url("projects/'+project+'/0.webp?1")')
   thumb.append('<div class="info"></div>')
   thumb.find('.info').addClass(projectsData[project]['thumb-style'])
@@ -400,6 +415,17 @@ function loadImages(imageSources) {
   const imagePromises = imageSources.map(loadImage);
   return Promise.all(imagePromises);
 }
+
+function openMenu() {
+  $('.hamburger-menu').removeClass('hide')
+}
+
+$(document).click(function(event) { 
+  target = $(event.target);
+  if(!target.closest('.hamburger').length && $('.hamburger-menu').is(":visible")) {
+    $('.hamburger-menu').addClass('hide');
+  }        
+});
 
 $(window).on('hashchange', function() {
   nav()
