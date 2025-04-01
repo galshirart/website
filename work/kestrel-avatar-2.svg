@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>kestrel-avatar-2</title>
+    <g id="avatar-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FF711F" x="0" y="0" width="100" height="100" rx="50"></rect>
+        <g id="kestrel-symbol-orange-gradient" transform="translate(22, 25)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M22.536325,0 L22.536325,16.6642946 L3.20244526,39.9 C1.24390913,38.2325581 0,35.7384374 0,32.951353 C0,27.9310689 4.03594255,23.8613246 9.01453002,23.8613246 L9.01453002,9.0900284 C9.01453002,4.06974434 13.0504725,0 18.02906,0 L22.536325,0 Z M57,3.19744231e-14 L28.5052461,34.243492 C26.7895862,36.3052817 24.2549973,37.4963672 21.5832398,37.4963672 L8.14575465,37.4963672 L36.6416407,3.2527513 C38.357301,1.19103562 40.8918426,3.19744231e-14 43.5635439,3.19744231e-14 L57,3.19744231e-14 Z" id="Shape"></path>
+            <path d="M37.1408223,26.6 L56.05,49.4 L42.8940107,49.4 C40.2776343,49.4 37.795595,48.229582 36.1155698,46.2035925 L28.5,37.019763 L37.1408223,26.6 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>
