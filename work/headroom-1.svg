@@ -2,9 +2,9 @@
 <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>headroom-1</title>
     <g id="1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="headroom-symbol-blue" transform="translate(80, 80)" fill-rule="nonzero">
-            <rect id="headroom-space" fill="#181818" opacity="0.1" x="0" y="0" width="96" height="80"></rect>
-            <rect id="headroom-base" fill="#123BFF" x="0" y="80" width="96" height="16"></rect>
+        <g id="headroom-symbol-blue" transform="translate(84, 84)" fill-rule="nonzero">
+            <rect id="headroom-space" fill="#181818" opacity="0.1" x="0" y="0" width="88" height="73.3333333"></rect>
+            <rect id="headroom-base" fill="#123BFF" x="0" y="73.3333333" width="88" height="14.6666667"></rect>
         </g>
     </g>
 </svg>
