@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>vetric-avatar-2</title>
+    <g id="avatar-2" stroke="none" fill="none" transform="translate(0, -0)" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#ECECEC" x="0" y="0" width="100" height="100" rx="50"></rect>
+        <g id="vetric-logomark-2" stroke-width="1" transform="translate(30, 29)" fill="#2969FF">
+            <path d="M40.904,16.9816177 L20.452,47.3044107 L0,16.9816177 L10.6452942,16.9816177 C12.5270156,16.9816177 14.2857291,17.9169038 15.3380496,19.4768708 L20.452,27.0578259 L25.56321,19.4777769 C26.6154455,17.9172859 28.3744681,16.9816177 30.2565764,16.9816177 L40.904,16.9816177 Z M8.39967685,0 L32.4986793,0 C34.8032325,0 36.8777323,1.3970981 37.7441054,3.5325988 L40.904,11.3213396 L0,11.3213396 L3.15292689,3.53586448 C3.98082112,1.49155767 5.91565806,0.123016613 8.10030283,0.00787751705 L8.39967685,0 Z" id="Shape" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
