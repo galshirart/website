@@ -12,11 +12,11 @@
         </linearGradient>
     </defs>
     <g id="1" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
-        <g id="swan-symbol-black" transform="translate(57, 57)">
-            <g transform="translate(4.6557, 20.9508)" id="Path">
-                <polygon fill="#0C0B10" fill-rule="nonzero" points="37.2459016 93.1147541 0 55.8688525 37.2459016 55.8688525 37.2459016 18.6229508 74.4918033 55.8688525 74.4918033 0 93.1147541 0 111.737705 18.6229508 86.913873 18.6229508 111.737705 55.8688525 111.737705 93.1147541"></polygon>
-                <polygon fill="url(#linearGradient-1)" fill-rule="nonzero" opacity="0.300000012" points="74.4918033 0 74.4918033 55.8688525 111.737705 93.1147541 111.737705 55.8688525"></polygon>
-                <polygon fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.300000012" points="111.737705 93.1147541 37.2459016 18.6229508 37.2459016 93.1147541"></polygon>
+        <g id="swan-symbol-black" transform="translate(60, 60)">
+            <g transform="translate(4.459, 20.0656)" id="Path">
+                <polygon fill="#0C0B10" fill-rule="nonzero" points="35.6721311 89.1803279 0 53.5081967 35.6721311 53.5081967 35.6721311 17.8360656 71.3442623 53.5081967 71.3442623 0 89.1803279 0 107.016393 17.8360656 83.2414558 17.8360656 107.016393 53.5081967 107.016393 89.1803279"></polygon>
+                <polygon fill="url(#linearGradient-1)" fill-rule="nonzero" opacity="0.300000012" points="71.3442623 0 71.3442623 53.5081967 107.016393 89.1803279 107.016393 53.5081967"></polygon>
+                <polygon fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.300000012" points="107.016393 89.1803279 35.6721311 17.8360656 35.6721311 89.1803279"></polygon>
             </g>
         </g>
     </g>

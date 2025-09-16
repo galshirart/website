@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>swan-avatar-1</title>
+    <defs>
+        <linearGradient x1="0%" y1="80.0817871%" x2="0%" y2="-6.10622664e-14%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="27.243042%" x2="0%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
     <g id="avatar-1" stroke="none" fill="none" fill-rule="evenodd">
         <rect id="Rectangle" fill="#0C0B10" x="0" y="0" width="100" height="100" rx="50"></rect>
+        <g id="swan-symbol-white" stroke-width="1" transform="translate(17, 26)">
+            <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="18.3333333 46 0 27.6 18.3333333 27.6 18.3333333 9.2 36.6666667 27.6 36.6666667 0 45.8333333 0 55 9.2 42.7811097 9.2 55 27.6 55 46"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero" opacity="0.200000003" points="36.6666667 0 36.6666667 27.6 55 46 55 27.6"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.200000003" points="55 46 18.3333333 9.2 18.3333333 46"></polygon>
+        </g>
     </g>
 </svg>
