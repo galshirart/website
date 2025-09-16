@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>swan-1</title>
+    <defs>
+        <linearGradient x1="0%" y1="80.0817871%" x2="0%" y2="-6.10622664e-14%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="27.243042%" x2="0%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="1" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g id="swan-symbol-black" transform="translate(57, 57)">
+            <g transform="translate(4.6557, 20.9508)" id="Path">
+                <polygon fill="#0C0B10" fill-rule="nonzero" points="37.2459016 93.1147541 0 55.8688525 37.2459016 55.8688525 37.2459016 18.6229508 74.4918033 55.8688525 74.4918033 0 93.1147541 0 111.737705 18.6229508 86.913873 18.6229508 111.737705 55.8688525 111.737705 93.1147541"></polygon>
+                <polygon fill="url(#linearGradient-1)" fill-rule="nonzero" opacity="0.300000012" points="74.4918033 0 74.4918033 55.8688525 111.737705 93.1147541 111.737705 55.8688525"></polygon>
+                <polygon fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.300000012" points="111.737705 93.1147541 37.2459016 18.6229508 37.2459016 93.1147541"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
