@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tenzai-avatar-2</title>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="55.0533137%" gradientTransform="translate(0.5, 0.5), scale(1, 0.9083), rotate(-90), translate(-0.5, -0.5)" id="radialGradient-1">
+            <stop stop-color="#19191A" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#19191A" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="avatar-2" stroke="none" fill="none" transform="translate(0, 0)" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#ECECEC" x="0" y="0" width="100" height="100" rx="50"></rect>
+        <g id="tenzai-symbol-black" stroke-width="1" transform="translate(22, 22)">
+            <path d="M41.0544993,34.0651935 L51.3333333,44.2969873 L44.7333333,50.8666667 L34.4554959,40.6354293 L34.455873,34.066742 L41.0544993,34.0651935 Z M15.4098576,34.0651935 L22.0107937,34.066742 L22.0104166,40.6354293 L11.7333334,50.8666667 L5.13333333,44.2969873 L15.4098576,34.0651935 Z M32.9002381,0 L32.9002381,16.6555399 L44.7333333,4.8789112 L51.3333333,11.4485906 L41.0576105,21.6772873 L15.4114132,21.6772873 L5.13333333,11.4485906 L11.7333334,4.8789112 L23.5664286,16.6555399 L23.5664286,0 L32.9002381,0 Z" id="Shape" fill="url(#radialGradient-1)" fill-rule="nonzero"></path>
+            <polygon id="Path" fill="#19191A" fill-rule="nonzero" points="56 23.3333333 56 32.6666667 32.6666667 32.6666667 32.6666667 56 23.3333333 56 23.3333333 32.6666667 0 32.6666667 0 23.3333333"></polygon>
+        </g>
+    </g>
+</svg>
