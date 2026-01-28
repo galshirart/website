@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="216px" height="216px" viewBox="0 0 216 216" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>hotline-avatar-1</title>
+    <defs>
+        <path d="M0,0 L216,0 L216,216 L0,216 L0,0 Z" id="path-1"></path>
+    </defs>
+    <g id="hotline-avatar-1" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd">
+        <use fill="#1F1E21" xlink:href="#path-1"></use>
+        <g id="hotline-avatar" stroke-width="1">
+            <g id="hotline-avatar-1">
+                <g id="path-1-link" fill="#FF2020">
+                    <polygon id="path-1" points="0 0 216 0 216 216 0 216"></polygon>
+                </g>
+                <g id="hotline-symbol-avatar" transform="translate(0, 53.3487)" fill="#FFFFFF">
+                    <polygon id="Path" points="99.1569211 0 92.5673315 46.8433735 131.581356 46.8433735 138.168535 0 156.412837 0 141.029264 109.301941 122.800109 109.301941 129.386223 62.4578313 90.372199 62.4578313 83.7830689 109.301941 65.545158 109.301941 72.1254038 62.4578313 0 62.458567 0 46.8441092 74.3192352 46.8433735 80.9010157 0"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
